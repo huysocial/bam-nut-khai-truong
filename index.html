@@ -107,8 +107,7 @@ input[type=range]{width:100%;accent-color:var(--cyan)}
 .exports small{font-weight:500;font-size:11px;opacity:.8}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 /* [C10:QUAN-TRI] */
-.admin-wrap{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:16px;align-items:start}
-@media (max-width:980px){.admin-wrap{grid-template-columns:minmax(0,1fr)}}
+.admin-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
 .res-item{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:8px;align-items:center;background:var(--raise);border:1px solid var(--line);border-radius:6px;padding:6px 8px}
 .res-item .thumb{height:36px}
 .res-item .thumb img,.res-item .thumb video{max-height:32px;max-width:48px}
@@ -131,6 +130,64 @@ tr:last-child td{border-bottom:0}
 .feed{display:flex;flex-direction:column;gap:4px;max-height:360px;overflow:auto}
 .feed div{display:flex;gap:10px;font-size:12px;padding:4px 0;border-bottom:1px solid var(--line)}
 .feed time{font-family:var(--f-mono);color:var(--muted);flex:none;font-variant-numeric:tabular-nums}
+/* [C11:THE-BUOC] 5 thẻ của bảng thông số */
+.steps{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);background:var(--raise);border-radius:8px 8px 0 0}
+.steps button{flex:1 1 auto;background:transparent;border:0;border-bottom:3px solid transparent;padding:12px 6px 10px;font-weight:600;font-size:12.5px;color:var(--muted);cursor:pointer;white-space:nowrap;min-height:44px}
+.steps button:hover{color:var(--text)}
+.steps button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--cyan)}
+.steps button:disabled{opacity:.45;cursor:not-allowed}
+.pane[hidden]{display:none}
+.seg.f1{border:0;border-radius:0;gap:6px;overflow:visible}
+.seg.f1 button,.seg.f1 button+button{border:1px solid var(--line);border-radius:999px;padding:7px 12px;min-height:36px}
+.seg.f1 button[aria-pressed="true"]{border-color:var(--cyan)}
+.sec.stepnav{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}
+output.ro{display:block;background:var(--raise);border:1px solid var(--line);border-radius:6px;padding:8px 10px;color:var(--text);font-size:14px}
+/* [/C11] */
+/* [C12:DINH-DANG] thanh định dạng chữ (YC-42), vị trí logo (YC-43) */
+.fmtw{display:flex;flex-direction:column;gap:6px}
+.fmtw .fl{font-size:12.5px;font-weight:600;color:var(--text)}
+.ts{display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:var(--raise);border:1px dashed var(--line);border-radius:6px;padding:8px}
+.ts select{width:auto;flex:1 1 130px;padding:6px 8px;font-size:13px;background:var(--panel)}
+.ts .sz{display:flex;align-items:center;gap:6px;flex:1 1 150px;font-size:12px;color:var(--muted)}
+.ts .sz output{min-width:40px;font:600 12px var(--f-mono);color:var(--text)}
+.ts .sw{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.ts .sw[aria-pressed="true"]{border-color:var(--cyan);box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--cyan)}
+.ts input[type=color]{width:30px;height:30px;padding:0;border:1px solid var(--line);border-radius:6px;background:transparent;cursor:pointer}
+.ts .tb{min-width:34px;min-height:32px;padding:4px 8px;font-weight:800}
+.ts .tb[aria-pressed="true"]{border-color:var(--cyan);background:var(--cyan-soft)}
+.g9{display:grid;grid-template-columns:repeat(3,18px);gap:3px}
+.g9 button{width:18px;height:14px;padding:0;border:1px solid var(--line);border-radius:3px;background:var(--panel);cursor:pointer}
+.g9 button[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan)}
+.xy{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted)}
+.xy input[type=number]{width:64px;padding:4px 6px;font-size:13px}
+.stage.drag-logo{cursor:grab}.stage.dragging{cursor:grabbing}
+/* [/C12] */
+/* [C13:AM-THANH] khối chọn nhạc (YC-40), nút bật tiếng xem trước */
+.ab{display:flex;flex-direction:column;gap:8px;background:var(--raise);border:1px dashed var(--line);border-radius:6px;padding:10px}
+.ab .r{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ab select{flex:1 1 180px;width:auto}
+.ab .vol{display:flex;align-items:center;gap:6px;flex:1 1 160px;font-size:12px;color:var(--muted)}
+.ab .vol input{flex:1}
+.ab .vol output{min-width:38px;font:600 12px var(--f-mono);color:var(--text)}
+.btn.on{border-color:var(--cyan);background:var(--cyan-soft)}
+/* [/C13] */
+/* [C14:TAI-KHOAN] thẻ con Quản trị, bảng người dùng, màn đăng nhập (YC-01, YC-02) */
+.qt-tabs{display:flex;overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.qt-tabs button{flex:1 1 auto;background:transparent;border:0;border-bottom:3px solid transparent;padding:12px 10px 10px;font-weight:600;font-size:13px;color:var(--muted);cursor:pointer;white-space:nowrap;min-height:44px}
+.qt-tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--cyan)}
+.demo-note{border:1px solid var(--warn);color:var(--warn);background:rgba(255,181,71,.08);border-radius:6px;padding:8px 10px;font-size:12.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.st{display:inline-block;font:700 10.5px var(--f-mono);letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+.st.ok{border-color:var(--ok);color:var(--ok)}.st.lock{border-color:var(--bad);color:var(--bad)}.st.must{border-color:var(--warn);color:var(--warn)}
+td .acts{display:flex;gap:4px;flex-wrap:wrap}
+.cred{font:600 13px var(--f-mono);background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;white-space:pre-wrap;user-select:all}
+.login{position:fixed;inset:0;z-index:50;background:radial-gradient(ellipse at 50% 20%,#0f2a5c 0%,var(--ink) 65%);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.login .card{width:100%;max-width:380px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 20px;display:flex;flex-direction:column;gap:12px}
+.login h2{margin:0;font-size:20px}
+.login .btn.primary{padding:11px 12px}
+input[type=password],input[type=tel],input[type=search]{background:var(--raise);border:1px solid var(--line);border-radius:6px;padding:8px 10px;color:var(--text);width:100%;font-size:14px}
+/* [/C14] */
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -156,7 +213,7 @@ tr:last-child td{border-bottom:0}
     <div class="stage" id="stage" tabindex="0" aria-label="Màn hình xem trước. Bấm hoặc nhấn phím cách để kích hoạt khi đang mô phỏng.">
       <canvas id="cv"></canvas>
       <div class="badge" id="badge">MÀN CHỜ · 1920×1080</div>
-      <div class="rec" id="recBox" hidden><div><b id="recTitle">Đang export</b><div class="hint">Giữ tab này mở cho tới khi xong</div><div class="bar"><i id="recBar"></i></div></div></div>
+      <div class="rec" id="recBox" hidden><div><b id="recTitle">Đang export</b><div class="hint">Giữ tab này mở cho tới khi xong</div><div class="bar"><i id="recBar"></i></div><button class="btn sm" id="recCancel" type="button" hidden style="pointer-events:auto;margin-top:10px">Hủy xuất</button></div></div>
     </div>
     <div class="transport">
       <div class="seg" role="group" aria-label="Chế độ xem">
@@ -166,23 +223,27 @@ tr:last-child td{border-bottom:0}
       </div>
       <button class="btn" id="fire" hidden>Nhấn nút ▸</button>
       <button class="btn" id="replay">Phát lại</button>
+      <button class="btn" id="sndBtn" type="button" aria-pressed="false">🔇 Tiếng: tắt</button>
       <span class="tc" id="tc">00:00.0</span>
     </div>
     <p class="hint" id="modeHint"></p>
   </section>
 
   <aside class="panel" aria-label="Thông số">
-    <!-- [S04:VIDEO-NEN] -->
-    <div class="sec">
-      <h2>1 · Video nền</h2>
-      <div class="list" id="bgList"></div>
-      <div class="hint" id="bgHint"></div>
-      <button class="btn" id="pickLocal">Dùng video từ máy tính…</button>
-      <input type="file" id="localFile" accept="video/*" class="sr">
-    </div>
+    <!-- [S16:THE-BUOC] 5 thẻ theo thứ tự làm việc -->
+    <nav class="steps" id="steps" role="tablist" aria-label="Các bước">
+      <button type="button" role="tab" data-tab="1" aria-selected="true">1 Sự kiện</button>
+      <button type="button" role="tab" data-tab="2" aria-selected="false">2 Màn chờ</button>
+      <button type="button" role="tab" data-tab="3" aria-selected="false">3 Kích hoạt</button>
+      <button type="button" role="tab" data-tab="4" aria-selected="false">4 Kết quả</button>
+      <button type="button" role="tab" data-tab="5" aria-selected="false">5 Xuất file</button>
+    </nav>
+    <!-- [/S16] -->
+
+    <div class="pane" data-pane="1" role="tabpanel" aria-label="Sự kiện">
     <!-- [S05:KHO-LED] -->
     <div class="sec">
-      <h2>2 · Kích thước màn LED</h2>
+      <h2>Kích thước màn LED</h2>
       <label class="f">Khổ màn hình
         <select id="preset">
           <option value="1920x1080">16:9 · 1920×1080 (Full HD)</option>
@@ -200,9 +261,116 @@ tr:last-child td{border-bottom:0}
       </div>
       <div class="hint" id="ratio"></div>
     </div>
+    <!-- [S07:THONG-TIN] -->
+    <div class="sec">
+      <h2>Nội dung sự kiện</h2>
+      <div class="hint">Nhập 1 lần, dùng chung cho mọi phần có chữ. File 1 (màn chờ) chỉ có nền, nút và hiệu ứng; logo và các dòng dưới đây hiện ở khung kết quả File 2, sau khi đếm ngược về 0.</div>
+      <label class="f">Dòng mở đầu<input type="text" id="kicker"></label>
+      <label class="f">Tên sự kiện (xuống dòng để ngắt câu)<textarea id="title" rows="3"></textarea></label>
+      <label class="f">Thời gian · địa điểm<input type="text" id="info"></label>
+      <label class="f">Dòng chữ khi kích hoạt<input type="text" id="actText"></label>
+      <label class="f">Lời mời nhấn nút (chỉ hiện khi bật ở thẻ Màn chờ)<input type="text" id="invite"></label>
+    </div>
+    <div class="sec stepnav"><span></span><button type="button" class="btn primary" data-go="2">Tiếp: Màn chờ →</button></div>
+    </div>
+
+    <div class="pane" data-pane="2" role="tabpanel" aria-label="Màn chờ" hidden>
+    <!-- [S17:THOI-LUONG-F1] -->
+    <div class="sec">
+      <h2>Thời lượng File 1</h2>
+      <div class="hint">File 1 phát trong lúc chờ đại biểu lên xếp hàng và đặt tay lên màn hình. Nền, nút và hiệu ứng chạy lặp liền mạch trong suốt thời lượng này.</div>
+      <div class="seg f1" role="group" aria-label="Thời lượng File 1" id="f1Seg">
+        <button type="button" data-s="30">30 giây</button><button type="button" data-s="60">1 phút</button><button type="button" data-s="120">2 phút</button><button type="button" data-s="180">3 phút</button><button type="button" data-s="300">5 phút</button><button type="button" data-s="custom">Tùy chỉnh…</button>
+      </div>
+      <label class="f" id="f1CustomWrap" hidden>Thời lượng mong muốn (giây, 10–600)<input type="number" id="f1Custom" min="10" max="600" step="1"></label>
+      <div class="hint" id="f1Hint"></div>
+    </div>
+    <!-- [/S17] -->
+    <!-- [S04:VIDEO-NEN] -->
+    <div class="sec">
+      <h2>Nền màn chờ</h2>
+      <div class="list" id="bgList"></div>
+      <div class="hint" id="bgHint"></div>
+      <button class="btn" id="pickLocal">Dùng video từ máy tính…</button>
+      <input type="file" id="localFile" accept="video/*" class="sr">
+      <label class="f">Độ dài 1 vòng của nền mặc định (giây)<input type="number" id="loopDur" min="4" max="60" step="1"></label>
+      <div class="hint" id="durHint"></div>
+    </div>
+    <!-- [S08:NUT-BAM] -->
+    <div class="sec">
+      <h2>Nút bấm</h2>
+      <div class="row" style="align-items:center">
+        <div class="stepper"><button id="nMinus" aria-label="Bớt một nút">−</button><output id="nOut">5</output><button id="nPlus" aria-label="Thêm một nút">+</button></div>
+        <span class="hint">nút trên màn hình (1–10, bằng số đại biểu)</span>
+      </div>
+      <div class="types" id="types" role="group" aria-label="Kiểu nút"></div>
+      <label class="check"><input type="checkbox" id="showNames"> Hiện tên đại biểu dưới mỗi nút</label>
+      <label class="f" id="namesWrap">Tên đại biểu, mỗi dòng một người, theo thứ tự trái sang phải<textarea id="names" rows="4" placeholder="Ông Nguyễn Văn A&#10;Bà Trần Thị B"></textarea></label>
+    </div>
+    <div class="sec">
+      <h2>Lời mời nhấn nút</h2>
+      <label class="f">Chữ trên màn chờ (File 1)
+        <select id="loopText"><option value="none">Không chữ</option><option value="invite">Hiện lời mời nhấn nút</option></select>
+      </label>
+      <span class="hint">Nội dung lời mời sửa ở thẻ Sự kiện.</span>
+    </div>
+    <!-- [S18:CHU-MAN-CHO] kiểu chữ tên đại biểu, lời mời (YC-42) -->
+    <div class="sec">
+      <h2>Kiểu chữ màn chờ</h2>
+      <div class="fmtw"><span class="fl">Tên đại biểu</span><div class="ts" data-fmt="names" data-seg="loop"></div></div>
+      <div class="fmtw"><span class="fl">Lời mời nhấn nút</span><div class="ts" data-fmt="invite" data-seg="loop"></div></div>
+      <span class="hint">Chỉ thấy trên màn xem trước khi đã bật hiện tên đại biểu / lời mời ở trên.</span>
+    </div>
+    <!-- [/S18] -->
+    <!-- [S22:NHAC-CHO] nhạc màn chờ, phát lặp cùng File 1 (YC-40) -->
+    <div class="sec">
+      <h2>Nhạc màn chờ</h2>
+      <div class="ab" data-aud="loop" data-seg="loop"></div>
+    </div>
+    <!-- [/S22] -->
+    <div class="sec stepnav"><button type="button" class="btn" data-go="1">← Sự kiện</button><button type="button" class="btn primary" data-go="3">Tiếp: Kích hoạt →</button></div>
+    </div>
+
+    <div class="pane" data-pane="3" role="tabpanel" aria-label="Kích hoạt" hidden>
+    <!-- [S09:HIEU-UNG] -->
+    <div class="sec">
+      <h2>Khi nhấn nút (0–1 giây)</h2>
+      <div class="list" id="fxList"></div>
+    </div>
+    <div class="sec">
+      <h2>Đếm ngược và chuyển cảnh</h2>
+      <div class="list" id="packBox">
+        <label class="f">Hiệu ứng mỗi số đếm · biến thể 1<select id="pkC1"></select></label>
+        <label class="f">Hiệu ứng mỗi số đếm · biến thể 2 (luân phiên, không bắt buộc)<select id="pkC2"></select></label>
+        <label class="f">Chuyển cảnh trước khung kết quả<select id="pkTr"></select></label>
+        <label class="f">Tách nền đen cho video hiệu ứng: <span id="fxKeyOut"></span><input type="range" id="fxKey" min="0" max="60" step="5"></label>
+        <span class="hint" id="packHint"></span>
+      </div>
+    </div>
+    <!-- [S19:CHU-SO-DEM] kiểu chữ số đếm ngược (YC-42) -->
+    <div class="sec">
+      <h2>Số đếm ngược</h2>
+      <div class="ts" data-fmt="count" data-seg="count"></div>
+    </div>
+    <!-- [/S19] -->
+    <!-- [S23:NHAC-COUNTDOWN] nhạc đếm ngược, mốc tiếng nổ căn vào lúc bùng nổ (YC-40) -->
+    <div class="sec">
+      <h2>Nhạc đếm ngược</h2>
+      <div class="ab" data-aud="count" data-seg="count"></div>
+    </div>
+    <!-- [/S23] -->
+    <div class="sec stepnav"><button type="button" class="btn" data-go="2">← Màn chờ</button><button type="button" class="btn primary" data-go="4">Tiếp: Kết quả →</button></div>
+    </div>
+
+    <div class="pane" data-pane="4" role="tabpanel" aria-label="Kết quả" hidden>
     <!-- [S06:LOGO] -->
     <div class="sec">
-      <h2>3 · Logo</h2>
+      <h2>Nền khung kết quả</h2>
+      <label class="f">Nền sau khi bùng nổ<select id="pkRb"></select></label>
+    </div>
+    <div class="sec">
+      <h2>Logo</h2>
+      <div class="seg sm" role="group" aria-label="Bố cục nhanh của logo" id="logoMode"><button type="button" data-m="row">Hàng ngang giữa</button><button type="button" data-m="corners">Hai góc trên</button><button type="button" data-m="free">Tự do</button></div>
       <div class="list" id="logoList"></div>
       <div class="row">
         <button class="btn" id="addLogo">+ Thêm logo từ máy</button>
@@ -210,58 +378,46 @@ tr:last-child td{border-bottom:0}
       </div>
       <input type="file" id="logoFile" accept="image/png,image/svg+xml,image/webp,image/jpeg" class="sr" multiple>
       <div id="logoLibWrap" hidden><div class="hint" style="margin-bottom:6px">Logo chuẩn trong thư viện, bấm để thêm:</div><div class="chips" id="logoLib"></div></div>
-      <span class="hint">Mỗi logo chọn được vị trí Trái, Giữa hoặc Phải và cỡ to nhỏ. Logo cùng vị trí xếp thành hàng theo thứ tự trong danh sách.</span>
+      <span class="hint" id="logoModeHint"></span>
     </div>
-    <!-- [S07:THONG-TIN] -->
+    <!-- [S20:CHU-KET-QUA] kiểu chữ 3 dòng khung kết quả (YC-42) -->
     <div class="sec">
-      <h2>4 · Thông tin sự kiện</h2>
-      <div class="hint">File 1 (màn chờ) chỉ có nền, nút và hiệu ứng. Logo và các dòng dưới đây hiện ở khung kết quả File 2, sau khi đếm ngược về 0.</div>
-      <label class="f">Chữ trên màn chờ (File 1)
-        <select id="loopText"><option value="none">Không chữ</option><option value="invite">Hiện lời mời nhấn nút</option></select>
-      </label>
-      <label class="f">Dòng mở đầu<input type="text" id="kicker"></label>
-      <label class="f">Tên sự kiện (xuống dòng để ngắt câu)<textarea id="title" rows="3"></textarea></label>
-      <label class="f">Thời gian · địa điểm<input type="text" id="info"></label>
-      <label class="f">Lời mời nhấn nút (chỉ hiện khi bật ở trên)<input type="text" id="invite"></label>
-      <label class="f">Dòng chữ khi kích hoạt<input type="text" id="actText"></label>
+      <h2>Chữ khung kết quả</h2>
+      <div class="fmtw"><span class="fl">Dòng khai trương</span><div class="ts" data-fmt="act" data-seg="result"></div></div>
+      <div class="fmtw"><span class="fl">Tên sự kiện</span><div class="ts" data-fmt="title" data-seg="result"></div></div>
+      <div class="fmtw"><span class="fl">Thời gian · địa điểm</span><div class="ts" data-fmt="info" data-seg="result"></div></div>
+      <span class="hint">Cỡ là % so với cỡ tự co vừa khung. Chữ luôn nằm trong vùng giữa màn, không tràn mép ở mọi khổ LED.</span>
     </div>
-    <!-- [S08:NUT-BAM] -->
+    <!-- [/S20] -->
+    <!-- [S24:NHAC-CHAO-MUNG] nhạc chào mừng từ lúc bùng nổ đến hết File 2 (YC-40) -->
     <div class="sec">
-      <h2>5 · Nút bấm</h2>
-      <div class="row" style="align-items:center">
-        <div class="stepper"><button id="nMinus" aria-label="Bớt một nút">−</button><output id="nOut">5</output><button id="nPlus" aria-label="Thêm một nút">+</button></div>
-        <span class="hint">nút trên màn hình (1–10)</span>
-      </div>
-      <div class="types" id="types" role="group" aria-label="Kiểu nút"></div>
-      <label class="check"><input type="checkbox" id="showNames"> Hiện tên đại biểu dưới mỗi nút</label>
-      <label class="f" id="namesWrap">Tên đại biểu, mỗi dòng một người, theo thứ tự trái sang phải<textarea id="names" rows="4" placeholder="Ông Nguyễn Văn A&#10;Bà Trần Thị B"></textarea></label>
+      <h2>Nhạc chào mừng</h2>
+      <div class="ab" data-aud="welcome" data-seg="result"></div>
     </div>
-    <!-- [S09:HIEU-UNG] -->
-    <div class="sec">
-      <h2>6 · Hiệu ứng kích hoạt (File 2)</h2>
-      <div class="hint">Khi nhấn nút (0–1 giây):</div>
-      <div class="list" id="fxList"></div>
-      <div class="list" id="packBox">
-        <label class="f">Hiệu ứng mỗi số đếm · biến thể 1<select id="pkC1"></select></label>
-        <label class="f">Hiệu ứng mỗi số đếm · biến thể 2 (luân phiên, không bắt buộc)<select id="pkC2"></select></label>
-        <label class="f">Chuyển cảnh trước khung kết quả<select id="pkTr"></select></label>
-        <label class="f">Nền khung kết quả<select id="pkRb"></select></label>
-        <label class="f">Tách nền đen cho video hiệu ứng: <span id="fxKeyOut"></span><input type="range" id="fxKey" min="0" max="60" step="5"></label>
-        <span class="hint" id="packHint"></span>
-      </div>
+    <!-- [/S24] -->
+    <div class="sec stepnav"><button type="button" class="btn" data-go="3">← Kích hoạt</button><button type="button" class="btn primary" data-go="5">Tiếp: Xuất file →</button></div>
     </div>
+
+    <div class="pane" data-pane="5" role="tabpanel" aria-label="Xuất file" hidden>
     <!-- [S10:XUAT-FILE] -->
     <div class="sec">
-      <h2>7 · Hiệu chỉnh & export</h2>
-      <label class="f">Làm tối nền để chữ dễ đọc: <span id="dimOut"></span><input type="range" id="dim" min="0" max="70" step="5"></label>
+      <h2>Thời lượng & chất lượng</h2>
       <div class="row">
-        <label class="f">Màn chờ (giây)<input type="number" id="loopDur" min="4" max="60" step="1"></label>
-        <label class="f">Kích hoạt (giây)<input type="number" id="actDur" min="10" max="20" step="1"></label>
+        <label class="f">File 1 (chọn ở thẻ Màn chờ)<output class="ro" id="f1Sum"></output></label>
+        <label class="f">File 2 · Kích hoạt (giây, ≥ 10)<input type="number" id="actDur" min="10" max="20" step="1"></label>
       </div>
-      <div class="hint" id="durHint"></div>
-      <label class="f">Khung hình/giây
-        <select id="fps"><option value="25">25 fps</option><option value="30">30 fps</option><option value="50">50 fps</option></select>
-      </label>
+      <div class="hint">File 2: nhấn nút ở giây 0, đếm ngược 5 → 0 từ giây 1 đến giây 6, bùng nổ ở giây 6,2, logo và chữ hiện đủ ở giây 8, phần còn lại giữ khung kết quả.</div>
+      <div class="row">
+        <label class="f">Khung hình/giây
+          <select id="fps"><option value="25">25 fps</option><option value="30">30 fps</option><option value="50">50 fps</option></select>
+        </label>
+        <label class="f">Làm tối nền: <span id="dimOut"></span><input type="range" id="dim" min="0" max="70" step="5"></label>
+      </div>
+      <label class="check"><input type="checkbox" id="audExp"> Xuất kèm âm thanh (nhạc đã chọn ở thẻ 2, 3, 4)</label>
+      <span class="hint" id="audExpHint"></span>
+    </div>
+    <div class="sec">
+      <h2>Xuất file</h2>
       <div class="exports">
         <button class="btn primary" id="expLoop"><b>EXPORT</b>File 1 · Màn chờ<small>phát lặp</small></button>
         <button class="btn primary" id="expAct"><b>EXPORT</b>File 2 · Kích hoạt<small>phát 1 lần, giữ khung cuối</small></button>
@@ -270,13 +426,61 @@ tr:last-child td{border-bottom:0}
       <div id="expMsg" class="msg" hidden></div>
       <button class="btn" id="saveAgain" hidden>Lưu lại file vừa export</button>
     </div>
+    <div class="sec stepnav"><button type="button" class="btn" data-go="4">← Kết quả</button><span></span></div>
+    </div>
   </aside>
 </main>
 
 <!-- [S11:QUAN-TRI] -->
 <section class="admin-wrap" id="adminArea" hidden aria-label="Quản trị">
+  <!-- [S21:QT-THE] thẻ con của khu Quản trị -->
+  <nav class="qt-tabs" id="qtTabs" role="tablist" aria-label="Mục quản trị">
+    <button type="button" role="tab" data-qt="lib" aria-selected="true">Thư viện</button>
+    <button type="button" role="tab" data-qt="aud" aria-selected="false">Âm thanh</button>
+    <button type="button" role="tab" data-qt="usr" aria-selected="false">Người dùng</button>
+    <button type="button" role="tab" data-qt="log" aria-selected="false">Nhật ký</button>
+  </nav>
+  <!-- [/S21] -->
+  <!-- [S25:QT-AM-THANH] danh sách nhạc có sẵn + nhạc trong thư viện, nghe thử -->
+  <div class="panel" data-qtp="aud" hidden>
+    <div class="sec">
+      <h2>Bộ nhạc dùng cho video</h2>
+      <div class="hint">Người dùng chọn nhạc ở thẻ 2 (nhạc chờ), thẻ 3 (đếm ngược), thẻ 4 (chào mừng). Bộ “Có sẵn” do tool tự tạo bằng code, không vướng bản quyền. Muốn dùng nhạc khác: tải lên ở mục Thư viện, loại Âm thanh.</div>
+      <div class="list" id="audAdmList"></div>
+      <div class="row"><button type="button" class="btn primary" id="audGoUp">+ Tải nhạc lên thư viện</button><span></span></div>
+    </div>
+  </div>
+  <!-- [/S25] -->
+  <!-- [S15:NGUOI-DUNG] tạo, sửa, khóa, đặt lại mật khẩu tài khoản (YC-02) -->
+  <div class="panel" data-qtp="usr" hidden>
+    <div class="sec">
+      <h2 id="uFormTitle">Tạo tài khoản người dùng</h2>
+      <div class="demo-note" id="uDemo">Bản giao diện: danh sách tài khoản chỉ lưu trên trình duyệt của máy này, chưa nối máy chủ nên chưa phải bảo mật thật. Khi chốt host (YC-24) sẽ chuyển sang cơ sở dữ liệu.</div>
+      <div class="grid2">
+        <label class="f">Tên đăng nhập *<input type="text" id="uUser" autocomplete="off" placeholder="vd: hanoi.tt" maxlength="32"></label>
+        <label class="f">Mật khẩu tạm * <span class="hint">(để trống = tự tạo)</span><input type="text" id="uPass" autocomplete="off" maxlength="64"></label>
+        <label class="f">Họ tên *<input type="text" id="uName" maxlength="80"></label>
+        <label class="f">Số điện thoại<input type="tel" id="uPhone" maxlength="15" placeholder="0912345678"></label>
+      </div>
+      <label class="f">Đơn vị * <span class="hint">(gõ mới hoặc chọn đơn vị đã có)</span><input type="text" id="uUnit" list="uUnits" maxlength="120" placeholder="vd: VNPT Hà Nội – Phòng KHDN"></label>
+      <datalist id="uUnits"></datalist>
+      <div class="row"><button type="button" class="btn primary" id="uSave">Tạo tài khoản</button><button type="button" class="btn" id="uCancel" hidden>Hủy sửa</button></div>
+      <div id="uMsg" class="msg" hidden></div>
+      <div id="uCredWrap" hidden><div class="hint">Gửi thông tin này cho người dùng (chỉ hiện 1 lần). Họ phải đổi mật khẩu ở lần đăng nhập đầu.</div><div class="cred" id="uCred"></div><button type="button" class="btn sm" id="uCopy">Chép</button></div>
+    </div>
+    <div class="sec">
+      <div class="row" style="align-items:center"><h2>Danh sách tài khoản</h2><div style="display:flex;justify-content:flex-end"><button type="button" class="btn sm" id="uLoginDemo">Xem thử màn đăng nhập</button></div></div>
+      <div class="grid2"><input type="search" id="uSearch" placeholder="Tìm tên đăng nhập, họ tên, SĐT…" aria-label="Tìm tài khoản"><select id="uUnitF" aria-label="Lọc theo đơn vị"></select></div>
+      <div class="tbl"><table>
+        <thead><tr><th>Tên đăng nhập</th><th>Họ tên</th><th>Đơn vị</th><th>SĐT</th><th>Trạng thái</th><th>Đăng nhập gần nhất</th><th>Thao tác</th></tr></thead>
+        <tbody id="uBody"></tbody>
+      </table></div>
+      <span class="hint" id="uCount"></span>
+    </div>
+  </div>
+  <!-- [/S15] -->
   <!-- [S12:TAI-NGUYEN] -->
-  <div class="panel">
+  <div class="panel" data-qtp="lib">
     <div class="sec">
       <h2>Tải tài nguyên lên thư viện</h2>
       <label class="f">Loại tài nguyên
@@ -308,9 +512,10 @@ tr:last-child td{border-bottom:0}
       </div>
       <div id="audioOpts" hidden>
         <label class="f">Dùng cho
-          <select id="rASlot"><option value="loop">Nhạc màn chờ (phát lặp)</option><option value="press">Tiếng nhấn nút</option><option value="count">Tiếng mỗi số đếm</option><option value="boom">Tiếng bùng nổ + nhạc khung kết quả</option></select>
+          <select id="rASlot"><option value="loop">Nhạc màn chờ (phát lặp)</option><option value="count">Nhạc đếm ngược (có tiếng nổ)</option><option value="welcome">Nhạc chào mừng (từ lúc bùng nổ đến hết File 2)</option></select>
         </label>
-        <span class="hint">Âm thanh lưu vào thư viện ở bản này; phát trong xem trước và ghép vào file export sẽ có ở đợt 2.</span>
+        <label class="f" id="rBoomWrap">Mốc tiếng nổ trong file nhạc đếm ngược (giây tính từ đầu file)<input type="number" id="rBoom" min="0" max="60" step="0.1" value="6.2"></label>
+        <span class="hint">Tool căn mốc tiếng nổ trùng lúc bùng nổ trên hình (giây 6,2 của File 2). Nhạc chào mừng tự nhỏ dần ở 1 giây cuối.</span>
       </div>
       <input type="file" id="rFile">
       <button class="btn primary" id="rUpload">Tải lên thư viện</button>
@@ -327,7 +532,7 @@ tr:last-child td{border-bottom:0}
     </div>
   </div>
   <!-- [S13:NHAT-KY] -->
-  <div class="panel">
+  <div class="panel" data-qtp="log" hidden>
     <div class="sec">
       <div class="row" style="align-items:center">
         <h2>Nhật ký sử dụng</h2>
@@ -353,9 +558,38 @@ tr:last-child td{border-bottom:0}
   </div>
 </section>
 
+<!-- [S14:DANG-NHAP] màn đăng nhập + đổi mật khẩu lần đầu (YC-01). Không có nút đăng ký -->
+<div class="login" id="loginBox" hidden role="dialog" aria-modal="true" aria-labelledby="lgTitle">
+  <form class="card" id="lgForm" autocomplete="on">
+    <div class="kind">VNPT · BẤM NÚT KHAI TRƯƠNG</div>
+    <h2 id="lgTitle">Đăng nhập</h2>
+    <div class="demo-note" id="lgDemo">Bản xem thử giao diện: đăng nhập kiểm tra theo danh sách tài khoản trên máy này, chưa khóa tool.</div>
+    <div id="lgStep1" class="list">
+      <label class="f">Tên đăng nhập<input type="text" id="lgUser" autocomplete="username" required></label>
+      <label class="f">Mật khẩu<input type="password" id="lgPass" autocomplete="current-password" required></label>
+    </div>
+    <div id="lgStep2" class="list" hidden>
+      <span class="hint">Lần đăng nhập đầu: đặt mật khẩu mới (tối thiểu 8 ký tự, có chữ và số).</span>
+      <label class="f">Mật khẩu mới<input type="password" id="lgNew" autocomplete="new-password"></label>
+      <label class="f">Nhập lại mật khẩu mới<input type="password" id="lgNew2" autocomplete="new-password"></label>
+    </div>
+    <button type="submit" class="btn primary" id="lgBtn">Đăng nhập</button>
+    <div id="lgMsg" class="msg" hidden></div>
+    <span class="hint">Chưa có tài khoản hoặc quên mật khẩu: liên hệ Ban Truyền thông để được cấp lại.</span>
+    <button type="button" class="btn sm" id="lgClose">Đóng bản xem thử</button>
+  </form>
+</div>
+<!-- [/S14] -->
+
 <video id="bgv" muted playsinline loop preload="auto" hidden></video>
 <video id="fxv" muted playsinline preload="auto" hidden></video>
 
+<!-- [S26:THU-VIEN-MP4] mp4-muxer 5.2.2 (MIT, © Vanilagy) nhúng sẵn để ghép MP4 khi xuất từng khung; không gọi mạng -->
+<script>"use strict";var Mp4Muxer=(()=>{var we=Object.defineProperty,at=Object.getOwnPropertyDescriptor,nt=Object.getOwnPropertyNames,ot=Object.prototype.hasOwnProperty,ht=(e,t)=>{for(var s in t)we(e,s,{get:t[s],enumerable:!0})},lt=(e,t,s,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let a of nt(t))!ot.call(e,a)&&a!==s&&we(e,a,{get:()=>t[a],enumerable:!(r=at(t,a))||r.enumerable});return e},ft=e=>lt(we({},"__esModule",{value:!0}),e),ve=(e,t,s)=>{if(!t.has(e))throw TypeError("Cannot "+s)},i=(e,t,s)=>(ve(e,t,"read from private field"),s?s.call(e):t.get(e)),d=(e,t,s)=>{if(t.has(e))throw TypeError("Cannot add the same private member more than once");t instanceof WeakSet?t.add(e):t.set(e,s)},C=(e,t,s,r)=>(ve(e,t,"write to private field"),r?r.call(e,s):t.set(e,s),s),ut=(e,t,s,r)=>({set _(a){C(e,t,a,s)},get _(){return i(e,t,r)}}),m=(e,t,s)=>(ve(e,t,"access private method"),s),Re={};ht(Re,{ArrayBufferTarget:()=>qe,FileSystemWritableFileStreamTarget:()=>Xe,Muxer:()=>vi,StreamTarget:()=>Te});var p=new Uint8Array(8),z=new DataView(p.buffer),y=e=>[(e%256+256)%256],c=e=>(z.setUint16(0,e,!1),[p[0],p[1]]),dt=e=>(z.setInt16(0,e,!1),[p[0],p[1]]),Pe=e=>(z.setUint32(0,e,!1),[p[1],p[2],p[3]]),n=e=>(z.setUint32(0,e,!1),[p[0],p[1],p[2],p[3]]),mt=e=>(z.setInt32(0,e,!1),[p[0],p[1],p[2],p[3]]),x=e=>(z.setUint32(0,Math.floor(e/2**32),!1),z.setUint32(4,e,!1),[p[0],p[1],p[2],p[3],p[4],p[5],p[6],p[7]]),ge=e=>(z.setInt16(0,2**8*e,!1),[p[0],p[1]]),A=e=>(z.setInt32(0,2**16*e,!1),[p[0],p[1],p[2],p[3]]),ye=e=>(z.setInt32(0,2**30*e,!1),[p[0],p[1],p[2],p[3]]),E=(e,t=!1)=>{let s=Array(e.length).fill(null).map((r,a)=>e.charCodeAt(a));return t&&s.push(0),s},se=e=>e&&e[e.length-1],Ce=e=>{let t;for(let s of e)(!t||s.presentationTimestamp>t.presentationTimestamp)&&(t=s);return t},O=(e,t,s=!0)=>{let r=e*t;return s?Math.round(r):r},Le=e=>{let t=e*(Math.PI/180),s=Math.cos(t),r=Math.sin(t);return[s,r,0,-r,s,0,0,0,1]},Ve=Le(0),je=e=>[A(e[0]),A(e[1]),ye(e[2]),A(e[3]),A(e[4]),ye(e[5]),A(e[6]),A(e[7]),ye(e[8])],X=e=>!e||typeof e!="object"?e:Array.isArray(e)?e.map(X):Object.fromEntries(Object.entries(e).map(([t,s])=>[t,X(s)])),V=e=>e>=0&&e<2**32,v=(e,t,s)=>({type:e,contents:t&&new Uint8Array(t.flat(10)),children:s}),w=(e,t,s,r,a)=>v(e,[y(t),Pe(s),r??[]],a),pt=e=>{let t=512;return e.fragmented?v("ftyp",[E("iso5"),n(t),E("iso5"),E("iso6"),E("mp41")]):v("ftyp",[E("isom"),n(t),E("isom"),e.holdsAvc?E("avc1"):[],E("mp41")])},Se=e=>({type:"mdat",largeSize:e}),ct=e=>({type:"free",size:e}),re=(e,t,s=!1)=>v("moov",null,[wt(t,e),...e.map(r=>vt(r,t)),s?Gt(e):null]),wt=(e,t)=>{let s=O(Math.max(0,...t.filter(l=>l.samples.length>0).map(l=>{const u=Ce(l.samples);return u.presentationTimestamp+u.duration})),Ae),r=Math.max(...t.map(l=>l.id))+1,a=!V(e)||!V(s),o=a?x:n;return w("mvhd",+a,0,[o(e),o(e),n(Ae),o(s),A(1),ge(1),Array(10).fill(0),je(Ve),Array(24).fill(0),n(r)])},vt=(e,t)=>v("trak",null,[gt(e,t),yt(e,t)]),gt=(e,t)=>{let s=Ce(e.samples),r=O(s?s.presentationTimestamp+s.duration:0,Ae),a=!V(t)||!V(r),o=a?x:n,l;return e.info.type==="video"?l=typeof e.info.rotation=="number"?Le(e.info.rotation):e.info.rotation:l=Ve,w("tkhd",+a,3,[o(t),o(t),n(e.id),n(0),o(r),Array(8).fill(0),c(0),c(0),ge(e.info.type==="audio"?1:0),c(0),je(l),A(e.info.type==="video"?e.info.width:0),A(e.info.type==="video"?e.info.height:0)])},yt=(e,t)=>v("mdia",null,[Ct(e,t),St(e.info.type==="video"?"vide":"soun"),Tt(e)]),Ct=(e,t)=>{let s=Ce(e.samples),r=O(s?s.presentationTimestamp+s.duration:0,e.timescale),a=!V(t)||!V(r),o=a?x:n;return w("mdhd",+a,0,[o(t),o(t),n(e.timescale),o(r),c(21956),c(0)])},St=e=>w("hdlr",0,0,[E("mhlr"),E(e),n(0),n(0),n(0),E("mp4-muxer-hdlr",!0)]),Tt=e=>v("minf",null,[e.info.type==="video"?bt():_t(),kt(),At(e)]),bt=()=>w("vmhd",0,1,[c(0),c(0),c(0),c(0)]),_t=()=>w("smhd",0,0,[c(0),c(0)]),kt=()=>v("dinf",null,[Et()]),Et=()=>w("dref",0,0,[n(1)],[zt()]),zt=()=>w("url ",0,1),At=e=>{const t=e.compositionTimeOffsetTable.length>1||e.compositionTimeOffsetTable.some(s=>s.sampleCompositionTimeOffset!==0);return v("stbl",null,[Ot(e),Vt(e),jt(e),$t(e),Ht(e),qt(e),t?Xt(e):null])},Ot=e=>w("stsd",0,0,[n(1)],[e.info.type==="video"?Mt(ri[e.info.codec],e):Rt(ni[e.info.codec],e)]),Mt=(e,t)=>v(e,[Array(6).fill(0),c(1),c(0),c(0),Array(12).fill(0),c(t.info.width),c(t.info.height),n(4718592),n(4718592),n(0),c(1),Array(32).fill(0),c(24),dt(65535)],[ai[t.info.codec](t),t.info.decoderConfig.colorSpace?Ut(t):null]),Bt={bt709:1,bt470bg:5,smpte170m:6},It={bt709:1,smpte170m:6,"iec61966-2-1":13},Dt={rgb:0,bt709:1,bt470bg:5,smpte170m:6},Ut=e=>v("colr",[E("nclx"),c(Bt[e.info.decoderConfig.colorSpace.primaries]),c(It[e.info.decoderConfig.colorSpace.transfer]),c(Dt[e.info.decoderConfig.colorSpace.matrix]),y((e.info.decoderConfig.colorSpace.fullRange?1:0)<<7)]),xt=e=>e.info.decoderConfig&&v("avcC",[...new Uint8Array(e.info.decoderConfig.description)]),Wt=e=>e.info.decoderConfig&&v("hvcC",[...new Uint8Array(e.info.decoderConfig.description)]),Ft=e=>{if(!e.info.decoderConfig)return null;let t=e.info.decoderConfig;if(!t.colorSpace)throw new Error("'colorSpace' is required in the decoder config for VP9.");let s=t.codec.split("."),r=Number(s[1]),a=Number(s[2]),u=(Number(s[3])<<4)+(0<<1)+Number(t.colorSpace.fullRange);return w("vpcC",1,0,[y(r),y(a),y(u),y(2),y(2),y(2),c(0)])},Nt=()=>{let s=(1<<7)+1;return v("av1C",[s,0,0,0])},Rt=(e,t)=>v(e,[Array(6).fill(0),c(1),c(0),c(0),n(0),c(t.info.numberOfChannels),c(16),c(0),c(0),A(t.info.sampleRate)],[oi[t.info.codec](t)]),Pt=e=>{let t=new Uint8Array(e.info.decoderConfig.description);return w("esds",0,0,[n(58753152),y(32+t.byteLength),c(1),y(0),n(75530368),y(18+t.byteLength),y(64),y(21),Pe(0),n(130071),n(130071),n(92307584),y(t.byteLength),...t,n(109084800),y(1),y(2)])},Lt=e=>{let t=3840,s=0;const r=e.info.decoderConfig?.description;if(r){if(r.byteLength<18)throw new TypeError("Invalid decoder description provided for Opus; must be at least 18 bytes long.");const a=ArrayBuffer.isView(r)?new DataView(r.buffer,r.byteOffset,r.byteLength):new DataView(r);t=a.getUint16(10,!0),s=a.getInt16(14,!0)}return v("dOps",[y(0),y(e.info.numberOfChannels),c(t),n(e.info.sampleRate),ge(s),y(0)])},Vt=e=>w("stts",0,0,[n(e.timeToSampleTable.length),e.timeToSampleTable.map(t=>[n(t.sampleCount),n(t.sampleDelta)])]),jt=e=>{if(e.samples.every(s=>s.type==="key"))return null;let t=[...e.samples.entries()].filter(([,s])=>s.type==="key");return w("stss",0,0,[n(t.length),t.map(([s])=>n(s+1))])},$t=e=>w("stsc",0,0,[n(e.compactlyCodedChunkTable.length),e.compactlyCodedChunkTable.map(t=>[n(t.firstChunk),n(t.samplesPerChunk),n(1)])]),Ht=e=>w("stsz",0,0,[n(0),n(e.samples.length),e.samples.map(t=>n(t.size))]),qt=e=>e.finalizedChunks.length>0&&se(e.finalizedChunks).offset>=2**32?w("co64",0,0,[n(e.finalizedChunks.length),e.finalizedChunks.map(t=>x(t.offset))]):w("stco",0,0,[n(e.finalizedChunks.length),e.finalizedChunks.map(t=>n(t.offset))]),Xt=e=>w("ctts",0,0,[n(e.compositionTimeOffsetTable.length),e.compositionTimeOffsetTable.map(t=>[n(t.sampleCount),n(t.sampleCompositionTimeOffset)])]),Gt=e=>v("mvex",null,e.map(Zt)),Zt=e=>w("trex",0,0,[n(e.id),n(1),n(0),n(0),n(0)]),$e=(e,t)=>v("moof",null,[Kt(e),...t.map(Qt)]),Kt=e=>w("mfhd",0,0,[n(e)]),He=e=>{let t=0,s=0,r=0,a=0,o=e.type==="delta";return s|=+o,o?t|=1:t|=2,t<<24|s<<16|r<<8|a},Qt=e=>v("traf",null,[Jt(e),Yt(e),ei(e)]),Jt=e=>{let t=0;t|=8,t|=16,t|=32,t|=131072;let s=e.currentChunk.samples[1]??e.currentChunk.samples[0],r={duration:s.timescaleUnitsToNextSample,size:s.size,flags:He(s)};return w("tfhd",0,t,[n(e.id),n(r.duration),n(r.size),n(r.flags)])},Yt=e=>w("tfdt",1,0,[x(O(e.currentChunk.startTimestamp,e.timescale))]),ei=e=>{let t=e.currentChunk.samples.map(D=>D.timescaleUnitsToNextSample),s=e.currentChunk.samples.map(D=>D.size),r=e.currentChunk.samples.map(He),a=e.currentChunk.samples.map(D=>O(D.presentationTimestamp-D.decodeTimestamp,e.timescale)),o=new Set(t),l=new Set(s),u=new Set(r),g=new Set(a),b=u.size===2&&r[0]!==r[1],U=o.size>1,ie=l.size>1,st=!b&&u.size>1,rt=g.size>1||[...g].some(D=>D!==0),L=0;return L|=1,L|=4*+b,L|=256*+U,L|=512*+ie,L|=1024*+st,L|=2048*+rt,w("trun",1,L,[n(e.currentChunk.samples.length),n(e.currentChunk.offset-e.currentChunk.moofOffset||0),b?n(r[0]):[],e.currentChunk.samples.map((D,ce)=>[U?n(t[ce]):[],ie?n(s[ce]):[],st?n(r[ce]):[],rt?mt(a[ce]):[]])])},ti=e=>v("mfra",null,[...e.map(ii),si()]),ii=(e,t)=>w("tfra",1,0,[n(e.id),n(63),n(e.finalizedChunks.length),e.finalizedChunks.map(r=>[x(O(r.startTimestamp,e.timescale)),x(r.moofOffset),n(t+1),n(1),n(1)])]),si=()=>w("mfro",0,0,[n(0)]),ri={avc:"avc1",hevc:"hvc1",vp9:"vp09",av1:"av01"},ai={avc:xt,hevc:Wt,vp9:Ft,av1:Nt},ni={aac:"mp4a",opus:"Opus"},oi={aac:Pt,opus:Lt},hi=Symbol("isTarget"),ae=class{},qe=class extends ae{constructor(){super(...arguments),this.buffer=null}},Te=class extends ae{constructor(e){if(super(),this.options=e,typeof e!="object")throw new TypeError("StreamTarget requires an options object to be passed to its constructor.");if(e.onData){if(typeof e.onData!="function")throw new TypeError("options.onData, when provided, must be a function.");if(e.onData.length<2)throw new TypeError("options.onData, when provided, must be a function that takes in at least two arguments (data and position). Ignoring the position argument, which specifies the byte offset at which the data is to be written, can lead to broken outputs.")}if(e.chunked!==void 0&&typeof e.chunked!="boolean")throw new TypeError("options.chunked, when provided, must be a boolean.");if(e.chunkSize!==void 0&&(!Number.isInteger(e.chunkSize)||e.chunkSize<1024))throw new TypeError("options.chunkSize, when provided, must be an integer and not smaller than 1024.")}},Xe=class extends ae{constructor(e,t){if(super(),this.stream=e,this.options=t,!(e instanceof FileSystemWritableFileStream))throw new TypeError("FileSystemWritableFileStreamTarget requires a FileSystemWritableFileStream instance.");if(t!==void 0&&typeof t!="object")throw new TypeError("FileSystemWritableFileStreamTarget's options, when provided, must be an object.");if(t&&t.chunkSize!==void 0&&(!Number.isInteger(t.chunkSize)||t.chunkSize<=0))throw new TypeError("options.chunkSize, when provided, must be a positive integer")}},W,j,Ge=class{constructor(){this.pos=0,d(this,W,new Uint8Array(8)),d(this,j,new DataView(i(this,W).buffer)),this.offsets=new WeakMap}seek(e){this.pos=e}writeU32(e){i(this,j).setUint32(0,e,!1),this.write(i(this,W).subarray(0,4))}writeU64(e){i(this,j).setUint32(0,Math.floor(e/2**32),!1),i(this,j).setUint32(4,e,!1),this.write(i(this,W).subarray(0,8))}writeAscii(e){for(let t=0;t<e.length;t++)i(this,j).setUint8(t%8,e.charCodeAt(t)),t%8===7&&this.write(i(this,W));e.length%8!==0&&this.write(i(this,W).subarray(0,e.length%8))}writeBox(e){if(this.offsets.set(e,this.pos),e.contents&&!e.children)this.writeBoxHeader(e,e.size??e.contents.byteLength+8),this.write(e.contents);else{let t=this.pos;if(this.writeBoxHeader(e,0),e.contents&&this.write(e.contents),e.children)for(let a of e.children)a&&this.writeBox(a);let s=this.pos,r=e.size??s-t;this.seek(t),this.writeBoxHeader(e,r),this.seek(s)}}writeBoxHeader(e,t){this.writeU32(e.largeSize?1:t),this.writeAscii(e.type),e.largeSize&&this.writeU64(t)}measureBoxHeader(e){return 8+(e.largeSize?8:0)}patchBox(e){let t=this.pos;this.seek(this.offsets.get(e)),this.writeBox(e),this.seek(t)}measureBox(e){if(e.contents&&!e.children)return this.measureBoxHeader(e)+e.contents.byteLength;{let t=this.measureBoxHeader(e);if(e.contents&&(t+=e.contents.byteLength),e.children)for(let s of e.children)s&&(t+=this.measureBox(s));return t}}};W=new WeakMap,j=new WeakMap;var ne,F,G,Z,oe,be,li=class extends Ge{constructor(e){super(),d(this,oe),d(this,ne,void 0),d(this,F,new ArrayBuffer(2**16)),d(this,G,new Uint8Array(i(this,F))),d(this,Z,0),C(this,ne,e)}write(e){m(this,oe,be).call(this,this.pos+e.byteLength),i(this,G).set(e,this.pos),this.pos+=e.byteLength,C(this,Z,Math.max(i(this,Z),this.pos))}finalize(){m(this,oe,be).call(this,this.pos),i(this,ne).buffer=i(this,F).slice(0,Math.max(i(this,Z),this.pos))}};ne=new WeakMap,F=new WeakMap,G=new WeakMap,Z=new WeakMap,oe=new WeakSet,be=function(e){let t=i(this,F).byteLength;for(;t<e;)t*=2;if(t===i(this,F).byteLength)return;let s=new ArrayBuffer(t),r=new Uint8Array(s);r.set(i(this,G),0),C(this,F,s),C(this,G,r)};var fi=2**24,ui=2,K,N,Q,B,_,he,_e,ke,Ze,Ee,Ke,J,le,ze=class extends Ge{constructor(e){super(),d(this,he),d(this,ke),d(this,Ee),d(this,J),d(this,K,void 0),d(this,N,[]),d(this,Q,void 0),d(this,B,void 0),d(this,_,[]),C(this,K,e),C(this,Q,e.options?.chunked??!1),C(this,B,e.options?.chunkSize??fi)}write(e){i(this,N).push({data:e.slice(),start:this.pos}),this.pos+=e.byteLength}flush(){if(i(this,N).length===0)return;let e=[],t=[...i(this,N)].sort((s,r)=>s.start-r.start);e.push({start:t[0].start,size:t[0].data.byteLength});for(let s=1;s<t.length;s++){let r=e[e.length-1],a=t[s];a.start<=r.start+r.size?r.size=Math.max(r.size,a.start+a.data.byteLength-r.start):e.push({start:a.start,size:a.data.byteLength})}for(let s of e){s.data=new Uint8Array(s.size);for(let r of i(this,N))s.start<=r.start&&r.start<s.start+s.size&&s.data.set(r.data,r.start-s.start);i(this,Q)?(m(this,he,_e).call(this,s.data,s.start),m(this,J,le).call(this)):i(this,K).options.onData?.(s.data,s.start)}i(this,N).length=0}finalize(){i(this,Q)&&m(this,J,le).call(this,!0)}};K=new WeakMap,N=new WeakMap,Q=new WeakMap,B=new WeakMap,_=new WeakMap,he=new WeakSet,_e=function(e,t){let s=i(this,_).findIndex(u=>u.start<=t&&t<u.start+i(this,B));s===-1&&(s=m(this,Ee,Ke).call(this,t));let r=i(this,_)[s],a=t-r.start,o=e.subarray(0,Math.min(i(this,B)-a,e.byteLength));r.data.set(o,a);let l={start:a,end:a+o.byteLength};if(m(this,ke,Ze).call(this,r,l),r.written[0].start===0&&r.written[0].end===i(this,B)&&(r.shouldFlush=!0),i(this,_).length>ui){for(let u=0;u<i(this,_).length-1;u++)i(this,_)[u].shouldFlush=!0;m(this,J,le).call(this)}o.byteLength<e.byteLength&&m(this,he,_e).call(this,e.subarray(o.byteLength),t+o.byteLength)},ke=new WeakSet,Ze=function(e,t){let s=0,r=e.written.length-1,a=-1;for(;s<=r;){let o=Math.floor(s+(r-s+1)/2);e.written[o].start<=t.start?(s=o+1,a=o):r=o-1}for(e.written.splice(a+1,0,t),(a===-1||e.written[a].end<t.start)&&a++;a<e.written.length-1&&e.written[a].end>=e.written[a+1].start;)e.written[a].end=Math.max(e.written[a].end,e.written[a+1].end),e.written.splice(a+1,1)},Ee=new WeakSet,Ke=function(e){let s={start:Math.floor(e/i(this,B))*i(this,B),data:new Uint8Array(i(this,B)),written:[],shouldFlush:!1};return i(this,_).push(s),i(this,_).sort((r,a)=>r.start-a.start),i(this,_).indexOf(s)},J=new WeakSet,le=function(e=!1){for(let t=0;t<i(this,_).length;t++){let s=i(this,_)[t];if(!(!s.shouldFlush&&!e)){for(let r of s.written)i(this,K).options.onData?.(s.data.subarray(r.start,r.end),s.start+r.start);i(this,_).splice(t--,1)}}};var di=class extends ze{constructor(e){super(new Te({onData:(t,s)=>e.stream.write({type:"write",data:t,position:s}),chunked:!0,chunkSize:e.options?.chunkSize}))}},Ae=1e3,mi=["avc","hevc","vp9","av1"],pi=["aac","opus"],ci=2082844800,wi=["strict","offset","cross-track-offset"],h,f,fe,k,T,S,$,H,Oe,R,P,Y,Me,Qe,Be,Je,Ie,Ye,De,et,Ue,tt,ue,xe,M,I,We,it,ee,de,me,Fe,q,te,pe,Ne,vi=class{constructor(e){if(d(this,Me),d(this,Be),d(this,Ie),d(this,De),d(this,Ue),d(this,ue),d(this,M),d(this,We),d(this,ee),d(this,me),d(this,q),d(this,pe),d(this,h,void 0),d(this,f,void 0),d(this,fe,void 0),d(this,k,void 0),d(this,T,null),d(this,S,null),d(this,$,Math.floor(Date.now()/1e3)+ci),d(this,H,[]),d(this,Oe,1),d(this,R,[]),d(this,P,[]),d(this,Y,!1),m(this,Me,Qe).call(this,e),e.video=X(e.video),e.audio=X(e.audio),e.fastStart=X(e.fastStart),this.target=e.target,C(this,h,{firstTimestampBehavior:"strict",...e}),e.target instanceof qe)C(this,f,new li(e.target));else if(e.target instanceof Te)C(this,f,new ze(e.target));else if(e.target instanceof Xe)C(this,f,new di(e.target));else throw new Error(`Invalid target: ${e.target}`);m(this,De,et).call(this),m(this,Be,Je).call(this)}addVideoChunk(e,t,s,r){if(!(e instanceof EncodedVideoChunk))throw new TypeError("addVideoChunk's first argument (sample) must be of type EncodedVideoChunk.");if(t&&typeof t!="object")throw new TypeError("addVideoChunk's second argument (meta), when provided, must be an object.");if(s!==void 0&&(!Number.isFinite(s)||s<0))throw new TypeError("addVideoChunk's third argument (timestamp), when provided, must be a non-negative real number.");if(r!==void 0&&!Number.isFinite(r))throw new TypeError("addVideoChunk's fourth argument (compositionTimeOffset), when provided, must be a real number.");let a=new Uint8Array(e.byteLength);e.copyTo(a),this.addVideoChunkRaw(a,e.type,s??e.timestamp,e.duration,t,r)}addVideoChunkRaw(e,t,s,r,a,o){if(!(e instanceof Uint8Array))throw new TypeError("addVideoChunkRaw's first argument (data) must be an instance of Uint8Array.");if(t!=="key"&&t!=="delta")throw new TypeError("addVideoChunkRaw's second argument (type) must be either 'key' or 'delta'.");if(!Number.isFinite(s)||s<0)throw new TypeError("addVideoChunkRaw's third argument (timestamp) must be a non-negative real number.");if(!Number.isFinite(r)||r<0)throw new TypeError("addVideoChunkRaw's fourth argument (duration) must be a non-negative real number.");if(a&&typeof a!="object")throw new TypeError("addVideoChunkRaw's fifth argument (meta), when provided, must be an object.");if(o!==void 0&&!Number.isFinite(o))throw new TypeError("addVideoChunkRaw's sixth argument (compositionTimeOffset), when provided, must be a real number.");if(m(this,pe,Ne).call(this),!i(this,h).video)throw new Error("No video track declared.");if(typeof i(this,h).fastStart=="object"&&i(this,T).samples.length===i(this,h).fastStart.expectedVideoChunks)throw new Error(`Cannot add more video chunks than specified in 'fastStart' (${i(this,h).fastStart.expectedVideoChunks}).`);let l=m(this,ue,xe).call(this,i(this,T),e,t,s,r,a,o);if(i(this,h).fastStart==="fragmented"&&i(this,S)){for(;i(this,P).length>0&&i(this,P)[0].decodeTimestamp<=l.decodeTimestamp;){let u=i(this,P).shift();m(this,M,I).call(this,i(this,S),u)}l.decodeTimestamp<=i(this,S).lastDecodeTimestamp?m(this,M,I).call(this,i(this,T),l):i(this,R).push(l)}else m(this,M,I).call(this,i(this,T),l)}addAudioChunk(e,t,s){if(!(e instanceof EncodedAudioChunk))throw new TypeError("addAudioChunk's first argument (sample) must be of type EncodedAudioChunk.");if(t&&typeof t!="object")throw new TypeError("addAudioChunk's second argument (meta), when provided, must be an object.");if(s!==void 0&&(!Number.isFinite(s)||s<0))throw new TypeError("addAudioChunk's third argument (timestamp), when provided, must be a non-negative real number.");let r=new Uint8Array(e.byteLength);e.copyTo(r),this.addAudioChunkRaw(r,e.type,s??e.timestamp,e.duration,t)}addAudioChunkRaw(e,t,s,r,a){if(!(e instanceof Uint8Array))throw new TypeError("addAudioChunkRaw's first argument (data) must be an instance of Uint8Array.");if(t!=="key"&&t!=="delta")throw new TypeError("addAudioChunkRaw's second argument (type) must be either 'key' or 'delta'.");if(!Number.isFinite(s)||s<0)throw new TypeError("addAudioChunkRaw's third argument (timestamp) must be a non-negative real number.");if(!Number.isFinite(r)||r<0)throw new TypeError("addAudioChunkRaw's fourth argument (duration) must be a non-negative real number.");if(a&&typeof a!="object")throw new TypeError("addAudioChunkRaw's fifth argument (meta), when provided, must be an object.");if(m(this,pe,Ne).call(this),!i(this,h).audio)throw new Error("No audio track declared.");if(typeof i(this,h).fastStart=="object"&&i(this,S).samples.length===i(this,h).fastStart.expectedAudioChunks)throw new Error(`Cannot add more audio chunks than specified in 'fastStart' (${i(this,h).fastStart.expectedAudioChunks}).`);let o=m(this,ue,xe).call(this,i(this,S),e,t,s,r,a);if(i(this,h).fastStart==="fragmented"&&i(this,T)){for(;i(this,R).length>0&&i(this,R)[0].decodeTimestamp<=o.decodeTimestamp;){let l=i(this,R).shift();m(this,M,I).call(this,i(this,T),l)}o.decodeTimestamp<=i(this,T).lastDecodeTimestamp?m(this,M,I).call(this,i(this,S),o):i(this,P).push(o)}else m(this,M,I).call(this,i(this,S),o)}finalize(){if(i(this,Y))throw new Error("Cannot finalize a muxer more than once.");if(i(this,h).fastStart==="fragmented"){for(let t of i(this,R))m(this,M,I).call(this,i(this,T),t);for(let t of i(this,P))m(this,M,I).call(this,i(this,S),t);m(this,me,Fe).call(this,!1)}else i(this,T)&&m(this,ee,de).call(this,i(this,T)),i(this,S)&&m(this,ee,de).call(this,i(this,S));let e=[i(this,T),i(this,S)].filter(Boolean);if(i(this,h).fastStart==="in-memory"){let t;for(let r=0;r<2;r++){let a=re(e,i(this,$)),o=i(this,f).measureBox(a);t=i(this,f).measureBox(i(this,k));let l=i(this,f).pos+o+t;for(let u of i(this,H)){u.offset=l;for(let{data:g}of u.samples)l+=g.byteLength,t+=g.byteLength}if(l<2**32)break;t>=2**32&&(i(this,k).largeSize=!0)}let s=re(e,i(this,$));i(this,f).writeBox(s),i(this,k).size=t,i(this,f).writeBox(i(this,k));for(let r of i(this,H))for(let a of r.samples)i(this,f).write(a.data),a.data=null}else if(i(this,h).fastStart==="fragmented"){let t=i(this,f).pos,s=ti(e);i(this,f).writeBox(s);let r=i(this,f).pos-t;i(this,f).seek(i(this,f).pos-4),i(this,f).writeU32(r)}else{let t=i(this,f).offsets.get(i(this,k)),s=i(this,f).pos-t;i(this,k).size=s,i(this,k).largeSize=s>=2**32,i(this,f).patchBox(i(this,k));let r=re(e,i(this,$));if(typeof i(this,h).fastStart=="object"){i(this,f).seek(i(this,fe)),i(this,f).writeBox(r);let a=t-i(this,f).pos;i(this,f).writeBox(ct(a))}else i(this,f).writeBox(r)}m(this,q,te).call(this),i(this,f).finalize(),C(this,Y,!0)}};return h=new WeakMap,f=new WeakMap,fe=new WeakMap,k=new WeakMap,T=new WeakMap,S=new WeakMap,$=new WeakMap,H=new WeakMap,Oe=new WeakMap,R=new WeakMap,P=new WeakMap,Y=new WeakMap,Me=new WeakSet,Qe=function(e){if(typeof e!="object")throw new TypeError("The muxer requires an options object to be passed to its constructor.");if(!(e.target instanceof ae))throw new TypeError("The target must be provided and an instance of Target.");if(e.video){if(!mi.includes(e.video.codec))throw new TypeError(`Unsupported video codec: ${e.video.codec}`);if(!Number.isInteger(e.video.width)||e.video.width<=0)throw new TypeError(`Invalid video width: ${e.video.width}. Must be a positive integer.`);if(!Number.isInteger(e.video.height)||e.video.height<=0)throw new TypeError(`Invalid video height: ${e.video.height}. Must be a positive integer.`);const t=e.video.rotation;if(typeof t=="number"&&![0,90,180,270].includes(t))throw new TypeError(`Invalid video rotation: ${t}. Has to be 0, 90, 180 or 270.`);if(Array.isArray(t)&&(t.length!==9||t.some(s=>typeof s!="number")))throw new TypeError(`Invalid video transformation matrix: ${t.join()}`);if(e.video.frameRate!==void 0&&(!Number.isInteger(e.video.frameRate)||e.video.frameRate<=0))throw new TypeError(`Invalid video frame rate: ${e.video.frameRate}. Must be a positive integer.`)}if(e.audio){if(!pi.includes(e.audio.codec))throw new TypeError(`Unsupported audio codec: ${e.audio.codec}`);if(!Number.isInteger(e.audio.numberOfChannels)||e.audio.numberOfChannels<=0)throw new TypeError(`Invalid number of audio channels: ${e.audio.numberOfChannels}. Must be a positive integer.`);if(!Number.isInteger(e.audio.sampleRate)||e.audio.sampleRate<=0)throw new TypeError(`Invalid audio sample rate: ${e.audio.sampleRate}. Must be a positive integer.`)}if(e.firstTimestampBehavior&&!wi.includes(e.firstTimestampBehavior))throw new TypeError(`Invalid first timestamp behavior: ${e.firstTimestampBehavior}`);if(typeof e.fastStart=="object"){if(e.video){if(e.fastStart.expectedVideoChunks===void 0)throw new TypeError("'fastStart' is an object but is missing property 'expectedVideoChunks'.");if(!Number.isInteger(e.fastStart.expectedVideoChunks)||e.fastStart.expectedVideoChunks<0)throw new TypeError("'expectedVideoChunks' must be a non-negative integer.")}if(e.audio){if(e.fastStart.expectedAudioChunks===void 0)throw new TypeError("'fastStart' is an object but is missing property 'expectedAudioChunks'.");if(!Number.isInteger(e.fastStart.expectedAudioChunks)||e.fastStart.expectedAudioChunks<0)throw new TypeError("'expectedAudioChunks' must be a non-negative integer.")}}else if(![!1,"in-memory","fragmented"].includes(e.fastStart))throw new TypeError("'fastStart' option must be false, 'in-memory', 'fragmented' or an object.");if(e.minFragmentDuration!==void 0&&(!Number.isFinite(e.minFragmentDuration)||e.minFragmentDuration<0))throw new TypeError("'minFragmentDuration' must be a non-negative number.")},Be=new WeakSet,Je=function(){if(i(this,f).writeBox(pt({holdsAvc:i(this,h).video?.codec==="avc",fragmented:i(this,h).fastStart==="fragmented"})),C(this,fe,i(this,f).pos),i(this,h).fastStart==="in-memory")C(this,k,Se(!1));else if(i(this,h).fastStart!=="fragmented"){if(typeof i(this,h).fastStart=="object"){let e=m(this,Ie,Ye).call(this);i(this,f).seek(i(this,f).pos+e)}C(this,k,Se(!0)),i(this,f).writeBox(i(this,k))}m(this,q,te).call(this)},Ie=new WeakSet,Ye=function(){if(typeof i(this,h).fastStart!="object")return;let e=0,t=[i(this,h).fastStart.expectedVideoChunks,i(this,h).fastStart.expectedAudioChunks];for(let s of t)s&&(e+=8*Math.ceil(.6666666666666666*s),e+=4*s,e+=12*Math.ceil(.6666666666666666*s),e+=4*s,e+=8*s);return e+=4096,e},De=new WeakSet,et=function(){if(i(this,h).video&&C(this,T,{id:1,info:{type:"video",codec:i(this,h).video.codec,width:i(this,h).video.width,height:i(this,h).video.height,rotation:i(this,h).video.rotation??0,decoderConfig:null},timescale:i(this,h).video.frameRate??57600,samples:[],finalizedChunks:[],currentChunk:null,firstDecodeTimestamp:void 0,lastDecodeTimestamp:-1,timeToSampleTable:[],compositionTimeOffsetTable:[],lastTimescaleUnits:null,lastSample:null,compactlyCodedChunkTable:[]}),i(this,h).audio&&(C(this,S,{id:i(this,h).video?2:1,info:{type:"audio",codec:i(this,h).audio.codec,numberOfChannels:i(this,h).audio.numberOfChannels,sampleRate:i(this,h).audio.sampleRate,decoderConfig:null},timescale:i(this,h).audio.sampleRate,samples:[],finalizedChunks:[],currentChunk:null,firstDecodeTimestamp:void 0,lastDecodeTimestamp:-1,timeToSampleTable:[],compositionTimeOffsetTable:[],lastTimescaleUnits:null,lastSample:null,compactlyCodedChunkTable:[]}),i(this,h).audio.codec==="aac")){let e=m(this,Ue,tt).call(this,2,i(this,h).audio.sampleRate,i(this,h).audio.numberOfChannels);i(this,S).info.decoderConfig={codec:i(this,h).audio.codec,description:e,numberOfChannels:i(this,h).audio.numberOfChannels,sampleRate:i(this,h).audio.sampleRate}}},Ue=new WeakSet,tt=function(e,t,s){let a=[96e3,88200,64e3,48e3,44100,32e3,24e3,22050,16e3,12e3,11025,8e3,7350].indexOf(t),o=s,l="";l+=e.toString(2).padStart(5,"0"),l+=a.toString(2).padStart(4,"0"),a===15&&(l+=t.toString(2).padStart(24,"0")),l+=o.toString(2).padStart(4,"0");let u=Math.ceil(l.length/8)*8;l=l.padEnd(u,"0");let g=new Uint8Array(l.length/8);for(let b=0;b<l.length;b+=8)g[b/8]=parseInt(l.slice(b,b+8),2);return g},ue=new WeakSet,xe=function(e,t,s,r,a,o,l){let u=r/1e6,g=(r-(l??0))/1e6,b=a/1e6,U=m(this,We,it).call(this,u,g,e);return u=U.presentationTimestamp,g=U.decodeTimestamp,o?.decoderConfig&&(e.info.decoderConfig===null?e.info.decoderConfig=o.decoderConfig:Object.assign(e.info.decoderConfig,o.decoderConfig)),{presentationTimestamp:u,decodeTimestamp:g,duration:b,data:t,size:t.byteLength,type:s,timescaleUnitsToNextSample:O(b,e.timescale)}},M=new WeakSet,I=function(e,t){i(this,h).fastStart!=="fragmented"&&e.samples.push(t);const s=O(t.presentationTimestamp-t.decodeTimestamp,e.timescale);if(e.lastTimescaleUnits!==null){let a=O(t.decodeTimestamp,e.timescale,!1),o=Math.round(a-e.lastTimescaleUnits);if(e.lastTimescaleUnits+=o,e.lastSample.timescaleUnitsToNextSample=o,i(this,h).fastStart!=="fragmented"){let l=se(e.timeToSampleTable);l.sampleCount===1?(l.sampleDelta=o,l.sampleCount++):l.sampleDelta===o?l.sampleCount++:(l.sampleCount--,e.timeToSampleTable.push({sampleCount:2,sampleDelta:o}));const u=se(e.compositionTimeOffsetTable);u.sampleCompositionTimeOffset===s?u.sampleCount++:e.compositionTimeOffsetTable.push({sampleCount:1,sampleCompositionTimeOffset:s})}}else e.lastTimescaleUnits=0,i(this,h).fastStart!=="fragmented"&&(e.timeToSampleTable.push({sampleCount:1,sampleDelta:O(t.duration,e.timescale)}),e.compositionTimeOffsetTable.push({sampleCount:1,sampleCompositionTimeOffset:s}));e.lastSample=t;let r=!1;if(!e.currentChunk)r=!0;else{let a=t.presentationTimestamp-e.currentChunk.startTimestamp;if(i(this,h).fastStart==="fragmented"){let o=i(this,T)??i(this,S);const l=i(this,h).minFragmentDuration??1;e===o&&t.type==="key"&&a>=l&&(r=!0,m(this,me,Fe).call(this))}else r=a>=.5}r&&(e.currentChunk&&m(this,ee,de).call(this,e),e.currentChunk={startTimestamp:t.presentationTimestamp,samples:[]}),e.currentChunk.samples.push(t)},We=new WeakSet,it=function(e,t,s){const r=i(this,h).firstTimestampBehavior==="strict",a=s.lastDecodeTimestamp===-1;if(r&&a&&t!==0)throw new Error(`The first chunk for your media track must have a timestamp of 0 (received DTS=${t}).Non-zero first timestamps are often caused by directly piping frames or audio data from a MediaStreamTrack into the encoder. Their timestamps are typically relative to the age of thedocument, which is probably what you want.
+
+If you want to offset all timestamps of a track such that the first one is zero, set firstTimestampBehavior: 'offset' in the options.
+`);if(i(this,h).firstTimestampBehavior==="offset"||i(this,h).firstTimestampBehavior==="cross-track-offset"){s.firstDecodeTimestamp===void 0&&(s.firstDecodeTimestamp=t);let l;i(this,h).firstTimestampBehavior==="offset"?l=s.firstDecodeTimestamp:l=Math.min(i(this,T)?.firstDecodeTimestamp??1/0,i(this,S)?.firstDecodeTimestamp??1/0),t-=l,e-=l}if(t<s.lastDecodeTimestamp)throw new Error(`Timestamps must be monotonically increasing (DTS went from ${s.lastDecodeTimestamp*1e6} to ${t*1e6}).`);return s.lastDecodeTimestamp=t,{presentationTimestamp:e,decodeTimestamp:t}},ee=new WeakSet,de=function(e){if(i(this,h).fastStart==="fragmented")throw new Error("Can't finalize individual chunks if 'fastStart' is set to 'fragmented'.");if(e.currentChunk){if(e.finalizedChunks.push(e.currentChunk),i(this,H).push(e.currentChunk),(e.compactlyCodedChunkTable.length===0||se(e.compactlyCodedChunkTable).samplesPerChunk!==e.currentChunk.samples.length)&&e.compactlyCodedChunkTable.push({firstChunk:e.finalizedChunks.length,samplesPerChunk:e.currentChunk.samples.length}),i(this,h).fastStart==="in-memory"){e.currentChunk.offset=0;return}e.currentChunk.offset=i(this,f).pos;for(let t of e.currentChunk.samples)i(this,f).write(t.data),t.data=null;m(this,q,te).call(this)}},me=new WeakSet,Fe=function(e=!0){if(i(this,h).fastStart!=="fragmented")throw new Error("Can't finalize a fragment unless 'fastStart' is set to 'fragmented'.");let t=[i(this,T),i(this,S)].filter(u=>u&&u.currentChunk);if(t.length===0)return;let s=ut(this,Oe)._++;if(s===1){let u=re(t,i(this,$),!0);i(this,f).writeBox(u)}let r=i(this,f).pos,a=$e(s,t);i(this,f).writeBox(a);{let u=Se(!1),g=0;for(let U of t)for(let ie of U.currentChunk.samples)g+=ie.size;let b=i(this,f).measureBox(u)+g;b>=4294967296&&(u.largeSize=!0,b=i(this,f).measureBox(u)+g),u.size=b,i(this,f).writeBox(u)}for(let u of t){u.currentChunk.offset=i(this,f).pos,u.currentChunk.moofOffset=r;for(let g of u.currentChunk.samples)i(this,f).write(g.data),g.data=null}let o=i(this,f).pos;i(this,f).seek(i(this,f).offsets.get(a));let l=$e(s,t);i(this,f).writeBox(l),i(this,f).seek(o);for(let u of t)u.finalizedChunks.push(u.currentChunk),i(this,H).push(u.currentChunk),u.currentChunk=null;e&&m(this,q,te).call(this)},q=new WeakSet,te=function(){i(this,f)instanceof ze&&i(this,f).flush()},pe=new WeakSet,Ne=function(){if(i(this,Y))throw new Error("Cannot add new video or audio chunks after the file has been finalized.")},ft(Re)})();typeof module=="object"&&typeof module.exports=="object"&&Object.assign(module.exports,Mp4Muxer);</script>
+<!-- [/S26] -->
 <script>
 (() => {
 "use strict";
@@ -363,10 +597,29 @@ tr:last-child td{border-bottom:0}
 const CFG={
   DEF:{W:1920,H:1080,preset:"1920x1080",kicker:"VNPT HÀ NỘI",title:"LỄ RA MẮT\nHỆ THỐNG HỘI NGHỊ TRUYỀN HÌNH",
     info:"Hà Nội, ngày 15 tháng 11 năm 2026",invite:"Kính mời Quý đại biểu thực hiện nghi thức nhấn nút",
-    actText:"CHÍNH THỨC KHAI TRƯƠNG",n:5,type:"finger",fx:"converge",showNames:false,names:"",dim:20,loopDur:12,actDur:12,fps:30,loopText:"none",
-    fxCount1:"",fxCount2:"",fxTrans:"",resBg:"",fxKey:0},
+    actText:"CHÍNH THỨC KHAI TRƯƠNG",n:5,type:"finger",fx:"converge",showNames:false,names:"",dim:20,loopDur:12,actDur:12,fps:25,loopText:"none",f1Dur:60,
+    fxCount1:"",fxCount2:"",fxTrans:"",resBg:"",fxKey:0,fmt:{},logoMode:"row",
+    audLoop:"bi",audCount:"bi",audWelcome:"bi",volLoop:70,volCount:90,volWelcome:80,audExp:true},
+  /* Âm thanh (YC-40): "bi" = bộ nhạc có sẵn do tool tự tạo bằng code; "" = không dùng; id khác = nhạc trong thư viện.
+     fade = giây nhỏ dần cuối File 2; kbps = chất lượng tiếng khi xuất */
+  AUDIO:{names:{loop:"Có sẵn · Nền công nghệ êm",count:"Có sẵn · Đếm nhịp + tiếng nổ",welcome:"Có sẵn · Kèn chào mừng"},fade:1,kbps:192},
+  /* Đăng nhập (YC-01, YC-02) – bản giao diện: enforce=false thì tool chưa khóa, màn đăng nhập chỉ xem thử */
+  AUTH:{enforce:false,minPass:8,userRe:/^[a-z0-9._-]{3,32}$/,phoneRe:/^0\d{9}$/,key:"bnkt.users"},
+  /* Định dạng chữ (YC-42): 5 font, 4 màu nhanh, cỡ % so với cỡ tự co; mặc định từng khối chữ (độ đậm, màu gốc) */
+  FONTS:[["bvp","Be Vietnam Pro",'"Be Vietnam Pro", system-ui, sans-serif'],["mont","Montserrat",'"Montserrat", system-ui, sans-serif'],["robo","Roboto",'"Roboto", system-ui, sans-serif'],["lex","Lexend",'"Lexend", system-ui, sans-serif'],["tnr","Times New Roman",'"Times New Roman", Times, serif']],
+  FONT_CSS:"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&family=Lexend:wght@400;500;600;700;800;900&display=swap",
+  SWATCH:[["#ffffff","Trắng"],["#22c7f2","Cyan"],["#fbbf24","Vàng nhấn"],["#cfe2ff","Xanh nhạt"]],
+  TXT:{names:{w:600,color:"#e9f6ff",align:true},invite:{w:600,color:"#ffffff",align:true},count:{w:900,color:"#ffffff",align:false},
+    act:{w:900,color:"#ffffff",align:true},title:{w:800,color:"#e6f6ff",align:true},info:{w:500,color:"#cfe2ff",align:true}},
+  SIZE_PCT:{min:50,max:200},
+  /* Logo vị trí cụ thể (YC-43): cách mép tối thiểu, cỡ gốc (theo chiều cao màn) */
+  LOGO:{margin:.03,baseH:.13},
   /* Nhịp File 2 (giây): bắt đầu đếm, mỗi số, đếm từ, số 0 hiện trước khi bùng nổ */
   ACT:{cdStart:1,cdStep:1,cdFrom:5,zeroHold:.2,minDur:10},
+  /* Thời lượng File 1 (giây): các mức chọn nhanh, giới hạn ô tùy chỉnh */
+  F1:{choices:[30,60,120,180,300],min:10,max:600},
+  /* Xuất file (YC-47): bpp = bit/điểm ảnh/khung → 1920×1080 · 25 fps ≈ 20 Mbps; giới hạn min–max; gop = giây giữa 2 khung khóa */
+  EXPORT:{bpp:.385,min:8e6,max:80e6,gop:2},
   MAX_LOGOS:8, MAX_N:10, LIB_MAX_MB:20, SVG_MAX_MB:2,
   COLOR:{cyan:"#22c7f2",kicker:"#9fe9ff",title:"#ffffff",info:"#cfe2ff",glow:"rgba(34,199,242,.55)"},
   FONT:'"Be Vietnam Pro", system-ui, sans-serif',
@@ -376,11 +629,11 @@ const CFG={
   ACCEPT:{background:"video/mp4,video/webm",effect:"video/mp4,video/webm",button:"image/png,image/svg+xml,image/webp",logo:"image/png,image/svg+xml,image/webp,image/jpeg",resultbg:"video/mp4,video/webm",audio:"audio/mpeg,audio/wav,audio/x-wav,audio/wave,audio/mp4,audio/x-m4a,audio/aac"},
   /* Ô của bộ hiệu ứng File 2 (phương án B – ghép tài nguyên) */
   FX_SLOT:{press:"nhấn nút",count:"mỗi số",trans:"chuyển cảnh"},
-  AUDIO_SLOT:{loop:"nhạc màn chờ",press:"tiếng nhấn nút",count:"tiếng mỗi số",boom:"tiếng bùng nổ"},
-  SPEC:{background:"MP4 hoặc WebM tối đa 20 MB, đoạn lặp 10–20 giây, nền sạch không có nút.",
+  AUDIO_SLOT:{loop:"nhạc màn chờ",count:"nhạc đếm ngược",welcome:"nhạc chào mừng",press:"tiếng nhấn nút (bản cũ → đếm ngược)",boom:"tiếng bùng nổ (bản cũ → chào mừng)"},
+  SPEC:{background:"MP4 hoặc WebM tối đa 20 MB, đoạn lặp 10–20 giây, nền sạch không có nút; khuyến nghị tối thiểu 1920×1080 để file xuất đạt Full HD.",
     button:"Ảnh vuông, hình tròn ở giữa, nền trong suốt. PNG/WebP tối đa 20 MB, SVG tối đa 2 MB. Tool tự thêm vòng sáng quanh nút.",
     effect:"MP4 nền đen (chọn “screen”) hoặc WebM có kênh trong suốt, tối đa 20 MB. Nhấn nút ≤ 1 giây; mỗi số đúng 1 giây; chuyển cảnh ≤ 1 giây, kết thúc bằng chớp trắng. Hiệu ứng nên nằm giữa màn hoặc phủ toàn màn, không phụ thuộc vị trí nút.",
-    resultbg:"MP4 hoặc WebM tối đa 20 MB, đoạn lặp 8–20 giây; nửa trên tối hoặc trống để đặt logo và chữ.",
+    resultbg:"MP4 hoặc WebM tối đa 20 MB, đoạn lặp 8–20 giây; nửa trên tối hoặc trống để đặt logo và chữ; khuyến nghị tối thiểu 1920×1080.",
     audio:"MP3, WAV hoặc M4A tối đa 20 MB; cắt bỏ khoảng lặng đầu file; đỉnh âm lượng ≤ -1 dB.",
     logo:"PNG/WebP nền trong suốt hoặc SVG, bản trắng hoặc màu sáng."}
 };
@@ -399,7 +652,7 @@ let saveT=0;function persist(){clearTimeout(saveT);saveT=setTimeout(()=>store.se
 /* [F02:canvas] */
 const cv=$("cv"),ctx=cv.getContext("2d"),stage=$("stage"),video=$("bgv"),fxv=$("fxv");
 let bg={kind:"proc",id:null,label:"Nền mặc định"},localURL=null;
-function sizeCanvas(){cv.width=S.W;cv.height=S.H;stage.style.aspectRatio=S.W+" / "+S.H;textCache.clear();updateBadge()}
+function sizeCanvas(){cv.width=S.W;cv.height=S.H;ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";stage.style.aspectRatio=S.W+" / "+S.H;textCache.clear();updateBadge()}
 function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const R=rng(20261115);const PART=Array.from({length:110},()=>({x:R(),y:R(),s:R(),k:1+Math.floor(R()*2),w:R()}));
 const SPARK=Array.from({length:90},()=>({a:R()*TAU,d:R(),s:R(),v:.4+R()*.8}));
@@ -421,6 +674,7 @@ function procBg(c,W,H,t,T){
   for(const p of PART){const y=(((p.y-u*p.k)%1)+1)%1;const x=p.x*W+Math.sin(TAU*(u*p.k+p.w))*W*.006;const r=H*(.0012+p.s*.0028);c.fillStyle=`rgba(170,235,255,${.25+.6*p.s*Math.sin(Math.PI*y)})`;c.beginPath();c.arc(x,y*H,r,0,TAU);c.fill()}
 }
 function drawBg(c,W,H,t,T){
+  if(OFF&&OFF.prep&&videoReady()){const d=video.duration;if(isFinite(d)&&d>0)OFF.seek.push([video,((t%d)+d)%d])}/* xuất từng khung [F41]: tua nền đúng giây */
   if(videoReady()){c.fillStyle="#000";c.fillRect(0,0,W,H);drawCover(c,video,video.videoWidth,video.videoHeight,0,0,W,H)}else procBg(c,W,H,t,T);
   if(S.dim>0){c.fillStyle=`rgba(2,8,28,${S.dim/100})`;c.fillRect(0,0,W,H)}
   const g=c.createRadialGradient(W/2,H/2,Math.min(W,H)*.35,W/2,H/2,Math.hypot(W,H)*.6);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,"rgba(0,4,18,.55)");c.fillStyle=g;c.fillRect(0,0,W,H);
@@ -429,24 +683,30 @@ function drawBg(c,W,H,t,T){
 /* [F04:veChu] tự co cỡ chữ cho vừa khung */
 const textCache=new Map();
 function wrap(c,text,maxW){const out=[];for(const para of String(text).split("\n")){const words=para.trim().split(/\s+/).filter(Boolean);if(!words.length)continue;let line=words[0];for(let i=1;i<words.length;i++){const tryL=line+" "+words[i];if(c.measureText(tryL).width<=maxW)line=tryL;else{out.push(line);line=words[i]}}out.push(line)}return out}
-function fit(c,key,text,weight,maxW,maxH,maxSize,minSize,lh,spacing){
-  const ck=[key,text,weight,maxW|0,maxH|0,maxSize|0,spacing].join("|");if(textCache.has(ck))return textCache.get(ck);
+/* fam: font (mặc định FONT); pct: cỡ % so với cỡ tự co (YC-42) – sau khi phóng/thu vẫn ngắt dòng trong maxW nên không tràn mép */
+function fit(c,key,text,weight,maxW,maxH,maxSize,minSize,lh,spacing,fam,pct){
+  fam=fam||FONT;pct=pct||1;
+  const ck=[key,text,weight,maxW|0,maxH|0,maxSize|0,spacing,fam,pct].join("|");if(textCache.has(ck))return textCache.get(ck);
   let size=maxSize,res;
-  while(true){c.font=`${weight} ${size}px ${FONT}`;if("letterSpacing"in c)c.letterSpacing=(spacing*size)+"px";const lines=wrap(c,text,maxW);const ok=lines.every(l=>c.measureText(l).width<=maxW)&&lines.length*size*lh<=maxH;res={size,lines};if(ok||size<=minSize)break;size=Math.max(minSize,size*.94)}
+  while(true){c.font=`${weight} ${size}px ${fam}`;if("letterSpacing"in c)c.letterSpacing=(spacing*size)+"px";const lines=wrap(c,text,maxW);const ok=lines.every(l=>c.measureText(l).width<=maxW)&&lines.length*size*lh<=maxH;res={size,lines};if(ok||size<=minSize)break;size=Math.max(minSize,size*.94)}
+  if(pct!==1){size=res.size*pct;
+    for(let k=0;k<60;k++){c.font=`${weight} ${size}px ${fam}`;if("letterSpacing"in c)c.letterSpacing=(spacing*size)+"px";const lines=wrap(c,text,maxW);res={size,lines};if(lines.every(l=>c.measureText(l).width<=maxW))break;size*=.94}}
   if("letterSpacing"in c)c.letterSpacing="0px";textCache.set(ck,res);return res}
-function drawBlock(c,f,weight,cx,cy,lh,color,glow,alpha,spacing,scale){
+/* align: "center" (mặc định) | "left" | "right", căn trong bề rộng boxW quanh cx */
+function drawBlock(c,f,weight,cx,cy,lh,color,glow,alpha,spacing,scale,fam,align,boxW){
   if(alpha<=0||!f.lines.length)return;c.save();c.globalAlpha*=alpha;c.translate(cx,cy);if(scale&&scale!==1)c.scale(scale,scale);
-  c.font=`${weight} ${f.size}px ${FONT}`;if("letterSpacing"in c)c.letterSpacing=(spacing*f.size)+"px";c.textAlign="center";c.textBaseline="middle";
+  c.font=`${weight} ${f.size}px ${fam||FONT}`;if("letterSpacing"in c)c.letterSpacing=(spacing*f.size)+"px";align=align||"center";c.textAlign=align;c.textBaseline="middle";
+  const ax=align==="left"?-(boxW||0)/2:align==="right"?(boxW||0)/2:0;
   const tot=f.lines.length*f.size*lh;let y=-tot/2+f.size*lh/2;
-  for(const l of f.lines){if(glow){c.shadowColor=glow;c.shadowBlur=f.size*.45}c.fillStyle=color;c.fillText(l,0,y);y+=f.size*lh}
+  for(const l of f.lines){if(glow){c.shadowColor=glow;c.shadowBlur=f.size*.45}c.fillStyle=color;c.fillText(l,ax,y);y+=f.size*lh}
   c.restore()}
 
 /* [F05:logo] danh sách logo, mỗi logo có vị trí trái/giữa/phải và cỡ */
-let LOGOS=[];/* {src, pos:"left"|"center"|"right", scale, img} */
-function saveLogos(){const ok=store.set("bnkt.logos",JSON.stringify(LOGOS.map(l=>({src:l.src,pos:l.pos,scale:l.scale}))));if(!ok)$("logoCount").textContent="Trình duyệt hết chỗ lưu logo, logo sẽ mất khi tải lại trang."}
+let LOGOS=[];/* {src, pos:"left"|"center"|"right", scale, x, y (tâm logo, % màn – YC-43), img} */
+function saveLogos(){const ok=store.set("bnkt.logos",JSON.stringify(LOGOS.map(l=>({src:l.src,pos:l.pos,scale:l.scale,x:l.x,y:l.y}))));if(!ok)$("logoCount").textContent="Trình duyệt hết chỗ lưu logo, logo sẽ mất khi tải lại trang."}
 function makeImg(src,cb){const im=new Image();im.onload=()=>cb&&cb(im);im.src=src;return im}
 function addLogo(src,pos){if(LOGOS.length>=CFG.MAX_LOGOS){$("logoCount").textContent="Tối đa "+CFG.MAX_LOGOS+" logo.";return}
-  const l={src,pos:pos||(LOGOS.length===0?"center":"right"),scale:1,img:null};l.img=makeImg(src,()=>renderLogos());LOGOS.push(l);saveLogos();renderLogos()}
+  const l={src,pos:pos||(LOGOS.length===0?"center":"right"),scale:1,x:50,y:20,img:null};l.img=makeImg(src,()=>renderLogos());LOGOS.push(l);saveLogos();renderLogos()}
 function drawLogos(c,W,H,cy,baseH,alpha){
   if(alpha<=0)return;const gap=H*.03,mx=W*.04;
   c.save();c.globalAlpha*=alpha;
@@ -466,6 +726,19 @@ function drawLogosRow(c,W,H,cy,baseH,alpha,scale){
   c.save();c.globalAlpha*=alpha;c.translate(W/2,cy);c.scale(scale||1,scale||1);let x=-tot/2;
   L.forEach((l,i)=>{const d=dims[i];c.shadowColor="rgba(34,199,242,.55)";c.shadowBlur=H*.02;c.drawImage(l.img,x,-d.h/2,d.w,d.h);c.shadowBlur=0;x+=d.w;
     if(i<L.length-1){c.fillStyle="rgba(200,235,255,.6)";c.fillRect(x+gap*k-Math.max(1,H*.001),-baseH*k*.38,Math.max(2,H*.002),baseH*k*.76);x+=gap*2*k}});
+  c.restore();return true}
+/* YC-43: kích thước logo (px) ở khổ W×H; tọa độ tâm (px) đã kẹp để cách mép ≥ CFG.LOGO.margin */
+function logoDims(l,W,H){const h=H*CFG.LOGO.baseH*l.scale;let w=h*l.img.naturalWidth/l.img.naturalHeight,hh=h;const mw=W*(1-2*CFG.LOGO.margin);if(w>mw){w=mw;hh=w*l.img.naturalHeight/l.img.naturalWidth}return{w,h:hh}}
+function logoCenter(l,W,H,d){const m=CFG.LOGO.margin;
+  const x=clamp(l.x/100*W,W*m+d.w/2,W*(1-m)-d.w/2),y=clamp(l.y/100*H,H*m+d.h/2,H*(1-m)-d.h/2);return{x,y}}
+const LOGO_HIT=[];/* vùng logo đã vẽ ở khung hiện tại, cho kéo thả [F37] */
+/* Khung kết quả, bố cục Hai góc / Tự do: mỗi logo ở tọa độ riêng. Trả về false nếu chưa có logo */
+function drawLogosFree(c,W,H,alpha,scale){
+  const L=LOGOS.filter(l=>l.img&&l.img.complete&&l.img.naturalWidth);if(!L.length)return false;if(alpha<=0)return true;
+  c.save();c.globalAlpha*=alpha;
+  L.forEach(l=>{const d=logoDims(l,W,H),p=logoCenter(l,W,H,d),s=scale||1;
+    c.save();c.translate(p.x,p.y);c.scale(s,s);c.shadowColor="rgba(34,199,242,.55)";c.shadowBlur=H*.02;c.drawImage(l.img,-d.w/2,-d.h/2,d.w,d.h);c.restore();
+    LOGO_HIT.push({l,x:p.x-d.w/2,y:p.y-d.h/2,w:d.w,h:d.h})});
   c.restore();return true}
 
 /* [F06:icon] biểu tượng nút có sẵn */
@@ -504,7 +777,7 @@ function layout(W,H){const n=S.n,span=W*.86,cell=span/n;const r=Math.min(H*.072,
   const by=H*((S.loopText==="invite"?.56:.5)-(S.showNames?.03:0));const xs=Array.from({length:n},(_,i)=>W/2+(i-(n-1)/2)*pitch);
   return{r,by,xs,C:{x:W/2,y:H*.47},textW:Math.min(W*.86,H*2.6)}}
 function names(){return S.names.split("\n").map(s=>s.trim())}
-function drawName(c,txt,x,y,L,H,a=1){if(!txt)return;const f=fit(c,"n",txt,600,Math.min(L.r*3.6,S.W*.86/S.n*.95),H*.07,H*.024,H*.011,1.2,0);drawBlock(c,f,600,x,y+f.size*.6*(f.lines.length-1),1.2,"#e9f6ff",null,a,0)}
+function drawName(c,txt,x,y,L,H,a=1){if(!txt)return;const st=TS("names"),bw=Math.min(L.r*3.6,S.W*.86/S.n*.95);const f=fit(c,"n",txt,st.w,bw,H*.07,H*.024,H*.011,1.2,0,st.fam,st.pct);drawBlock(c,f,st.w,x,y+f.size*.6*(f.lines.length-1),1.2,st.color,null,a,0,1,st.fam,st.align,bw)}
 
 /* [F09:hieuUng] hiệu ứng có sẵn + video hiệu ứng từ thư viện */
 function fxDoc(){if(!S.fx.startsWith("lib:"))return null;return LIB.find(x=>x.id===S.fx.slice(4))||null}
@@ -519,7 +792,9 @@ function rays(c,W,H,C,t,a){c.save();c.translate(C.x,C.y);c.rotate(t*.12);const R
 function sparks(c,W,H,C,tt){if(tt<=0)return;for(const p of SPARK){const life=(tt*p.v*.5+p.s)%1;const d=Math.hypot(W,H)*.55*(p.d*.3+life*.7);const x=C.x+Math.cos(p.a)*d,y=C.y+Math.sin(p.a)*d*.6;const a=Math.min(1,tt*2)*Math.sin(Math.PI*life)*.9;c.fillStyle=`rgba(210,245,255,${a})`;c.beginPath();c.arc(x,y,H*(.002+.003*p.s),0,TAU);c.fill()}}
 let fxStarted=false;
 function fxReset(){fxStarted=false;try{fxv.pause();fxv.currentTime=0}catch(e){}packReset()}
-function fxTick(t){const d=fxDoc();if(!d)return;const st=(d.opts&&+d.opts.startAt)||0;if(t>=st&&!fxStarted){fxStarted=true;try{fxv.currentTime=0;fxv.play().catch(()=>{})}catch(e){}}}
+function fxTick(t){const d=fxDoc();if(!d)return;const st=(d.opts&&+d.opts.startAt)||0;
+  if(OFF){const dur=fxv.duration,loc=t-st;fxStarted=loc>=0&&(!isFinite(dur)||loc<dur);if(fxStarted&&OFF.prep)OFF.seek.push([fxv,loc]);return}/* xuất từng khung [F41] */
+  if(t>=st&&!fxStarted){fxStarted=true;try{fxv.currentTime=0;fxv.play().catch(()=>{})}catch(e){}}}
 function drawFxVideo(c,W,H,L){const d=fxDoc();if(!d||!fxStarted||fxv.readyState<2||fxv.ended||!fxv.videoWidth)return;
   c.save();c.globalCompositeOperation=(d.opts&&d.opts.blend)||"screen";
   if(d.opts&&d.opts.mode==="button"){const s=L.r*5;L.xs.forEach(x=>drawCover(c,fxv,fxv.videoWidth,fxv.videoHeight,x-s/2,L.by-s/2,s,s))}
@@ -529,21 +804,21 @@ function drawFxVideo(c,W,H,L){const d=fxDoc();if(!d||!fxStarted||fxv.readyState<
 /* [F10:veKhung] vẽ 1 khung hình theo pha "loop" (màn chờ) hoặc "act" (kích hoạt) */
 function draw(phase,t){
   const W=S.W,H=S.H,c=ctx,T=loopDur(),per=T/Math.max(1,Math.round(T/1.8));
-  c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.shadowBlur=0;
+  c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.shadowBlur=0;LOGO_HIT.length=0;
   drawBg(c,W,H,t,T);
   const L=layout(W,H),tw=L.textW,K=CFG.COLOR;
-  const fv=fit(c,"v",S.invite,600,tw,H*.04,H*.027,H*.013,1.2,.04);
+  const sv=TS("invite"),fv=fit(c,"v",S.invite,sv.w,tw,H*.04,H*.027,H*.013,1.2,.04,sv.fam,sv.pct);
   const NM=names();
   if(phase==="loop"){
     /* File 1: nền + hiệu ứng quanh nút + nút; lời mời là tùy chọn. Không logo, không thông tin sự kiện */
-    if(S.loopText==="invite"){const pa=.65+.35*(.5+.5*Math.sin(TAU*t/per));drawBlock(c,fv,600,W/2,L.by-L.r*2.9,1.2,"#ffffff",null,pa,.04)}
+    if(S.loopText==="invite"){const pa=.65+.35*(.5+.5*Math.sin(TAU*t/per));drawBlock(c,fv,sv.w,W/2,L.by-L.r*2.9,1.2,sv.color,null,pa,.04,1,sv.fam,sv.align,tw)}
     hudFx(c,W,H,L,t,T,per,1);
     L.xs.forEach((x,i)=>{drawButton(c,x,L.by,L.r,i,t,T,per,null,1);if(S.showNames)drawName(c,NM[i],x,L.by+L.r*2.45,L,H)});
   }else{
     /* File 2: nhấn nút (0–1 s) → đếm ngược 5 → 0 → bùng nổ → logo + thông tin chương trình */
     const A=CFG.ACT,boom=A.cdStart+A.cdFrom*A.cdStep+A.zeroHold;
     const press=i=>.1+i*.06;const d=fxDoc();const custom=!!d;/* phương án B: cung nối từ nút luôn vẽ bằng code khi dùng hiệu ứng thư viện, vì phụ thuộc số nút */const keepBeam=!custom?S.fx==="converge":true;
-    if(S.loopText==="invite")drawBlock(c,fv,600,W/2,L.by-L.r*2.9,1.2,"#ffffff",null,1-ss(0,.3,t),.04);
+    if(S.loopText==="invite")drawBlock(c,fv,sv.w,W/2,L.by-L.r*2.9,1.2,sv.color,null,1-ss(0,.3,t),.04,1,sv.fam,sv.align,tw);
     if(keepBeam){L.xs.forEach((x,i)=>beam(c,x,L.by-L.r,L.C,t-press(i)-.15,t+1.95-A.cdStart,H));
       const core=ss(.55,.95,t)*(1-ss(A.cdStart,A.cdStart+.4,t));
       if(core>0){const rr=H*(.02+.12*core);const g=c.createRadialGradient(L.C.x,L.C.y,0,L.C.x,L.C.y,rr*2.4);g.addColorStop(0,`rgba(255,255,255,${core})`);g.addColorStop(.25,`rgba(140,230,255,${.8*core})`);g.addColorStop(1,"rgba(34,199,242,0)");c.fillStyle=g;c.beginPath();c.arc(L.C.x,L.C.y,rr*2.4,0,TAU);c.fill()}}
@@ -599,24 +874,28 @@ function countdown(c,W,H,C,t){
   const k=eo(Math.min(1,f/.6));c.strokeStyle=`rgba(200,245,255,${.8*(1-k)})`;c.lineWidth=R0*.02*(1-k)+1;c.beginPath();c.arc(C.x,C.y,R0*(.7+.6*k),0,TAU);c.stroke();
   const g=c.createRadialGradient(C.x,C.y,0,C.x,C.y,R0*.9);g.addColorStop(0,`rgba(34,199,242,${.28*(1-f*.6)})`);g.addColorStop(1,"rgba(34,199,242,0)");c.fillStyle=g;c.beginPath();c.arc(C.x,C.y,R0*.9,0,TAU);c.fill();
   const sc=1.3-.3*eo(Math.min(1,f/.25)),da=Math.min(1,f/.12+(t1<0?1:0))*(num>0?1-ss(.82,1,f):1);
-  c.save();c.globalAlpha*=da;c.translate(C.x,C.y+R0*.04);c.scale(sc,sc);c.font=`900 ${R0*1.15}px ${FONT}`;c.textAlign="center";c.textBaseline="middle";
-  c.shadowColor="rgba(34,199,242,.95)";c.shadowBlur=R0*.18;c.fillStyle="#ffffff";c.fillText(String(num),0,0);c.restore();
+  const st=TS("count");/* YC-42: font, cỡ %, màu, đậm của số đếm */
+  c.save();c.globalAlpha*=da;c.translate(C.x,C.y+R0*.04);c.scale(sc,sc);c.font=`${st.w} ${R0*1.15*st.pct}px ${st.fam}`;c.textAlign="center";c.textBaseline="middle";
+  c.shadowColor="rgba(34,199,242,.95)";c.shadowBlur=R0*.18;c.fillStyle=st.color;c.fillText(String(num),0,0);c.restore();
   c.restore()}
 
 /* [F34:ketQua] bùng nổ tại số 0, rồi hiện logo (giữa màn) + dòng kích hoạt + tên sự kiện + thời gian–địa điểm; giữ đến hết file */
 function result(c,W,H,L,t,boom){
   const tb=t-boom;if(tb<-.05)return;const C=L.C,tw=L.textW,K=CFG.COLOR;
-  const rv=ss(0,.6,tb);if(rv>0)rays(c,W,H,C,t,rv);
+  /* v1.8: tắt tia sáng xoay ở khung kết quả theo yêu cầu (hàm rays trong nhãn F09 vẫn giữ để bật lại khi cần) */
   for(let k=0;k<3;k++){const tt=tb-k*.22;if(tt>0&&tt<1.6){const e=eo(tt/1.6);c.strokeStyle=`rgba(170,235,255,${.7*(1-e)})`;c.lineWidth=H*.006*(1-e)+1;c.beginPath();c.arc(C.x,C.y,Math.hypot(W,H)*.6*e,0,TAU);c.stroke()}}
   sparks(c,W,H,C,tb);
-  const la=ss(.25,.7,tb),hasLogo=drawLogosRow(c,W,H,H*.19,H*.13,la,1.15-.15*eo((tb-.25)/.6));
+  const la=ss(.25,.7,tb),lsc=1.15-.15*eo((tb-.25)/.6);
+  /* YC-43: Hàng ngang giữa = hàng logo tự xếp; Hai góc trên / Tự do = mỗi logo ở tọa độ riêng */
+  const hasLogo=S.logoMode==="row"?drawLogosRow(c,W,H,H*.19,H*.13,la,lsc):drawLogosFree(c,W,H,la,lsc);
   const Y=hasLogo?[.43,.63,.81]:[.34,.58,.8];
-  const fa=fit(c,"a",S.actText,900,tw,H*(hasLogo?.15:.17),H*.115,H*.03,1.08,.02);
-  const ft2=fit(c,"t2",S.title,800,tw,H*(hasLogo?.17:.2),H*.062,H*.024,1.15,.01);
-  const fi=fit(c,"i",S.info,500,tw,H*.045,H*.03,H*.014,1.2,.02);
-  drawBlock(c,fa,900,W/2,H*Y[0],1.08,"#ffffff","rgba(34,199,242,.95)",ss(.55,1.0,tb),.02,1.25-.25*eo((tb-.55)/.9));
-  drawBlock(c,ft2,800,W/2,H*Y[1],1.15,"#e6f6ff","rgba(34,199,242,.4)",ss(.85,1.5,tb),.01,1+.06*(1-eo((tb-.85)/.8)));
-  drawBlock(c,fi,500,W/2,H*Y[2],1.2,K.info,null,ss(1.1,1.7,tb),.02);
+  const sa=TS("act"),st=TS("title"),si=TS("info");/* YC-42 */
+  const fa=fit(c,"a",S.actText,sa.w,tw,H*(hasLogo?.15:.17),H*.115,H*.03,1.08,.02,sa.fam,sa.pct);
+  const ft2=fit(c,"t2",S.title,st.w,tw,H*(hasLogo?.17:.2),H*.062,H*.024,1.15,.01,st.fam,st.pct);
+  const fi=fit(c,"i",S.info,si.w,tw,H*.045,H*.03,H*.014,1.2,.02,si.fam,si.pct);
+  drawBlock(c,fa,sa.w,W/2,H*Y[0],1.08,sa.color,"rgba(34,199,242,.95)",ss(.55,1.0,tb),.02,1.25-.25*eo((tb-.55)/.9),sa.fam,sa.align,tw);
+  drawBlock(c,ft2,st.w,W/2,H*Y[1],1.15,st.color,"rgba(34,199,242,.4)",ss(.85,1.5,tb),.01,1+.06*(1-eo((tb-.85)/.8)),st.fam,st.align,tw);
+  drawBlock(c,fi,si.w,W/2,H*Y[2],1.2,si.color,null,ss(1.1,1.7,tb),.02,1,si.fam,si.align,tw);
   const fl=ss(-.05,0,tb)*(1-ss(.05,.8,tb));if(fl>0){c.fillStyle=`rgba(235,250,255,${.92*fl})`;c.fillRect(0,0,W,H)}}
 
 /* [F35:boHieuUng] phương án B: ghép video hiệu ứng thư viện theo mốc File 2 (mỗi số, chuyển cảnh, nền kết quả).
@@ -628,6 +907,8 @@ function packSync(){[["c1",S.fxCount1],["c2",S.fxCount2],["tr",S.fxTrans],["rb",
   if((v.getAttribute("src")||"")!==src){v.pause();if(src){v.src=src;v.load()}else{v.removeAttribute("src");v.load()}}})}
 function packReset(){for(const k in PV){const v=PV[k];try{v.pause();v._last=undefined;if(v.getAttribute("src"))v.currentTime=0}catch(e){}}}
 function slotPlay(v,local,loop){
+  if(OFF){/* xuất từng khung [F41]: lượt 1 ghi điểm tua, lượt 2 chỉ báo đã sẵn khung */if(!v.getAttribute("src")||v.readyState<1)return false;const d=v.duration;if(!isFinite(d)||d<=0||local<0||(!loop&&local>=d))return false;
+    if(OFF.prep){OFF.seek.push([v,loop?local%d:local]);return false}return v.readyState>=2&&v.videoWidth>0}
   if(!v.getAttribute("src")||v.readyState<1)return false;const dur=v.duration;if(!isFinite(dur)||dur<=0)return false;
   if(local<0||(!loop&&local>=dur)){if(!v.paused)v.pause();v._last=undefined;return false}
   const tgt=loop?local%dur:local,tol=1.5/(S.fps||25);
@@ -654,6 +935,8 @@ function packResultBg(c,W,H,t,boom){const d=libDoc(S.resBg);if(!d)return;const v
 
 /* [F11:phat] vòng phát xem trước */
 function loopDur(){return videoReady()&&isFinite(video.duration)&&video.duration>1?video.duration:S.loopDur}
+/* File 1 = số vòng trọn vẹn gần nhất với thời lượng mong muốn, để điểm cuối nối khớp điểm đầu */
+function f1Plan(){const cyc=loopDur(),n=Math.max(1,Math.round(S.f1Dur/cyc));return{cyc,n,T:n*cyc}}
 let view="loop",t0=performance.now(),actStart=performance.now(),simFired=false,exp=null;
 const HINT={loop:"Màn chờ phát lặp trong lúc MC giới thiệu. Chuyển sang “Mô phỏng sự kiện” để thử đúng khoảnh khắc đại biểu nhấn nút.",act:"Đoạn kích hoạt phát một lần rồi giữ khung cuối. Bấm “Phát lại” để xem lại.",sim:"Đang ở màn chờ. Bấm vào màn hình, nút “Nhấn nút” hoặc phím cách để kích hoạt như lúc đại biểu nhấn nút thật."};
 function setView(v){view=v;simFired=false;t0=actStart=performance.now();fxReset();
@@ -664,18 +947,20 @@ function fire(){if(view==="sim"&&!simFired){simFired=true;actStart=performance.n
 function updateBadge(){const ph=exp?exp.kind:(view==="loop"||(view==="sim"&&!simFired))?"loop":"act";$("badge").textContent=(ph==="loop"?"MÀN CHỜ":"KÍCH HOẠT")+" · "+S.W+"×"+S.H}
 function fmt(s){const m=Math.floor(s/60),x=s-m*60;return String(m).padStart(2,"0")+":"+x.toFixed(1).padStart(4,"0")}
 function frame(now){
+  if(offx){requestAnimationFrame(frame);return}/* đang xuất từng khung [F41]: không vẽ xem trước */
   let phase,t;
-  if(exp){const el=(now-exp.t0)/1000;phase=exp.kind;t=phase==="loop"&&videoReady()?video.currentTime:el;
+  if(exp){const el=(now-exp.t0)/1000;phase=exp.kind;t=phase==="loop"?(videoReady()?video.currentTime:el%exp.cyc):el;
     $("recBar").style.width=Math.min(100,el/exp.T*100)+"%";if(el>=exp.T&&!exp.stopping){exp.stopping=true;exp.rec.stop()}}
   else if(view==="loop"||(view==="sim"&&!simFired)){phase="loop";t=videoReady()?video.currentTime:((now-t0)/1000)%loopDur()}
   else{phase="act";t=Math.min((now-actStart)/1000,S.actDur)}
   try{draw(phase,t)}catch(e){console.error(e)}
+  try{audTick(phase,t)}catch(e){console.error(e)}
   $("tc").textContent=fmt(t)+" / "+fmt(phase==="loop"?loopDur():S.actDur);
   requestAnimationFrame(frame)}
 
 /* [F12:export] ghi canvas thành MP4/WebM và lưu file */
-function pickMime(){const list=["video/mp4;codecs=avc1.640033","video/mp4;codecs=avc1.640028","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm;codecs=vp8","video/webm"];
-  if(typeof MediaRecorder==="undefined")return null;for(const m of list)try{if(MediaRecorder.isTypeSupported(m))return m}catch(e){}return null}
+function pickMime(snd){const list=snd?["video/mp4;codecs=avc1.640033,mp4a.40.2","video/mp4;codecs=avc1.640028,mp4a.40.2","video/mp4;codecs=avc1,mp4a.40.2","video/webm;codecs=vp9,opus","video/webm;codecs=vp8,opus"]:["video/mp4;codecs=avc1.640033","video/mp4;codecs=avc1.640028","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9","video/webm;codecs=vp8","video/webm"];
+  if(typeof MediaRecorder==="undefined")return null;for(const m of list)try{if(MediaRecorder.isTypeSupported(m))return m}catch(e){}return snd?pickMime(false):null}
 function slug(s){return(s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").replace(/[^a-zA-Z0-9]+/g,"-").replace(/^-|-$/g,"").toLowerCase().slice(0,50))||"su-kien"}
 let lastFile=null,dlP=Promise.resolve(null);
 function msg(el,text,cls){el.hidden=!text;el.textContent=text||"";el.className="msg"+(cls?" "+cls:"")}
@@ -693,35 +978,38 @@ async function saveFile(f){const em=$("expMsg");const dl=await dlP;
     else{msg(em,"Không lưu được file ("+(c||"lỗi")+"). Thử lại trên Chrome máy tính.","bad");$("saveAgain").hidden=false}
     return false}}
 async function doExport(kind){
-  if(exp)return;const mime=pickMime();const em=$("expMsg");
+  if(exp||offx)return;if(offOK()&&await exportOffline(kind))return;/* [F41] xuất từng khung; không hỗ trợ thì ghi thời gian thực như dưới */
+  const snd=S.audExp&&audHas(kind);const mime=pickMime(snd);const em=$("expMsg");
   if(!mime){msg(em,"Trình duyệt này không hỗ trợ ghi video. Dùng Chrome hoặc Edge bản mới trên máy tính.","bad");return}
   if(S.W*S.H>3840*2160)msg(em,"Khổ lớn hơn 4K có thể bị trình duyệt từ chối khi ghi. Nếu lỗi, chia màn thành 2 nửa.","warn");else msg(em,"");
-  const T=kind==="loop"?loopDur():S.actDur;
-  lockUI(true);$("recBox").hidden=false;$("recTitle").textContent=kind==="loop"?"Đang export File 1 · Màn chờ":"Đang export File 2 · Kích hoạt";$("recBar").style.width="0%";fxReset();
+  const P=f1Plan(),T=kind==="loop"?P.T:S.actDur;
+  lockUI(true);$("recBox").hidden=false;$("recTitle").textContent=kind==="loop"?"Đang export File 1 · Màn chờ ("+P.n+" vòng, "+secVN(P.T)+")":"Đang export File 2 · Kích hoạt";$("recBar").style.width="0%";fxReset();
+  if(snd)await audPrepare(kind);
   if(video.src){try{video.pause();video.currentTime=0;await new Promise(r=>{video.onseeked=()=>{video.onseeked=null;r()};setTimeout(r,800)});await video.play()}catch(e){}}
-  const stream=cv.captureStream(S.fps);const br=Math.round(clamp(S.W*S.H*S.fps*.26,8e6,80e6));
-  let rec;try{rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:br})}catch(e){lockUI(false);$("recBox").hidden=true;msg(em,"Trình duyệt không ghi được ở khổ "+S.W+"×"+S.H+". Thử khổ nhỏ hơn.","bad");return}
+  const stream=cv.captureStream(S.fps);const br=expBitrate();
+  const aTr=snd&&/mp4a|opus/.test(mime)?await audExportTrack(kind):null;if(aTr)stream.addTrack(aTr);else if(snd)msg(em,"Trình duyệt này không ghi được tiếng kèm video, file sẽ không có tiếng. Dùng Chrome hoặc Edge bản mới.","warn");
+  let rec;try{rec=new MediaRecorder(stream,aTr?{mimeType:mime,videoBitsPerSecond:br,audioBitsPerSecond:CFG.AUDIO.kbps*1000}:{mimeType:mime,videoBitsPerSecond:br})}catch(e){lockUI(false);$("recBox").hidden=true;msg(em,"Trình duyệt không ghi được ở khổ "+S.W+"×"+S.H+". Thử khổ nhỏ hơn.","bad");return}
   const chunks=[];rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
   rec.onstop=async()=>{stream.getTracks().forEach(tr=>tr.stop());const ext=mime.startsWith("video/mp4")?"mp4":"webm";
-    const blob=new Blob(chunks,{type:mime.split(";")[0]});exp=null;lockUI(false);$("recBox").hidden=true;updateBadge();fxReset();
+    const blob=new Blob(chunks,{type:mime.split(";")[0]});exp=null;audExportEnd();lockUI(false);$("recBox").hidden=true;updateBadge();fxReset();
     const name=slug(S.title.split("\n").join(" "))+"_"+(kind==="loop"?"01-man-cho":"02-kich-hoat")+"_"+S.n+"nut_"+S.W+"x"+S.H+"."+ext;
     lastFile={name,blob};if(!blob.size){msg(em,"File rỗng. Giữ tab ở phía trước trong lúc export rồi thử lại.","bad");return}
     logEvent(kind==="loop"?"export_loop":"export_act",{W:S.W,H:S.H,n:S.n});
     await saveFile(lastFile)};
-  exp={kind,T,rec,t0:performance.now(),stopping:false};updateBadge();rec.start(1000)}
+  exp={kind,T,cyc:P.cyc,rec,t0:performance.now(),stopping:false};updateBadge();rec.start(1000)}
 function lockUI(on){document.querySelectorAll("aside input,aside select,aside textarea,aside button,.transport button").forEach(el=>{if(on){el.dataset.wasDis=el.disabled?"1":"";el.disabled=true}else el.disabled=el.dataset.wasDis==="1"})}
 
 /* [F13:thuVien] tài nguyên chung (db "templates" + assets) */
-let db=null,assets=null,user=null,isAdmin=false,LIB=[];const imgCache=new Map();
-function assetURL(d){return"/_blob/"+d.assetId}
-function assetImg(d){if(!imgCache.has(d.assetId))imgCache.set(d.assetId,makeImg(assetURL(d),()=>{renderTypes();renderLogoLib()}));return imgCache.get(d.assetId)}
+let db=null,assets=null,user=null,isAdmin=false,LIB=[],staticLib=false;/* staticLib: thư viện đọc từ thu-vien.json khi mở ngoài claude.ai (GitHub Pages) */const imgCache=new Map();
+function assetURL(d){return d.url?d.url:"/_blob/"+d.assetId}
+function assetImg(d){const k=d.assetId||d.url;if(!imgCache.has(k))imgCache.set(k,makeImg(assetURL(d),()=>{renderTypes();renderLogoLib()}));return imgCache.get(k)}
 function byKind(k){return LIB.filter(d=>d.kind===k)}
 function onLib(){
   if(bg.kind==="lib"&&!LIB.some(d=>d.id===bg.id))useProc();
   if(S.type.startsWith("lib:")&&!LIB.some(d=>d.id===S.type.slice(4))){S.type="finger";persist()}
   if(S.fx.startsWith("lib:")&&!LIB.some(d=>d.id===S.fx.slice(4))){S.fx="converge";persist()}
   for(const k of["fxCount1","fxCount2","fxTrans","resBg"])if(S[k]&&!libDoc(S[k])){S[k]="";persist()}
-  renderBg();renderTypes();renderFx();renderLogoLib();renderRes();syncFxVideo();packSync()}
+  renderBg();renderTypes();renderFx();renderLogoLib();renderRes();syncFxVideo();packSync();renderAud()}
 
 /* [F14:nenUI] */
 function optBtn(label,meta,pressed,onclick){const b=document.createElement("button");b.className="opt";b.type="button";b.setAttribute("aria-pressed",pressed);b.innerHTML='<span class="dot"></span><span class="nm"></span><span class="meta"></span>';b.querySelector(".nm").textContent=label;b.querySelector(".meta").textContent=meta||"";b.onclick=onclick;return b}
@@ -729,7 +1017,7 @@ function renderBg(){const box=$("bgList");box.textContent="";
   box.appendChild(optBtn("Nền mặc định (tự sinh)","xanh VNPT",bg.kind==="proc",useProc));
   for(const d of byKind("background"))box.appendChild(optBtn(d.name||"Video nền",d.sizeBytes?(d.sizeBytes/1048576).toFixed(1)+" MB":"",bg.kind==="lib"&&bg.id===d.id,()=>useLib(d)));
   if(bg.kind==="local")box.appendChild(optBtn(bg.label,"từ máy",true,()=>{}));
-  $("bgHint").textContent=db?(byKind("background").length?"Nền trong thư viện do Ban Truyền thông cung cấp. Video từ máy chỉ dùng trên máy bạn.":"Thư viện chưa có video nền. Dùng nền mặc định hoặc video từ máy."):"Thư viện chung chỉ có khi mở trang trên claude.ai. Bạn vẫn dùng được nền mặc định hoặc video từ máy."}
+  $("bgHint").textContent=(db||staticLib)?(byKind("background").length?"Nền trong thư viện do Ban Truyền thông cung cấp. Video từ máy chỉ dùng trên máy bạn.":"Thư viện chưa có video nền. Dùng nền mặc định hoặc video từ máy."):"Không đọc được thư viện chung. Bạn vẫn dùng được nền mặc định hoặc video từ máy."}
 function setVideo(src){video.pause();video.removeAttribute("src");if(src){video.src=src;video.load();video.play().catch(()=>{})}}
 function useProc(){bg={kind:"proc",id:null,label:"Nền mặc định"};setVideo(null);renderBg();durUI()}
 function useLib(d){bg={kind:"lib",id:d.id,label:d.name};setVideo(assetURL(d));renderBg()}
@@ -743,10 +1031,16 @@ function renderLogos(){const box=$("logoList");box.textContent="";
   LOGOS.forEach((l,i)=>{const row=document.createElement("div");row.className="logo-row";
     const th=document.createElement("div");th.className="thumb";const im=document.createElement("img");im.src=l.src;im.alt="";th.appendChild(im);row.appendChild(th);
     const ctl=document.createElement("div");ctl.className="ctl";
-    const seg=document.createElement("div");seg.className="seg sm";seg.setAttribute("role","group");seg.setAttribute("aria-label","Vị trí logo "+(i+1));
-    [["left","Trái"],["center","Giữa"],["right","Phải"]].forEach(([k,lab])=>{const b=document.createElement("button");b.type="button";b.textContent=lab;b.setAttribute("aria-pressed",l.pos===k);b.onclick=()=>{l.pos=k;saveLogos();renderLogos()};seg.appendChild(b)});
-    ctl.appendChild(seg);
-    const sz=document.createElement("input");sz.type="range";sz.min="50";sz.max="180";sz.step="5";sz.value=Math.round(l.scale*100);sz.id="logoSize"+i;sz.setAttribute("aria-label","Cỡ logo "+(i+1));sz.oninput=()=>{l.scale=+sz.value/100;saveLogos()};ctl.appendChild(sz);
+    /* YC-43: bố cục Hai góc / Tự do → lưới 9 ô + X/Y % cho từng logo; Hàng ngang giữa → tool tự xếp */
+    if(S.logoMode!=="row"){const pr=document.createElement("div");pr.className="xy";
+      const g=document.createElement("div");g.className="g9";g.setAttribute("role","group");g.setAttribute("aria-label","Vị trí nhanh logo "+(i+1));
+      for(let r=0;r<3;r++)for(let q=0;q<3;q++){const b=document.createElement("button");b.type="button";b.setAttribute("aria-label",["Trên","Giữa","Dưới"][r]+" "+["trái","giữa","phải"][q]);
+        b.setAttribute("aria-pressed",logoCell(l)===r*3+q);b.onclick=()=>{logoSnap(l,q,r);setLogoMode("free",true)};g.appendChild(b)}
+      pr.appendChild(g);
+      for(const ax of["x","y"]){const lb=document.createElement("label");lb.className="xy";lb.textContent=ax.toUpperCase();const n=document.createElement("input");n.type="number";n.min="0";n.max="100";n.step="0.5";n.value=Math.round(l[ax]*10)/10;n.id="logo"+ax.toUpperCase()+i;
+        n.onchange=()=>{l[ax]=clamp(+n.value||0,0,100);logoFix(l);setLogoMode("free",true)};lb.appendChild(n);lb.appendChild(document.createTextNode("%"));pr.appendChild(lb)}
+      ctl.appendChild(pr)}
+    const sz=document.createElement("input");sz.type="range";sz.min="50";sz.max="180";sz.step="5";sz.value=Math.round(l.scale*100);sz.id="logoSize"+i;sz.setAttribute("aria-label","Cỡ logo "+(i+1));sz.oninput=()=>{l.scale=+sz.value/100;if(S.logoMode!=="row")logoFix(l);saveLogos()};ctl.appendChild(sz);
     row.appendChild(ctl);
     const ord=document.createElement("div");ord.className="ord";
     const mk=(txt,lab,fn,dis)=>{const b=document.createElement("button");b.type="button";b.className="btn sm";b.textContent=txt;b.setAttribute("aria-label",lab);b.disabled=!!dis;b.onclick=fn;ord.appendChild(b)};
@@ -754,12 +1048,23 @@ function renderLogos(){const box=$("logoList");box.textContent="";
     mk("↓","Đưa logo xuống",()=>{[LOGOS[i+1],LOGOS[i]]=[LOGOS[i],LOGOS[i+1]];saveLogos();renderLogos()},i===LOGOS.length-1);
     mk("✕","Bỏ logo",()=>{LOGOS.splice(i,1);saveLogos();renderLogos()});
     row.appendChild(ord);box.appendChild(row)});
-  $("logoCount").textContent=LOGOS.length?LOGOS.length+"/"+CFG.MAX_LOGOS+" logo":"Chưa có logo";$("addLogo").disabled=LOGOS.length>=CFG.MAX_LOGOS}
+  $("logoCount").textContent=LOGOS.length?LOGOS.length+"/"+CFG.MAX_LOGOS+" logo":"Chưa có logo";$("addLogo").disabled=LOGOS.length>=CFG.MAX_LOGOS;
+  $("logoMode").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===S.logoMode));
+  $("logoModeHint").textContent=S.logoMode==="row"?"Logo xếp thành hàng ngang giữa màn theo thứ tự trong danh sách. Chọn “Hai góc trên” hoặc “Tự do” để đặt từng logo.":"Đặt nhanh bằng lưới 9 ô, tinh chỉnh X/Y (% tâm logo) hoặc kéo logo trên màn xem trước. Logo luôn cách mép tối thiểu "+Math.round(CFG.LOGO.margin*100)+"%."}
+/* YC-43: ô lưới gần nhất, đặt theo ô lưới, kẹp tọa độ vào vùng cách mép, bố cục nhanh */
+function logoRef(){return{W:S.W,H:S.H}}
+function logoFix(l){if(!(l.img&&l.img.naturalWidth))return;const{W,H}=logoRef(),d=logoDims(l,W,H),p=logoCenter(l,W,H,d);l.x=Math.round(p.x/W*1000)/10;l.y=Math.round(p.y/H*1000)/10}
+function logoSnap(l,q,r){l.x=[0,50,100][q];l.y=[0,50,100][r];logoFix(l)}
+function logoCell(l){const near=(v)=>v<34?0:v>66?2:1;return near(l.y)*3+near(l.x)}
+function setLogoMode(m,keep){S.logoMode=m;
+  if(m==="corners"&&!keep){const n=LOGOS.length;LOGOS.forEach((l,i)=>{l.scale=Math.min(l.scale,1);if(n===1)logoSnap(l,0,0);else if(i===n-1)logoSnap(l,2,0);else if(i===0)logoSnap(l,0,0);else{l.x=50;l.y=0;logoFix(l)}})}
+  saveLogos();persist();renderLogos()}
+$("logoMode").querySelectorAll("button").forEach(b=>b.onclick=()=>setLogoMode(b.dataset.m));
 function renderLogoLib(){const L=byKind("logo");$("logoLibWrap").hidden=!L.length;const box=$("logoLib");box.textContent="";
   for(const d of L){const b=document.createElement("button");b.type="button";b.className="chip";const im=document.createElement("img");im.src=assetURL(d);im.alt="";b.appendChild(im);b.appendChild(document.createTextNode(d.name||"Logo"));b.onclick=()=>addLogo(assetURL(d));box.appendChild(b)}}
 $("addLogo").onclick=()=>$("logoFile").click();
 $("logoFile").onchange=e=>{for(const f of [...e.target.files]){const r=new FileReader();r.onload=()=>addLogo(r.result);r.readAsDataURL(f)}e.target.value=""};
-try{const arr=JSON.parse(store.get("bnkt.logos")||"null");if(Array.isArray(arr))LOGOS=arr.slice(0,CFG.MAX_LOGOS).map(l=>({src:l.src,pos:["left","center","right"].includes(l.pos)?l.pos:"center",scale:clamp(+l.scale||1,.5,1.8),img:makeImg(l.src)}))}catch(e){}
+try{const arr=JSON.parse(store.get("bnkt.logos")||"null");if(Array.isArray(arr))LOGOS=arr.slice(0,CFG.MAX_LOGOS).map(l=>({src:l.src,pos:["left","center","right"].includes(l.pos)?l.pos:"center",scale:clamp(+l.scale||1,.5,1.8),x:isFinite(+l.x)&&l.x!==null?clamp(+l.x,0,100):50,y:isFinite(+l.y)&&l.y!==null?clamp(+l.y,0,100):20,img:makeImg(l.src)}))}catch(e){}
 {const old=[store.get("bnkt.logo.main"),store.get("bnkt.logo.part")];if(!LOGOS.length&&(old[0]||old[1])){if(old[0])addLogo(old[0],"center");if(old[1])addLogo(old[1],"right");store.del("bnkt.logo.main");store.del("bnkt.logo.part")}}
 
 /* [F16:nutUI] kiểu nút có sẵn + mẫu nút thư viện */
@@ -781,13 +1086,13 @@ function renderPack(){
     sel.value=list.some(d=>d.id===S[key])?S[key]:"";sel.onchange=()=>{S[key]=sel.value;persist();packSync();packReset()}};
   const cnt=byKind("effect").filter(d=>fxSlot(d)==="count"),tr=byKind("effect").filter(d=>fxSlot(d)==="trans");
   fill("pkC1","fxCount1",cnt,"Tự vẽ (vòng đếm có sẵn)");fill("pkC2","fxCount2",cnt,"Không dùng");fill("pkTr","fxTrans",tr,"Tự vẽ (chớp sáng có sẵn)");fill("pkRb","resBg",byKind("resultbg"),"Giống nền màn chờ");
-  $("packHint").textContent=db?((cnt.length||tr.length||byKind("resultbg").length)?"Video hiệu ứng ghép kiểu phát sáng lên nền, đúng mốc 1 giây/số. Kéo “Tách nền đen” lên nếu thấy vệt nền mờ quanh hiệu ứng.":"Thư viện chưa có hiệu ứng mỗi số, chuyển cảnh hay nền kết quả. Ban Truyền thông tải lên ở khu Quản trị."):"Bộ hiệu ứng thư viện chỉ có khi mở trang trên claude.ai."}
+  $("packHint").textContent=(db||staticLib)?((cnt.length||tr.length||byKind("resultbg").length)?"Video hiệu ứng ghép kiểu phát sáng lên nền, đúng mốc 1 giây/số. Kéo “Tách nền đen” lên nếu thấy vệt nền mờ quanh hiệu ứng.":(staticLib?"Thư viện chưa có hiệu ứng mỗi số, chuyển cảnh hay nền kết quả. Ban Truyền thông bổ sung vào thu-vien.json và thư mục media/ trên GitHub.":"Thư viện chưa có hiệu ứng mỗi số, chuyển cảnh hay nền kết quả. Ban Truyền thông tải lên ở khu Quản trị.")):"Không đọc được thư viện chung (mở file trực tiếp từ máy không có thư viện). Dùng hiệu ứng tự vẽ."}
 $("fxKey").value=S.fxKey;$("fxKeyOut").textContent=S.fxKey+"%";$("fxKey").oninput=e=>{S.fxKey=+e.target.value;$("fxKeyOut").textContent=S.fxKey+"%";persist()};
 function syncFxVideo(){const d=fxDoc();fxReset();if(d){const src=assetURL(d);if(fxv.getAttribute("src")!==src){fxv.src=src;fxv.load()}}else{fxv.removeAttribute("src")}}
 
 /* [F18:taiLen] admin tải tài nguyên lên thư viện */
-function kindUI(){const k=$("rKind").value;$("fxOpts").hidden=k!=="effect";$("audioOpts").hidden=k!=="audio";$("rFile").accept=CFG.ACCEPT[k];$("rSpec").textContent=CFG.SPEC[k]}
-$("rKind").onchange=kindUI;
+function kindUI(){const k=$("rKind").value;$("fxOpts").hidden=k!=="effect";$("audioOpts").hidden=k!=="audio";$("rBoomWrap").hidden=$("rASlot").value!=="count";$("rFile").accept=CFG.ACCEPT[k];$("rSpec").textContent=CFG.SPEC[k]}
+$("rKind").onchange=kindUI;$("rASlot").onchange=kindUI;
 $("rUpload").onclick=async()=>{const f=$("rFile").files[0],m=$("rMsg"),k=$("rKind").value;
   if(!assets||!db){msg(m,"Chỉ quản trị viên tải lên được.","bad");return}
   if(!f){msg(m,"Chọn file trước.","bad");return}
@@ -799,7 +1104,7 @@ $("rUpload").onclick=async()=>{const f=$("rFile").files[0],m=$("rMsg"),k=$("rKin
   try{const r=await assets.upload(f,{type});const name=$("rName").value.trim()||f.name.replace(/\.[^.]+$/,"");
     const doc={kind:k,name,assetId:r.id,sizeBytes:r.sizeBytes,contentType:r.contentType,createdAt:new Date().toISOString()};
     if(k==="effect")doc.opts={slot:$("rSlot").value,mode:$("rSlot").value==="press"?$("rMode").value:"full",blend:$("rBlend").value,startAt:clamp(+$("rStart").value||0,0,5),lead:clamp(+$("rLead").value||0,0,2),keepBeam:$("rKeepBeam").checked};
-    if(k==="audio")doc.opts={slot:$("rASlot").value};
+    if(k==="audio"){doc.opts={slot:$("rASlot").value};if(doc.opts.slot==="count")doc.opts.boomAt=clamp(+$("rBoom").value||0,0,60)}
     await db.collection("templates").add(doc);msg(m,"Đã thêm “"+name+"” vào thư viện ("+CFG.KIND_LABEL[k].toLowerCase()+").","ok");$("rName").value="";$("rFile").value=""}
   catch(e){const c=e&&e.code;msg(m,c==="too_large"?"File vượt giới hạn dung lượng.":c==="unsupported_type"?"Loại file không được hỗ trợ.":c==="quota_or_state"?"Thư viện đã hết dung lượng. Xóa bớt tài nguyên cũ rồi thử lại.":"Chưa tải lên được ("+(c||"lỗi")+"). Thử lại sau ít phút.","bad")}
   btn.disabled=false};
@@ -812,7 +1117,7 @@ function renderRes(){const box=$("resList");if(!box)return;box.textContent="";co
     row.appendChild(th);const info=document.createElement("div");info.style.minWidth="0";
     const kd=document.createElement("div");kd.className="kind";kd.textContent=CFG.KIND_LABEL[d.kind]||d.kind;info.appendChild(kd);
     const nm=document.createElement("div");nm.className="nm";nm.textContent=d.name||"(không tên)";info.appendChild(nm);
-    const mt=document.createElement("div");mt.className="hint";mt.textContent=[(d.sizeBytes/1048576).toFixed(1)+" MB",d.createdAt?new Date(d.createdAt).toLocaleDateString("vi-VN"):"",d.kind==="audio"&&d.opts?(CFG.AUDIO_SLOT[d.opts.slot]||""):d.opts?((CFG.FX_SLOT[fxSlot(d)]||"")+" · "+(d.opts.mode==="button"?"tại nút":"toàn màn")+(fxSlot(d)==="trans"?" · trước bùng nổ "+(d.opts.lead!=null?d.opts.lead:.6)+"s":fxSlot(d)==="press"?" · "+(d.opts.startAt||0)+"s":"")):""].filter(Boolean).join(" · ");info.appendChild(mt);
+    const mt=document.createElement("div");mt.className="hint";mt.textContent=[(d.sizeBytes/1048576).toFixed(1)+" MB",d.createdAt?new Date(d.createdAt).toLocaleDateString("vi-VN"):"",d.kind==="audio"&&d.opts?((CFG.AUDIO_SLOT[d.opts.slot]||"")+(d.opts.boomAt!=null?" · tiếng nổ ở giây "+d.opts.boomAt:"")):d.opts?((CFG.FX_SLOT[fxSlot(d)]||"")+" · "+(d.opts.mode==="button"?"tại nút":"toàn màn")+(fxSlot(d)==="trans"?" · trước bùng nổ "+(d.opts.lead!=null?d.opts.lead:.6)+"s":fxSlot(d)==="press"?" · "+(d.opts.startAt||0)+"s":"")):""].filter(Boolean).join(" · ");info.appendChild(mt);
     row.appendChild(info);
     const del=document.createElement("button");del.className="del";del.type="button";del.textContent="Xóa";del.setAttribute("aria-label","Xóa "+(d.name||"tài nguyên"));
     del.onclick=async()=>{if(!del.classList.contains("sure")){del.classList.add("sure");del.textContent="Xóa hẳn?";setTimeout(()=>{del.classList.remove("sure");del.textContent="Xóa"},4000);return}
@@ -857,7 +1162,12 @@ $("logReload").onclick=loadLog;$("logRange").onchange=loadLog;
 /* [F21:phanQuyen] Quản trị viên = người có quyền sửa trang (Editor/Owner); còn lại là Người dùng */
 function setArea(a){$("studio").hidden=a!=="studio";$("adminArea").hidden=a!=="admin";$("aStudio").setAttribute("aria-pressed",a==="studio");$("aAdmin").setAttribute("aria-pressed",a==="admin");if(a==="admin"){renderRes();loadLog()}}
 $("aStudio").onclick=()=>setArea("studio");$("aAdmin").onclick=()=>setArea("admin");
-(async()=>{const cl=window.claude;if(!cl||!cl.use){renderBg();return}
+/* Ngoài claude.ai (GitHub Pages, host tĩnh): đọc thư viện chỉ-đọc từ thu-vien.json cạnh index.html. Mỗi mục: {kind, name, url, opts}. Không có khu Quản trị, nhật ký */
+const EXT_TYPE={mp4:"video/mp4",webm:"video/webm",png:"image/png",svg:"image/svg+xml",webp:"image/webp",jpg:"image/jpeg",jpeg:"image/jpeg",mp3:"audio/mpeg",wav:"audio/wav",m4a:"audio/mp4"};
+async function loadStaticLib(){try{const r=await fetch("thu-vien.json",{cache:"no-cache"});if(!r.ok)return;const j=await r.json();const arr=Array.isArray(j)?j:(j&&j.items)||[];
+  LIB=arr.filter(d=>d&&d.kind&&d.url&&CFG.KIND_LABEL[d.kind]).map((d,i)=>Object.assign({},d,{id:String(d.id||"tv"+i),name:d.name||"",contentType:d.contentType||EXT_TYPE[(String(d.url).split(".").pop()||"").toLowerCase()]||"",sizeBytes:+d.sizeBytes||0,opts:d.opts||null}));
+  staticLib=true;onLib()}catch(e){}}
+(async()=>{const cl=window.claude;if(!cl||!cl.use){await loadStaticLib();renderBg();renderFx();return}
   dlP=cl.use("downloads").catch(()=>null);
   try{user=await cl.use("user")}catch(e){user=null}
   try{db=await cl.use("db")}catch(e){db=null}
@@ -869,7 +1179,15 @@ $("aStudio").onclick=()=>setArea("studio");$("aAdmin").onclick=()=>setArea("admi
 
 /* [F22:form] gắn ô nhập với trạng thái */
 function durUI(){const v=bg.kind!=="proc"&&isFinite(video.duration)&&video.duration>0;$("loopDur").disabled=!!v;
-  $("durHint").textContent=v?"Màn chờ theo đúng độ dài video nền ("+video.duration.toFixed(1)+" giây) để lặp liền mạch.":"Kích hoạt: nhấn nút ở giây 0, đếm ngược 5 → 0 từ giây 1 đến giây 6, bùng nổ ở giây 6,2, logo và chữ hiện đủ ở giây 8, phần còn lại giữ khung kết quả."}
+  $("durHint").textContent=v?"1 vòng = đúng độ dài video nền ("+secVN(video.duration)+") để lặp liền mạch.":"Đang dùng nền mặc định: 1 vòng dài bằng số giây ở ô trên.";f1UI()}
+function secVN(x){return(Math.round(x*10)/10).toLocaleString("vi-VN")+" giây"}
+function f1Label(v){return v<60?v+" giây":(v%60?secVN(v):(v/60)+" phút")}
+function f1UI(){const P=f1Plan(),cus=!CFG.F1.choices.includes(S.f1Dur);
+  $("f1Seg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s==="custom"?cus:(!cus&&+b.dataset.s===S.f1Dur)));
+  if(cus)$("f1CustomWrap").hidden=false;$("f1Custom").value=S.f1Dur;
+  const plan=P.n+" vòng × "+secVN(P.cyc)+" = "+secVN(P.T);
+  $("f1Hint").textContent="Làm tròn theo số vòng trọn vẹn: "+f1Label(S.f1Dur)+" → "+plan+", để điểm cuối nối khớp điểm đầu khi máy phát LED lặp lại. Xuất file mất đúng bằng thời lượng này.";
+  $("f1Sum").textContent=f1Label(S.f1Dur)+" → "+secVN(P.T)+" ("+P.n+" vòng)"}
 function ratioUI(){const g=(a,b)=>b?g(b,a%b):a;const d=g(S.W,S.H);$("ratio").textContent="Tỷ lệ "+(S.W/d)+":"+(S.H/d)+" · "+(S.W*S.H/1e6).toFixed(1)+" megapixel"+(S.W*S.H>3840*2160?" · lớn hơn 4K, có thể không export được":"")}
 function bindText(id){const el=$(id);el.value=S[id];el.addEventListener("input",()=>{S[id]=el.value;textCache.clear();persist()})}
 ["kicker","title","info","invite","actText","names"].forEach(bindText);
@@ -877,7 +1195,10 @@ $("showNames").checked=S.showNames;$("namesWrap").hidden=!S.showNames;$("showNam
 function setN(v){S.n=clamp(v,1,CFG.MAX_N);$("nOut").textContent=S.n;persist()}
 $("nMinus").onclick=()=>setN(S.n-1);$("nPlus").onclick=()=>setN(S.n+1);setN(S.n);
 $("dim").value=S.dim;$("dimOut").textContent=S.dim+"%";$("dim").oninput=e=>{S.dim=+e.target.value;$("dimOut").textContent=S.dim+"%";persist()};
-$("loopDur").value=S.loopDur;$("loopDur").onchange=e=>{S.loopDur=clamp(+e.target.value||12,4,60);e.target.value=S.loopDur;persist()};
+$("loopDur").value=S.loopDur;$("loopDur").onchange=e=>{S.loopDur=clamp(+e.target.value||12,4,60);e.target.value=S.loopDur;persist();f1UI()};
+S.f1Dur=clamp(Math.round(S.f1Dur)||60,CFG.F1.min,CFG.F1.max);
+$("f1Seg").querySelectorAll("button").forEach(b=>b.onclick=()=>{if(b.dataset.s==="custom"){$("f1CustomWrap").hidden=false;$("f1Custom").focus()}else{S.f1Dur=+b.dataset.s;$("f1CustomWrap").hidden=true;persist()}f1UI()});
+$("f1Custom").onchange=e=>{S.f1Dur=clamp(Math.round(+e.target.value)||60,CFG.F1.min,CFG.F1.max);persist();f1UI()};
 S.actDur=clamp(S.actDur,CFG.ACT.minDur,20);$("actDur").value=S.actDur;$("actDur").onchange=e=>{S.actDur=clamp(+e.target.value||12,CFG.ACT.minDur,20);e.target.value=S.actDur;persist()};
 if(S.loopText!=="invite")S.loopText="none";$("loopText").value=S.loopText;$("loopText").onchange=e=>{S.loopText=e.target.value;persist()};
 $("fps").value=String(S.fps);$("fps").onchange=e=>{S.fps=+e.target.value;persist()};
@@ -892,6 +1213,392 @@ $("expLoop").onclick=()=>doExport("loop");$("expAct").onclick=()=>doExport("act"
 $("saveAgain").onclick=()=>{if(lastFile)saveFile(lastFile)};
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&exp)msg($("expMsg"),"Tab bị ẩn trong lúc export, file có thể bị giật. Export lại và giữ tab ở phía trước.","warn")});
 {const m=pickMime();$("fmtHint").textContent=m?("Định dạng: "+(m.startsWith("video/mp4")?"MP4 (H.264)":"WebM")+". Thời gian export bằng đúng thời lượng video; giữ tab mở trong lúc ghi."+(m.startsWith("video/mp4")?"":" Nên dùng Chrome hoặc Edge để có MP4.")):"Trình duyệt này không ghi được video. Dùng Chrome hoặc Edge trên máy tính."}
+
+/* [F27:dinhDangChu] YC-42: định dạng từng khối chữ (font, cỡ %, màu, đậm, căn). Lưu trong S.fmt; ô trống = mặc định của khối (CFG.TXT).
+   Thanh công cụ dựng vào các ô data-fmt ở [S18] [S19] [S20] */
+const FMT_KEYS=Object.keys(CFG.TXT);
+function fmtClean(o){const r={},F=CFG.FONTS.map(f=>f[0]);
+  if(o&&typeof o==="object")for(const k of FMT_KEYS){const s=o[k];if(!s||typeof s!=="object")continue;const v={};
+    if(F.includes(s.font))v.font=s.font;
+    if(s.size!==null&&isFinite(+s.size))v.size=clamp(Math.round(+s.size),CFG.SIZE_PCT.min,CFG.SIZE_PCT.max);
+    if(typeof s.color==="string"&&/^#[0-9a-f]{6}$/i.test(s.color))v.color=s.color.toLowerCase();
+    if(typeof s.bold==="boolean")v.bold=s.bold;
+    if(["left","center","right"].includes(s.align))v.align=s.align;
+    r[k]=v}
+  return r}
+S.fmt=fmtClean(S.fmt);if(!["row","corners","free"].includes(S.logoMode))S.logoMode="row";
+function famOf(id){const f=CFG.FONTS.find(x=>x[0]===id);return f?f[2]:FONT}
+/* Kiểu chữ đang áp dụng cho khối k: fam, pct (cỡ/100), color, w (độ đậm), align */
+function TS(k){const d=CFG.TXT[k],s=(S.fmt&&S.fmt[k])||{};const bold=typeof s.bold==="boolean"?s.bold:d.w>=700;
+  return{font:s.font||"bvp",fam:s.font?famOf(s.font):FONT,size:s.size||100,pct:(s.size||100)/100,color:s.color||d.color,bold,
+    w:typeof s.bold==="boolean"?(s.bold?Math.max(d.w,700):400):d.w,align:d.align&&s.align||"center"}}
+function fmtLoad(k){const t=TS(k);if(document.fonts&&document.fonts.load)document.fonts.load(`${t.w} 40px ${t.fam}`).catch(()=>{}).finally(()=>textCache.clear())}
+{const lk=document.createElement("link");lk.rel="stylesheet";lk.href=CFG.FONT_CSS;lk.onload=()=>{FMT_KEYS.forEach(fmtLoad)};document.head.appendChild(lk)}
+function fmtSet(k,patch){S.fmt[k]=Object.assign({},S.fmt[k]||{},patch);textCache.clear();persist();fmtLoad(k);renderFmt(k)}
+function renderFmt(only){document.querySelectorAll("[data-fmt]").forEach(box=>{const k=box.dataset.fmt;if(!CFG.TXT[k]||(only&&k!==only))return;
+  const t=TS(k),d=CFG.TXT[k],w=box.closest(".fmtw"),lab=(w&&w.querySelector(".fl")||box.closest(".sec").querySelector("h2")).textContent;
+  box.textContent="";box.setAttribute("role","group");box.setAttribute("aria-label","Định dạng chữ: "+lab);
+  const mk=(txt,aria,on,fn,cls)=>{const b=document.createElement("button");b.type="button";b.className=cls||"btn sm tb";b.textContent=txt;b.setAttribute("aria-label",aria);if(on!==null)b.setAttribute("aria-pressed",!!on);b.onclick=fn;return b};
+  const sel=document.createElement("select");sel.setAttribute("aria-label","Font – "+lab);
+  for(const[id,name]of CFG.FONTS){const o=document.createElement("option");o.value=id;o.textContent=name;sel.appendChild(o)}
+  sel.value=t.font;sel.onchange=()=>fmtSet(k,{font:sel.value});box.appendChild(sel);
+  const sz=document.createElement("label");sz.className="sz";sz.appendChild(document.createTextNode("Cỡ"));
+  const r=document.createElement("input");r.type="range";r.min=CFG.SIZE_PCT.min;r.max=CFG.SIZE_PCT.max;r.step="5";r.value=t.size;r.setAttribute("aria-label","Cỡ chữ – "+lab+" (%)");
+  const out=document.createElement("output");out.textContent=t.size+"%";
+  r.oninput=()=>{out.textContent=r.value+"%";S.fmt[k]=Object.assign({},S.fmt[k]||{},{size:+r.value});textCache.clear();persist()};
+  sz.appendChild(r);sz.appendChild(out);box.appendChild(sz);
+  for(const[hex,name]of CFG.SWATCH){const b=mk("","Màu "+name+" – "+lab,t.color===hex,()=>fmtSet(k,{color:hex}),"sw");b.style.background=hex;b.title=name;box.appendChild(b)}
+  const pc=document.createElement("input");pc.type="color";pc.value=t.color;pc.title="Bảng màu";pc.setAttribute("aria-label","Bảng màu – "+lab);
+  pc.oninput=()=>{S.fmt[k]=Object.assign({},S.fmt[k]||{},{color:pc.value.toLowerCase()});persist()};pc.onchange=()=>fmtSet(k,{color:pc.value.toLowerCase()});box.appendChild(pc);
+  box.appendChild(mk("B","Chữ đậm – "+lab,t.bold,()=>fmtSet(k,{bold:!t.bold})));
+  if(d.align)for(const[a,txt,nm]of[["left","⇤","Căn trái"],["center","↔","Căn giữa"],["right","⇥","Căn phải"]])box.appendChild(mk(txt,nm+" – "+lab,t.align===a,()=>fmtSet(k,{align:a})));
+  box.appendChild(mk("↺","Về mặc định – "+lab,null,()=>{S.fmt[k]={};textCache.clear();persist();fmtLoad(k);renderFmt(k)}))})}
+renderFmt();
+/* [/F27] */
+
+/* [F37:keoThaLogo] YC-43: kéo logo trên màn xem trước khi bố cục là Hai góc trên / Tự do (logo phải đang hiện ở khung kết quả) */
+let drag=null,swallow=false;
+function stagePt(e){const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*S.W,y:(e.clientY-r.top)/r.height*S.H}}
+function hitLogo(p){for(let i=LOGO_HIT.length-1;i>=0;i--){const h=LOGO_HIT[i];if(p.x>=h.x&&p.x<=h.x+h.w&&p.y>=h.y&&p.y<=h.y+h.h)return h}return null}
+cv.addEventListener("pointerdown",e=>{if(exp||S.logoMode==="row")return;const p=stagePt(e),h=hitLogo(p);if(!h)return;e.preventDefault();swallow=true;
+  drag={l:h.l,dx:p.x-(h.x+h.w/2),dy:p.y-(h.y+h.h/2)};try{cv.setPointerCapture(e.pointerId)}catch(er){}stage.classList.add("dragging")});
+cv.addEventListener("pointermove",e=>{const p=stagePt(e);
+  if(!drag){stage.classList.toggle("drag-logo",!exp&&S.logoMode!=="row"&&!!hitLogo(p));return}
+  const l=drag.l;l.x=clamp((p.x-drag.dx)/S.W*100,0,100);l.y=clamp((p.y-drag.dy)/S.H*100,0,100);logoFix(l);
+  if(S.logoMode!=="free"){S.logoMode="free";renderLogos()}else{const i=LOGOS.indexOf(l),nx=$("logoX"+i),ny=$("logoY"+i);if(nx)nx.value=l.x;if(ny)ny.value=l.y}});
+function dragEnd(){if(!drag)return;drag=null;stage.classList.remove("dragging");saveLogos();persist();renderLogos()}
+cv.addEventListener("pointerup",dragEnd);cv.addEventListener("pointercancel",dragEnd);
+/* bấm vào logo không tính là "Nhấn nút" khi đang mô phỏng */
+stage.addEventListener("click",e=>{if(swallow){swallow=false;e.stopImmediatePropagation()}},true);
+/* [/F37] */
+
+/* [F38:nhayXemTruoc] YC-44: đổi một lựa chọn ở bảng thông số → màn xem trước tự nhảy đến đúng đoạn có lựa chọn đó.
+   Đang ở đúng đoạn thì không nhảy lại (kéo thanh trượt liên tục không bị giật). Không nhảy khi đang export */
+const SEG_ID={preset:null,w:null,h:null,kicker:"result",title:"result",info:"result",actText:"result",invite:"loop",fxList:"press",pkC1:"count",pkC2:"count",fxKey:"count",pkTr:"trans",pkRb:"result"};
+const SEG_PANE={"2":"loop","3":"press","4":"result"};
+function segOf(el){if(!el||!el.closest||el.closest("[data-go],#steps"))return null;const ds=el.closest("[data-seg]");if(ds)return ds.dataset.seg;
+  for(let n=el;n&&n!==document.body;n=n.parentElement)if(n.id&&n.id in SEG_ID)return SEG_ID[n.id];
+  const p=el.closest(".pane");return p?SEG_PANE[p.dataset.pane]||null:null}
+function actBoom(){const A=CFG.ACT;return A.cdStart+A.cdFrom*A.cdStep+A.zeroHold}
+function seekAct(t){if(view!=="act")setView("act");else fxReset();actStart=performance.now()-t*1000;updateBadge()}
+function jumpTo(seg){if(!seg||exp)return;const A=CFG.ACT,b=actBoom(),inAct=view==="act"||(view==="sim"&&simFired),t=inAct?(performance.now()-actStart)/1000:-1;
+  if(seg==="loop"){if(inAct)setView("loop");return}
+  const R={press:[0,A.cdStart,0],count:[A.cdStart-.2,b,A.cdStart-.2],trans:[b-1.2,b+1.5,b-1.2],result:[b+1.7,Infinity,b+1.7]}[seg];
+  if(!R||(t>=R[0]&&t<R[1]))return;seekAct(R[2])}
+{const side=document.querySelector("aside.panel");/* bắt ở pha capture: nút có thể bị dựng lại ngay khi bấm */
+  ["input","change"].forEach(ev=>side.addEventListener(ev,e=>jumpTo(segOf(e.target)),true));
+  side.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("button");if(b&&!b.disabled)jumpTo(segOf(b))},true)}
+/* [/F38] */
+
+/* [F36:theBuoc] 5 thẻ: Sự kiện · Màn chờ · Kích hoạt · Kết quả · Xuất file; nhớ thẻ đang mở trên trình duyệt */
+const TABS=[...document.querySelectorAll("#steps [data-tab]")];
+function setTab(k,focus){k=String(clamp(Math.round(+k)||1,1,TABS.length));
+  TABS.forEach(b=>{const on=b.dataset.tab===k;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  document.querySelectorAll("aside .pane").forEach(p=>p.hidden=p.dataset.pane!==k);store.set("bnkt.tab",k)}
+TABS.forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+$("steps").addEventListener("keydown",e=>{const i=TABS.findIndex(b=>b.getAttribute("aria-selected")==="true");let j=null;
+  if(e.key==="ArrowRight")j=(i+1)%TABS.length;else if(e.key==="ArrowLeft")j=(i-1+TABS.length)%TABS.length;else if(e.key==="Home")j=0;else if(e.key==="End")j=TABS.length-1;
+  if(j!==null){e.preventDefault();setTab(j+1,true)}});
+document.querySelectorAll("aside [data-go]").forEach(b=>b.onclick=()=>{setTab(b.dataset.go);const n=$("steps");if(n.getBoundingClientRect().top<0)n.scrollIntoView({block:"start"})});
+setTab(store.get("bnkt.tab")||1);
+/* [/F36] */
+
+/* [F39:amThanh] YC-40: 3 bản nhạc (chờ · đếm ngược · chào mừng). "Có sẵn" = tool tự tạo bằng Web Audio, không vướng bản quyền;
+   nhạc thư viện đọc từ assets (claude.ai) hoặc thu-vien.json (GitHub). Xem trước: bật bằng nút Tiếng.
+   Export: ghép tiếng vào file (MP4 AAC) qua MediaStreamDestination, cùng mốc thời gian với khung hình */
+const AK={loop:["audLoop","volLoop"],count:["audCount","volCount"],welcome:["audWelcome","volWelcome"]};
+const ASLOT={loop:["loop"],count:["count","press"],welcome:["welcome","boom"]};
+const AHINT={loop:"Phát lặp suốt File 1. Nhạc có sẵn dài đúng 1 vòng nền nên nối liền mạch khi máy LED phát lặp.",
+  count:"Bắt đầu lúc nhấn nút; tiếng nổ trùng đúng lúc bùng nổ trên hình (giây 6,2 của File 2).",
+  welcome:"Phát từ lúc bùng nổ đến hết File 2, tự nhỏ dần 1 giây cuối."};
+let AC=null,aMaster=null,aSpk=null,aDest=null,aOn=false,aSess=null,aTest=null;const ABUF=new Map();
+/* Nhạc người dùng tự tải từ máy: chỉ giữ trong phiên (giống video nền từ máy). LOC[k]={name,p (Promise AudioBuffer),boomAt}. Tải lại trang → quay về bộ có sẵn */
+const LOC={};
+function audList(k){return byKind("audio").filter(d=>ASLOT[k].includes((d.opts&&d.opts.slot)||"loop"))}
+function audSel(k){const id=S[AK[k][0]];if(id==="bi")return"bi";if(id==="local")return LOC[k]?"local":"bi";return id&&audList(k).some(d=>d.id===id)?id:""}
+function audHas(kind){return kind==="loop"?!!audSel("loop"):!!(audSel("count")||audSel("welcome"))}
+function audCtx(){if(!AC){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;AC=new C();aMaster=AC.createGain();aSpk=AC.createGain();aSpk.gain.value=aOn?1:0;aMaster.connect(aSpk);aSpk.connect(AC.destination)}
+  if(AC.state==="suspended")AC.resume().catch(()=>{});return AC}
+/* Bộ nhạc có sẵn: dựng bằng OfflineAudioContext theo đúng nhịp CFG.ACT và độ dài 1 vòng nền */
+async function synth(k){const sr=44100,b=actBoom(),A=CFG.ACT;
+  const len=k==="loop"?loopDur():k==="count"?b+2.2:Math.max(8,S.actDur-b+1),tail=k==="loop"?3:0;
+  const O=new OfflineAudioContext(2,Math.ceil((len+tail)*sr),sr),out=O.createGain();out.gain.value=.8;out.connect(O.destination);
+  const dl=O.createDelay(1),fb=O.createGain(),wet=O.createGain();dl.delayTime.value=.33;fb.gain.value=.3;wet.gain.value=.28;out.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(O.destination);
+  const hz=m=>440*Math.pow(2,(m-69)/12);
+  const tone=(m,t0,d,type,vol,att,rel,cut)=>{const o=O.createOscillator(),g=O.createGain();o.type=type;o.frequency.value=hz(m);let nd=o;
+    if(cut){const f=O.createBiquadFilter();f.type="lowpass";f.frequency.value=cut;o.connect(f);nd=f}
+    nd.connect(g);g.connect(out);g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(vol,t0+att);g.gain.setValueAtTime(vol,Math.max(t0+att,t0+d-rel));g.gain.linearRampToValueAtTime(0,t0+d);o.start(t0);o.stop(t0+d+.05)};
+  const nbuf=d=>{const n=Math.ceil(d*sr),bf=O.createBuffer(1,n,sr),ch=bf.getChannelData(0);for(let i=0;i<n;i++)ch[i]=Math.random()*2-1;return bf};
+  const noise=(t0,d,v0,v1,f0,f1,type)=>{const s=O.createBufferSource();s.buffer=nbuf(d);const f=O.createBiquadFilter();f.type=type;f.frequency.setValueAtTime(f0,t0);f.frequency.exponentialRampToValueAtTime(f1,t0+d);
+    const g=O.createGain();g.gain.setValueAtTime(v0,t0);g.gain.exponentialRampToValueAtTime(v1,t0+d);s.connect(f);f.connect(g);g.connect(out);s.start(t0);s.stop(t0+d)};
+  const kick=(t0,v)=>{const o=O.createOscillator(),g=O.createGain();o.frequency.setValueAtTime(120,t0);o.frequency.exponentialRampToValueAtTime(38,t0+.4);g.gain.setValueAtTime(v,t0);g.gain.exponentialRampToValueAtTime(.001,t0+.55);o.connect(g);g.connect(out);o.start(t0);o.stop(t0+.6)};
+  if(k==="loop"){/* nền công nghệ êm: 4 hợp âm Am–F–C–G mỗi vòng, rải nốt nhẹ */
+    const CH=[[57,60,64],[53,57,60],[48,52,55],[55,59,62]],seg=len/4;
+    CH.forEach((c,i)=>{const t0=i*seg;c.forEach(m=>{tone(m,t0,seg+1.2,"triangle",.08,.8,1.2,1600);tone(m+12,t0,seg+1.2,"sine",.03,1,1.2)});tone(c[0]-12,t0,seg+.8,"sine",.11,.3,.8);
+      const st=Math.max(4,Math.round(seg/.25));for(let j=0;j<st;j++)tone(c[j%3]+24,t0+j*seg/st,.2,"sine",.045,.005,.17)})}
+  else if(k==="count"){/* nhịp tim + tiếng bíp mỗi số, ống nén dâng dần, tiếng nổ tại bùng nổ */
+    for(let i=0;i<=A.cdFrom;i++){const t0=A.cdStart+i*A.cdStep,last=i===A.cdFrom;tone(last?86:74+i*2,t0,.24,"square",.05,.005,.2,3200);kick(t0,.55)}
+    tone(45,.05,.9,"sawtooth",.05,.02,.8,900);
+    noise(A.cdStart+1,b-A.cdStart-1,.004,.22,300,7000,"bandpass");
+    kick(b,1);tone(33,b,2,"sine",.35,.01,1.6);noise(b,1.8,.7,.001,5000,180,"lowpass");[72,76,79,84].forEach((m,i)=>tone(m,b+.02*i,1.6,"triangle",.06,.01,1.4,5000))}
+  else{/* kèn chào mừng: hợp âm Đô trưởng, giai điệu đi lên, nền ngân dài */
+    const br=(ms,t0,d,v)=>ms.forEach(m=>tone(m,t0,d,"sawtooth",v,.02,.25,2600));
+    kick(0,.7);br([48,60,64,67],0,.42,.085);br([48,60,64,67],.45,.42,.085);br([53,60,65,69],.9,.6,.085);br([55,62,67,71],1.5,.6,.085);br([48,60,64,67,72],2.1,2.4,.09);
+    [67,72,76,79,84].forEach((m,i)=>tone(m,2.1+i*.18,.9,"triangle",.05,.01,.6,6000));
+    for(let t0=4.4;t0<len;t0+=4){[[48,55,64],[53,57,65]].forEach((c,j)=>c.forEach(m=>tone(m,t0+j*2,2.6,"triangle",.06,.5,1.2,1800)));for(let j=0;j<16;j++)tone([72,76,79,84][j%4],t0+j*.25,.2,"sine",.035,.005,.17)}}
+  const r=await O.startRendering();if(!tail)return r;
+  /* gập phần đuôi vào đầu vòng → nối vòng không bị ngắt tiếng */
+  const N=Math.round(len*sr),o=new AudioBuffer({length:N,numberOfChannels:2,sampleRate:sr});
+  for(let c=0;c<2;c++){const a=r.getChannelData(c),z=o.getChannelData(c);z.set(a.subarray(0,N));for(let i=N;i<a.length&&i-N<N;i++)z[i-N]+=a[i]}
+  return o}
+function audBuf(k){const sel=audSel(k);if(!sel)return Promise.resolve(null);const c=audCtx();if(!c)return Promise.resolve(null);if(sel==="local")return LOC[k].p;
+  const key=sel==="bi"?"bi:"+k+":"+(k==="loop"?loopDur().toFixed(2):k==="count"?actBoom():S.actDur):"lib:"+sel;
+  if(!ABUF.has(key)){const d=sel!=="bi"&&libDoc(sel);
+    ABUF.set(key,(sel==="bi"?synth(k):fetch(assetURL(d)).then(r=>{if(!r.ok)throw new Error("http");return r.arrayBuffer()}).then(a=>c.decodeAudioData(a))).catch(e=>{console.warn("audio",k,e);ABUF.delete(key);return null}))}
+  return ABUF.get(key)}
+function audStop(){if(aSess){aSess.nodes.forEach(n=>{try{n.stop()}catch(e){}});aSess=null}}
+function audPlay(s,k,buf){const n=AC.currentTime,src=AC.createBufferSource(),g=AC.createGain();src.buffer=buf;g.gain.value=S[AK[k][1]]/100;src.connect(g);g.connect(aMaster);s.nodes.push(src);s.gains[k]=g;
+  if(k==="loop"){src.loop=true;src.start(n,((n-s.base)%buf.duration+buf.duration)%buf.duration);return}
+  const b=actBoom();let st=b;if(k==="count"){const sel=audSel("count"),d=sel!=="bi"&&sel!=="local"&&libDoc(sel),ba=sel==="local"?LOC.count.boomAt:d&&d.opts&&isFinite(+d.opts.boomAt)?+d.opts.boomAt:b;st=b-ba}
+  const when=s.base+st,end=s.base+S.actDur;if(end<=n)return;const off=Math.max(0,n-when);if(off>=buf.duration)return;
+  src.start(Math.max(n,when),off);if(k==="welcome"){g.gain.setValueAtTime(g.gain.value,Math.max(n,end-CFG.AUDIO.fade));g.gain.linearRampToValueAtTime(0,end)}
+  try{src.stop(end+.02)}catch(e){}}
+/* gọi mỗi khung hình từ [F11]: dựng lại phiên phát khi đổi pha, khi tua/phát lại, khi bắt đầu/kết thúc export */
+function audTick(phase,t){if(!AC||!(aOn||aDest)){if(aSess)audStop();return}
+  const n=AC.currentTime,mode=exp?"exp":"pv";
+  if(aSess&&aSess.phase===phase&&aSess.mode===mode){if(phase!=="act"||t>=S.actDur-.02||Math.abs((n-aSess.base)-t)<=.25)return}
+  audStop();const s={phase,mode,base:n-t,nodes:[],gains:{}};aSess=s;
+  (phase==="loop"?["loop"]:["count","welcome"]).forEach(k=>audBuf(k).then(buf=>{if(aSess===s&&buf)audPlay(s,k,buf)}))}
+/* Trộn sẵn toàn bộ tiếng cho xuất từng khung [F41]: cùng mốc như audPlay, base = 0 */
+async function audMix(kind,T){const ks=kind==="loop"?["loop"]:["count","welcome"],bufs=await Promise.all(ks.map(audBuf));if(!bufs.some(Boolean))return null;
+  const sr=48000,O=new OfflineAudioContext(2,Math.max(1,Math.ceil(T*sr)),sr),b=actBoom();
+  ks.forEach((k,i)=>{const buf=bufs[i];if(!buf)return;const s=O.createBufferSource(),g=O.createGain();s.buffer=buf;g.gain.value=S[AK[k][1]]/100;s.connect(g);g.connect(O.destination);
+    if(k==="loop"){s.loop=true;s.start(0);return}
+    let st=b;if(k==="count"){const sel=audSel("count"),d=sel!=="bi"&&sel!=="local"&&libDoc(sel),ba=sel==="local"?LOC.count.boomAt:d&&d.opts&&isFinite(+d.opts.boomAt)?+d.opts.boomAt:b;st=b-ba}
+    if(st>=0)s.start(st);else if(-st<buf.duration)s.start(0,-st);else return;
+    if(k==="welcome"){const f=CFG.AUDIO.fade;g.gain.setValueAtTime(g.gain.value,Math.max(st,T-f));g.gain.linearRampToValueAtTime(0,T)}});
+  return O.startRendering()}
+async function audPrepare(kind){if(!audCtx())return;await Promise.all((kind==="loop"?["loop"]:["count","welcome"]).map(audBuf))}
+async function audExportTrack(){const c=audCtx();if(!c||!c.createMediaStreamDestination)return null;try{await c.resume()}catch(e){}
+  aDest=c.createMediaStreamDestination();aMaster.connect(aDest);audStop();return aDest.stream.getAudioTracks()[0]||null}
+function audExportEnd(){if(aDest){try{aMaster.disconnect(aDest)}catch(e){}aDest=null}audStop()}
+/* Nghe thử 1 bản từ đầu (không ghi vào file export) */
+function audTestStop(){if(aTest){try{aTest.src.stop()}catch(e){}const b=aTest.btn;aTest=null;if(b){b.textContent="▶ Nghe thử";b.classList.remove("on")}}}
+function audTestBtn(k,getBuf){const b=document.createElement("button");b.type="button";b.className="btn sm";b.textContent="▶ Nghe thử";
+  b.onclick=async()=>{if(aTest&&aTest.btn===b){audTestStop();return}audTestStop();const c=audCtx();if(!c){b.textContent="Trình duyệt không phát được";return}
+    b.textContent="Đang tải…";const buf=await getBuf();if(!buf){b.textContent="Không đọc được file";setTimeout(()=>b.textContent="▶ Nghe thử",2500);return}
+    const src=c.createBufferSource(),g=c.createGain();src.buffer=buf;g.gain.value=S[AK[k][1]]/100;src.connect(g);g.connect(c.destination);src.start();
+    aTest={src,btn:b};b.textContent="■ Dừng";b.classList.add("on");src.onended=()=>{if(aTest&&aTest.src===src)audTestStop()}};return b}
+function renderAud(){document.querySelectorAll("[data-aud]").forEach(box=>{const k=box.dataset.aud;if(!AK[k])return;const[sk,vk]=AK[k];box.textContent="";
+  const r1=document.createElement("div");r1.className="r";const sel=document.createElement("select");sel.setAttribute("aria-label","Chọn "+CFG.AUDIO_SLOT[k]);
+  const add=(v,t)=>{const o=document.createElement("option");o.value=v;o.textContent=t;sel.appendChild(o)};
+  add("","Không dùng");add("bi",CFG.AUDIO.names[k]);audList(k).forEach(d=>add(d.id,"Thư viện · "+(d.name||"(không tên)")));if(LOC[k])add("local","Từ máy · "+LOC[k].name);sel.value=audSel(k);
+  sel.onchange=()=>{S[sk]=sel.value;persist();audStop();audTestStop();renderAud()};r1.appendChild(sel);r1.appendChild(audTestBtn(k,()=>audBuf(k)));box.appendChild(r1);
+  /* người dùng tự tải nhạc từ máy */
+  const r2=document.createElement("div");r2.className="r";const fi=document.createElement("input");fi.type="file";fi.accept=CFG.ACCEPT.audio+",.mp3,.wav,.m4a,.aac";fi.className="sr";fi.setAttribute("aria-label","Chọn file nhạc từ máy – "+CFG.AUDIO_SLOT[k]);
+  const up=document.createElement("button");up.type="button";up.className="btn sm";up.textContent=LOC[k]?"Đổi nhạc từ máy…":"Tải nhạc từ máy…";up.onclick=()=>fi.click();
+  const em=document.createElement("span");em.className="hint";
+  fi.onchange=()=>{const f=fi.files[0];if(!f)return;const ext=(f.name.split(".").pop()||"").toLowerCase();
+    if(!/^audio\//.test(f.type)&&!["mp3","wav","m4a","aac"].includes(ext)){em.textContent="File không phải âm thanh. Chọn MP3, WAV hoặc M4A.";return}
+    if(f.size>CFG.LIB_MAX_MB*1048576){em.textContent="File "+(f.size/1048576).toFixed(1)+" MB vượt giới hạn "+CFG.LIB_MAX_MB+" MB. Cắt ngắn hoặc nén lại.";return}
+    const c=audCtx();if(!c){em.textContent="Trình duyệt này không phát được âm thanh.";return}
+    em.textContent="Đang đọc file…";const p=f.arrayBuffer().then(a=>c.decodeAudioData(a)).catch(()=>null);
+    p.then(buf=>{if(!buf){if(LOC[k]&&LOC[k].p===p){delete LOC[k];if(S[sk]==="local"){S[sk]="bi";persist()}}renderAud();const e2=document.querySelector('[data-aud="'+k+'"] .r .hint');if(e2)e2.textContent="Không đọc được file này. Thử chuyển sang MP3 rồi tải lại.";return}
+      if(LOC[k]&&LOC[k].p===p){LOC[k].dur=buf.duration;renderAud()}});
+    LOC[k]={name:f.name.replace(/\.[^.]+$/,"").slice(0,60),p,boomAt:LOC[k]?LOC[k].boomAt:actBoom()};S[sk]="local";persist();audStop();audTestStop();renderAud()};
+  r2.appendChild(up);r2.appendChild(fi);r2.appendChild(em);box.appendChild(r2);
+  if(LOC[k])em.textContent=(LOC[k].dur?"Dài "+secVN(LOC[k].dur)+" · ":"")+"chỉ dùng trong lần mở này, tải lại trang phải chọn lại.";
+  if(k==="count"&&audSel(k)==="local"){const bl=document.createElement("label");bl.className="f";bl.textContent="Mốc tiếng nổ trong file của bạn (giây tính từ đầu file)";
+    const bi=document.createElement("input");bi.type="number";bi.min="0";bi.max="60";bi.step="0.1";bi.value=LOC.count.boomAt;bi.onchange=()=>{LOC.count.boomAt=clamp(+bi.value||0,0,60);bi.value=LOC.count.boomAt;audStop()};bl.appendChild(bi);box.appendChild(bl)}
+  const v=document.createElement("label");v.className="vol";v.appendChild(document.createTextNode("Âm lượng"));const rg=document.createElement("input");rg.type="range";rg.min="0";rg.max="100";rg.step="5";rg.value=S[vk];rg.setAttribute("aria-label","Âm lượng "+CFG.AUDIO_SLOT[k]);
+  const out=document.createElement("output");out.textContent=S[vk]+"%";rg.oninput=()=>{S[vk]=+rg.value;out.textContent=rg.value+"%";persist();if(aSess&&aSess.gains[k])aSess.gains[k].gain.value=S[vk]/100};
+  v.appendChild(rg);v.appendChild(out);box.appendChild(v);
+  const h=document.createElement("span");h.className="hint";h.textContent=AHINT[k]+(audList(k).length?"":staticLib?" Thư viện chưa có nhạc loại này.":db?" Ban Truyền thông có thể tải thêm nhạc ở khu Quản trị.":"");box.appendChild(h)});
+  if($("audAdmList")&&!$("adminArea").hidden)renderAudAdm();audExpUI()}
+function renderAudAdm(){const box=$("audAdmList");box.textContent="";
+  for(const k of["loop","count","welcome"]){const h=document.createElement("div");h.className="kind";h.style.marginTop="6px";h.textContent=CFG.AUDIO_SLOT[k].toUpperCase();box.appendChild(h);
+    const row=(name,meta,getBuf)=>{const r=document.createElement("div");r.className="res-item";const th=document.createElement("div");th.className="thumb";th.textContent="♪";r.appendChild(th);
+      const inf=document.createElement("div");inf.style.minWidth="0";const nm=document.createElement("div");nm.className="nm";nm.textContent=name;inf.appendChild(nm);const mt=document.createElement("div");mt.className="hint";mt.textContent=meta;inf.appendChild(mt);r.appendChild(inf);
+      r.appendChild(audTestBtn(k,getBuf));box.appendChild(r)};
+    row(CFG.AUDIO.names[k],"Tool tự tạo, không bản quyền"+(k==="loop"?" · dài 1 vòng nền":k==="count"?" · tiếng nổ ở giây "+actBoom().toLocaleString("vi-VN"):""),()=>{const key="bi:"+k+":"+(k==="loop"?loopDur().toFixed(2):k==="count"?actBoom():S.actDur);if(!ABUF.has(key))ABUF.set(key,synth(k).catch(()=>{ABUF.delete(key);return null}));return ABUF.get(key)});
+    audList(k).forEach(d=>row(d.name||"(không tên)","Thư viện · "+(d.sizeBytes?(d.sizeBytes/1048576).toFixed(1)+" MB":"")+(d.opts&&d.opts.boomAt!=null?" · tiếng nổ ở giây "+d.opts.boomAt:""),()=>{const key="lib:"+d.id;if(!ABUF.has(key))ABUF.set(key,fetch(assetURL(d)).then(r=>r.arrayBuffer()).then(a=>audCtx().decodeAudioData(a)).catch(()=>{ABUF.delete(key);return null}));return ABUF.get(key)}))}}
+function audExpUI(){const c=$("audExp");c.checked=!!S.audExp;const m=pickMime(true)||"";
+  $("audExpHint").textContent=!S.audExp?"File xuất không có tiếng; nhạc phát riêng tại sự kiện.":/mp4a/.test(m)?"File 1 kèm nhạc màn chờ; File 2 kèm nhạc đếm ngược + nhạc chào mừng. Tiếng AAC "+CFG.AUDIO.kbps+" kbps trong MP4.":/opus/.test(m)?"Trình duyệt này chỉ ghi được tiếng trong WebM. Dùng Chrome/Edge bản mới để có MP4 kèm tiếng.":"Trình duyệt này không ghi được tiếng kèm video."}
+$("audExp").onchange=e=>{S.audExp=e.target.checked;persist();audExpUI()};
+function sndUI(){const b=$("sndBtn");b.setAttribute("aria-pressed",aOn);b.classList.toggle("on",aOn);b.textContent=aOn?"🔊 Tiếng: bật":"🔇 Tiếng: tắt"}
+$("sndBtn").onclick=()=>{aOn=!aOn;if(aOn&&!audCtx()){aOn=false;$("modeHint").textContent="Trình duyệt này không phát được âm thanh."}if(aSpk)aSpk.gain.value=aOn?1:0;audStop();sndUI()};
+renderAud();sndUI();
+/* [/F39] */
+/* [F41:xuatTungKhung] Xuất từng khung (WebCodecs + mp4-muxer [S26]): vẽ đủ mọi khung theo đúng giây, không phụ thuộc tốc độ máy
+   → đủ 100% khung, fps cố định, H.264 High (level tự chọn theo khổ), bitrate CFG.EXPORT, tiếng AAC (Opus nếu trình duyệt không có AAC).
+   Video nền / hiệu ứng được tua đúng giây trước mỗi khung: lượt vẽ 1 (OFF.prep) ghi điểm tua, chờ tua xong, lượt vẽ 2 vẽ thật.
+   Trình duyệt không hỗ trợ → [F12] ghi thời gian thực như cũ */
+let OFF=null,offx=null;
+function offOK(){return typeof VideoEncoder!=="undefined"&&typeof VideoFrame!=="undefined"&&typeof AudioData!=="undefined"&&!!window.Mp4Muxer}
+function expBitrate(){const E=CFG.EXPORT;return Math.round(clamp(S.W*S.H*S.fps*E.bpp,E.min,E.max))}
+/* H.264 High, level nhỏ nhất đủ cho khổ × fps × bitrate (đầu phát LED đọc level thấp dễ hơn) */
+function avcCodec(W,H,fps,br){const mb=Math.ceil(W/16)*Math.ceil(H/16);
+  for(const[l,fs,mbps,b]of[[0x28,8192,245760,25e6],[0x2a,8704,522240,62.5e6],[0x32,22080,589824,168.75e6],[0x33,36864,983040,300e6],[0x34,36864,2073600,300e6]])
+    if(mb<=fs&&mb*fps<=mbps&&br<=b)return"avc1.6400"+l.toString(16);return"avc1.640034"}
+function seekV(v,tgt){return new Promise(res=>{if(!v.getAttribute("src"))return res();const d=v.duration;if(isFinite(d))tgt=clamp(tgt,0,Math.max(0,d-.001));
+  if(Math.abs(v.currentTime-tgt)<.2/S.fps&&v.readyState>=2)return res();
+  let done=false;const fin=()=>{if(done)return;done=true;v.removeEventListener("seeked",fin);clearTimeout(to);res()};const to=setTimeout(fin,4000);
+  v.addEventListener("seeked",fin);try{v.pause();v.currentTime=tgt}catch(e){fin()}})}
+const yieldUI=()=>new Promise(r=>{const ch=new MessageChannel();ch.port1.onmessage=()=>r();ch.port2.postMessage(0)});
+async function exportOffline(kind){
+  const em=$("expMsg"),W=S.W,H=S.H,fps=S.fps,P=f1Plan(),T=kind==="loop"?P.T:S.actDur,N=Math.round(T*fps),br=expBitrate();
+  const vc={codec:avcCodec(W,H,fps,br),width:W,height:H,bitrate:br,framerate:fps,latencyMode:"quality",avc:{format:"avc"}};
+  offx={kind,cancel:false};
+  let ok=false;try{ok=(await VideoEncoder.isConfigSupported(vc)).supported}catch(e){}
+  if(!ok){offx=null;console.warn("Không xuất từng khung được ở",vc.codec,W+"x"+H);return false}
+  const snd=S.audExp&&audHas(kind);let ac=null,abuf=null;
+  if(snd){try{abuf=await audMix(kind,T)}catch(e){abuf=null}
+    if(abuf)for(const c of["mp4a.40.2","opus"]){const cfg={codec:c,sampleRate:abuf.sampleRate,numberOfChannels:2,bitrate:CFG.AUDIO.kbps*1000};try{if((await AudioEncoder.isConfigSupported(cfg)).supported){ac=cfg;break}}catch(e){}}}
+  lockUI(true);audStop();audTestStop();fxReset();try{video.pause()}catch(e){}for(const k in PV)try{PV[k].pause()}catch(e){}
+  $("recBox").hidden=false;$("recCancel").hidden=false;$("recBar").style.width="0%";$("badge").textContent="ĐANG XUẤT · "+W+"×"+H;
+  const title=(kind==="loop"?"File 1 · Màn chờ ("+P.n+" vòng, "+secVN(P.T)+")":"File 2 · Kích hoạt")+" · "+W+"×"+H+" · "+fps+" fps";$("recTitle").textContent="Đang chuẩn bị: "+title;
+  const warn=[];if(W*H<1920*1080)warn.push("Khổ "+W+"×"+H+" thấp hơn Full HD; app xuất đúng pixel màn LED đã chọn.");if(snd&&!ac)warn.push("Trình duyệt này không mã hóa được tiếng, file sẽ không có tiếng.");
+  msg(em,warn.join(" "),warn.length?"warn":"");
+  /* ghép MP4 thành nhiều khúc (không cần 1 vùng nhớ liền khối); muxer ghi đè lại phần đầu khi kết thúc */
+  const parts=[];let end=0;
+  const target=new Mp4Muxer.StreamTarget({chunked:true,onData:(d,pos)=>{const len=d.length;
+    if(pos<end){const e2=Math.min(pos+len,end);for(const p of parts){const s=Math.max(pos,p.pos),e=Math.min(e2,p.pos+p.b.length);if(s<e)p.b.set(d.subarray(s-pos,e-pos),s-p.pos)}
+      if(pos+len>end){parts.push({pos:end,b:d.slice(end-pos)});end=pos+len}}
+    else{if(pos>end){parts.push({pos:end,b:new Uint8Array(pos-end)});end=pos}parts.push({pos,b:d.slice()});end+=len}}});
+  const mux=new Mp4Muxer.Muxer({target,video:{codec:"avc",width:W,height:H,frameRate:fps},audio:ac?{codec:ac.codec==="opus"?"opus":"aac",numberOfChannels:2,sampleRate:ac.sampleRate}:undefined,fastStart:false,firstTimestampBehavior:"offset"});
+  let err=null;const venc=new VideoEncoder({output:(c,m)=>mux.addVideoChunk(c,m),error:e=>{err=e}});venc.configure(vc);
+  const t0=performance.now(),gop=Math.max(1,Math.round(fps*CFG.EXPORT.gop));let fail=null,done=0;
+  try{for(let i=0;i<N;i++){if(offx.cancel||err)break;const t=i/fps;
+      OFF={prep:true,seek:[]};draw(kind,t);if(OFF.seek.length)await Promise.all(OFF.seek.map(([v,x])=>seekV(v,x)));OFF.prep=false;draw(kind,t);
+      const fr=new VideoFrame(cv,{timestamp:Math.round(i*1e6/fps),duration:Math.round(1e6/fps)});venc.encode(fr,{keyFrame:i%gop===0});fr.close();done=i+1;
+      while(venc.encodeQueueSize>3&&!err)await new Promise(r=>venc.addEventListener("dequeue",r,{once:true}));
+      if(i%3===0||i===N-1){const pc=done/N,el=(performance.now()-t0)/1000;$("recBar").style.width=(pc*100).toFixed(1)+"%";
+        $("recTitle").textContent="Đang xuất từng khung: "+title+" · "+Math.round(pc*100)+"%"+(i>fps&&pc<1?" · còn khoảng "+secVN(Math.max(1,el/pc-el)):"");$("tc").textContent=fmt(t)+" / "+fmt(T);await yieldUI()}}
+    if(!offx.cancel&&!err){$("recTitle").textContent="Đang hoàn tất file…";await venc.flush();
+      if(ac){const aenc=new AudioEncoder({output:(c,m)=>mux.addAudioChunk(c,m),error:e=>{err=e}});aenc.configure(ac);
+        const sr=abuf.sampleRate,n=abuf.length,L0=abuf.getChannelData(0),R0=abuf.getChannelData(1),F=1024;
+        for(let s=0;s<n&&!err;s+=F){const m=Math.min(F,n-s),data=new Float32Array(m*2);data.set(L0.subarray(s,s+m),0);data.set(R0.subarray(s,s+m),m);
+          const ad=new AudioData({format:"f32-planar",sampleRate:sr,numberOfFrames:m,numberOfChannels:2,timestamp:Math.round(s*1e6/sr),data});aenc.encode(ad);ad.close();
+          if(aenc.encodeQueueSize>20)await new Promise(r=>aenc.addEventListener("dequeue",r,{once:true}))}
+        await aenc.flush();aenc.close()}
+      if(err)throw err;mux.finalize()}}
+  catch(e){fail=e}
+  try{venc.close()}catch(e){}
+  OFF=null;const cancel=offx.cancel;offx=null;lockUI(false);$("recBox").hidden=true;$("recCancel").hidden=true;setView(view);
+  if(cancel){msg(em,"Đã hủy xuất file.","warn");return true}
+  const bad=fail||err;if(bad||done<N){console.error(bad);msg(em,"Xuất từng khung bị lỗi"+(bad&&bad.message?" ("+bad.message+")":"")+". Thử khổ nhỏ hơn, đóng bớt tab rồi export lại.","bad");return true}
+  const blob=new Blob(parts.map(p=>p.b),{type:"video/mp4"}),sec=(performance.now()-t0)/1000;
+  const name=slug(S.title.split("\n").join(" "))+"_"+(kind==="loop"?"01-man-cho":"02-kich-hoat")+"_"+S.n+"nut_"+W+"x"+H+".mp4";
+  lastFile={name,blob};logEvent(kind==="loop"?"export_loop":"export_act",{W,H,n:S.n});
+  await saveFile(lastFile);
+  const q="Chất lượng: "+W+"×"+H+(W*H>=1920*1080?" (đạt Full HD)":" (thấp hơn Full HD, đúng pixel màn LED)")+" · đủ "+N+"/"+N+" khung · "+fps+" fps cố định · H.264 "+(br/1e6).toFixed(0)+" Mbps"+
+    (ac?" · tiếng "+(ac.codec==="opus"?"Opus":"AAC")+" "+CFG.AUDIO.kbps+" kbps":snd?" · không tiếng":"")+" · xuất trong "+secVN(sec)+"."+
+    (ac&&ac.codec==="opus"?" Lưu ý: trình duyệt này không có AAC nên tiếng là Opus; một số máy phát LED không đọc được. Nên export trên Chrome/Edge Windows để có AAC.":"");
+  em.hidden=false;em.textContent=(em.textContent?em.textContent+" ":"")+q;return true}
+$("recCancel").onclick=()=>{if(offx)offx.cancel=true};
+if(offOK())$("fmtHint").textContent="Định dạng: MP4 (H.264 High). Xuất từng khung: đủ 100% khung, fps cố định, không phụ thuộc tốc độ máy; bitrate khoảng 20 Mbps ở 1920×1080 · 25 fps. Máy yếu chỉ mất thời gian lâu hơn, có thể bấm Hủy.";
+/* [/F41] */
+
+
+/* [F24:xacThuc] YC-01: màn đăng nhập, đổi mật khẩu lần đầu. Bản giao diện: kiểm tra theo danh sách tài khoản lưu trên trình duyệt (CFG.AUTH.key).
+   Mật khẩu chỉ lưu dạng băm PBKDF2-SHA256 + muối. CFG.AUTH.enforce=true mới khóa tool (chỉ bật khi đã nối máy chủ) */
+const ACC={list(){try{const a=JSON.parse(store.get(CFG.AUTH.key)||"[]");return Array.isArray(a)?a.filter(x=>x&&x.u):[]}catch(e){return[]}},save(a){return store.set(CFG.AUTH.key,JSON.stringify(a))}};
+const hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+async function pwHash(pw,salt){const s=window.crypto&&crypto.subtle;if(!s)throw new Error("nocrypto");const te=new TextEncoder();
+  const k=await s.importKey("raw",te.encode(pw),"PBKDF2",false,["deriveBits"]);return hex(await s.deriveBits({name:"PBKDF2",salt:te.encode(salt),iterations:100000,hash:"SHA-256"},k,256))}
+function rndSalt(){const a=new Uint8Array(16);crypto.getRandomValues(a);return hex(a)}
+function genPass(){const cs="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789",a=new Uint32Array(10);crypto.getRandomValues(a);let p=[...a].map(x=>cs[x%cs.length]).join("");
+  if(!/\d/.test(p))p=p.slice(0,9)+"7";if(!/[a-z]/i.test(p))p="k"+p.slice(1);return p}
+function passOK(p){return p.length>=CFG.AUTH.minPass&&/[a-zA-Z]/.test(p)&&/\d/.test(p)}
+const CRYPTO_ERR="Trình duyệt chặn chức năng mã hóa mật khẩu. Mở trang bằng Chrome/Edge bản mới qua link https.";
+let lgAcc=null;
+function lgReset(){lgAcc=null;$("lgStep1").hidden=false;$("lgStep2").hidden=true;$("lgBtn").textContent="Đăng nhập";$("lgTitle").textContent="Đăng nhập";$("lgPass").value=""}
+function openLogin(){lgReset();msg($("lgMsg"),"");$("lgDemo").hidden=CFG.AUTH.enforce;$("lgClose").hidden=CFG.AUTH.enforce;$("loginBox").hidden=false;$("lgUser").focus()}
+function closeLogin(){$("loginBox").hidden=true;lgReset()}
+$("lgClose").onclick=closeLogin;
+$("loginBox").addEventListener("keydown",e=>{if(e.key==="Escape"&&!CFG.AUTH.enforce)closeLogin()});
+$("lgForm").onsubmit=async e=>{e.preventDefault();const m=$("lgMsg");
+  try{if(!lgAcc){const u=$("lgUser").value.trim().toLowerCase(),p=$("lgPass").value,acc=ACC.list().find(x=>x.u===u);
+      if(!acc||await pwHash(p,acc.salt)!==acc.hash){msg(m,"Sai tên đăng nhập hoặc mật khẩu.","bad");return}
+      if(acc.locked){msg(m,"Tài khoản đang bị khóa. Liên hệ Ban Truyền thông.","bad");return}
+      if(acc.must){lgAcc=acc;$("lgStep1").hidden=true;$("lgStep2").hidden=false;$("lgTitle").textContent="Đặt mật khẩu mới";$("lgBtn").textContent="Lưu mật khẩu mới";msg(m,"Chào "+acc.name+". Đây là lần đăng nhập đầu, hãy đặt mật khẩu riêng.","warn");$("lgNew").focus();return}
+      loginDone(acc)}
+    else{const p1=$("lgNew").value,p2=$("lgNew2").value;
+      if(!passOK(p1)){msg(m,"Mật khẩu mới cần tối thiểu "+CFG.AUTH.minPass+" ký tự, có cả chữ và số.","bad");return}
+      if(p1!==p2){msg(m,"Hai lần nhập mật khẩu mới không khớp.","bad");return}
+      const a=ACC.list(),acc=a.find(x=>x.u===lgAcc.u);if(!acc){msg(m,"Tài khoản không còn tồn tại.","bad");lgReset();return}
+      acc.salt=rndSalt();acc.hash=await pwHash(p1,acc.salt);acc.must=false;ACC.save(a);$("lgNew").value=$("lgNew2").value="";loginDone(acc)}}
+  catch(er){msg(m,CRYPTO_ERR,"bad")}};
+function loginDone(acc){const a=ACC.list(),x=a.find(y=>y.u===acc.u);if(x){x.lastLogin=new Date().toISOString();ACC.save(a)}
+  if(CFG.AUTH.enforce){try{sessionStorage.setItem("bnkt.sess",acc.u)}catch(e){}$("roleBadge").textContent=acc.name+" · "+acc.unit;closeLogin()}
+  else{lgReset();msg($("lgMsg"),"Đăng nhập đúng: "+acc.name+" – "+acc.unit+". (Bản xem thử: tool chưa khóa, bấm “Đóng bản xem thử”.)","ok")}
+  renderUsers()}
+if(CFG.AUTH.enforce){let s=null;try{s=sessionStorage.getItem("bnkt.sess")}catch(e){}const acc=s&&ACC.list().find(x=>x.u===s&&!x.locked&&!x.must);if(acc)$("roleBadge").textContent=acc.name+" · "+acc.unit;else openLogin()}
+/* [/F24] */
+
+/* [F25:quanLyUser] YC-02: Admin tạo / sửa / khóa / đặt lại mật khẩu / xóa tài khoản; lọc theo đơn vị, tìm kiếm */
+let uEdit=null;
+function units(){return[...new Set(ACC.list().map(x=>x.unit).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"vi"))}
+function credShow(u,p){$("uCredWrap").hidden=false;$("uCred").textContent="Tên đăng nhập: "+u+"\nMật khẩu tạm: "+p}
+function renderUsers(){const body=$("uBody");if(!body)return;const all=ACC.list(),us=units(),fs=$("uUnitF"),cur=fs.value,q=$("uSearch").value.trim().toLowerCase();
+  fs.textContent="";fs.appendChild(new Option("Tất cả đơn vị",""));us.forEach(u=>fs.appendChild(new Option(u,u)));fs.value=us.includes(cur)?cur:"";
+  const dl=$("uUnits");dl.textContent="";us.forEach(u=>{const o=document.createElement("option");o.value=u;dl.appendChild(o)});
+  const L=all.filter(x=>(!fs.value||x.unit===fs.value)&&(!q||[x.u,x.name,x.phone,x.unit].join(" ").toLowerCase().includes(q))).sort((a,b)=>(a.unit||"").localeCompare(b.unit||"","vi")||a.u.localeCompare(b.u));
+  body.textContent="";const fd=s=>s?new Date(s).toLocaleString("vi-VN",{dateStyle:"short",timeStyle:"short"}):"Chưa";
+  if(!L.length){const tr=document.createElement("tr"),td=document.createElement("td");td.colSpan=7;td.className="hint";td.textContent=all.length?"Không có tài khoản khớp bộ lọc.":"Chưa có tài khoản nào. Tạo ở form phía trên.";tr.appendChild(td);body.appendChild(tr)}
+  for(const x of L){const tr=document.createElement("tr");[x.u,x.name,x.unit,x.phone||"–"].forEach(t=>{const td=document.createElement("td");td.textContent=t;tr.appendChild(td)});
+    const ts=document.createElement("td"),sp=document.createElement("span");sp.className="st "+(x.locked?"lock":x.must?"must":"ok");sp.textContent=x.locked?"ĐANG KHÓA":x.must?"CHỜ ĐỔI MK":"HOẠT ĐỘNG";ts.appendChild(sp);tr.appendChild(ts);
+    const tl=document.createElement("td");tl.textContent=fd(x.lastLogin);tr.appendChild(tl);
+    const ta=document.createElement("td"),box=document.createElement("div");box.className="acts";
+    const bt=(txt,aria,fn)=>{const e=document.createElement("button");e.type="button";e.className="btn sm";e.textContent=txt;e.setAttribute("aria-label",aria+" "+x.u);e.onclick=fn;box.appendChild(e)};
+    bt("Sửa","Sửa",()=>uEditStart(x.u));
+    bt(x.locked?"Mở khóa":"Khóa",x.locked?"Mở khóa":"Khóa",()=>uPatch(x.u,{locked:!x.locked},(x.locked?"Đã mở khóa ":"Đã khóa ")+x.u+"."));
+    bt("Đặt lại MK","Đặt lại mật khẩu",()=>uReset(x.u));
+    const del=document.createElement("button");del.type="button";del.className="del";del.textContent="Xóa";del.setAttribute("aria-label","Xóa tài khoản "+x.u);
+    del.onclick=()=>{if(!del.classList.contains("sure")){del.classList.add("sure");del.textContent="Xóa hẳn?";setTimeout(()=>{del.classList.remove("sure");del.textContent="Xóa"},4000);return}
+      ACC.save(ACC.list().filter(y=>y.u!==x.u));if(uEdit===x.u)uEditEnd();$("uCredWrap").hidden=true;msg($("uMsg"),"Đã xóa tài khoản "+x.u+".","ok");renderUsers()};
+    box.appendChild(del);ta.appendChild(box);tr.appendChild(ta);body.appendChild(tr)}
+  const lk=all.filter(x=>x.locked).length;$("uCount").textContent=all.length+" tài khoản · "+us.length+" đơn vị"+(lk?" · "+lk+" đang khóa":"")}
+function uPatch(u,patch,txt){const a=ACC.list(),x=a.find(y=>y.u===u);if(!x)return;Object.assign(x,patch);ACC.save(a);msg($("uMsg"),txt,"ok");renderUsers()}
+async function uReset(u){const a=ACC.list(),x=a.find(y=>y.u===u);if(!x)return;const p=genPass();
+  try{x.salt=rndSalt();x.hash=await pwHash(p,x.salt)}catch(e){msg($("uMsg"),CRYPTO_ERR,"bad");return}
+  x.must=true;ACC.save(a);msg($("uMsg"),"Đã đặt lại mật khẩu cho "+u+". Người dùng phải đổi ở lần đăng nhập tới.","ok");credShow(u,p);renderUsers()}
+function uEditStart(u){const x=ACC.list().find(y=>y.u===u);if(!x)return;uEdit=u;$("uUser").value=x.u;$("uUser").readOnly=true;$("uName").value=x.name||"";$("uUnit").value=x.unit||"";$("uPhone").value=x.phone||"";
+  $("uPass").value="";$("uPass").placeholder="để trống = giữ mật khẩu hiện tại";$("uFormTitle").textContent="Sửa tài khoản "+u;$("uSave").textContent="Lưu thay đổi";$("uCancel").hidden=false;$("uCredWrap").hidden=true;msg($("uMsg"),"");$("uFormTitle").scrollIntoView({block:"nearest"});$("uName").focus()}
+function uEditEnd(){uEdit=null;["uUser","uPass","uName","uPhone"].forEach(id=>$(id).value="");$("uUser").readOnly=false;$("uPass").placeholder="";$("uFormTitle").textContent="Tạo tài khoản người dùng";$("uSave").textContent="Tạo tài khoản";$("uCancel").hidden=true}
+$("uCancel").onclick=()=>{uEditEnd();msg($("uMsg"),"")};
+$("uSave").onclick=async()=>{const m=$("uMsg"),A=CFG.AUTH,u=$("uUser").value.trim().toLowerCase(),name=$("uName").value.trim().replace(/\s+/g," "),unit=$("uUnit").value.trim().replace(/\s+/g," "),phone=$("uPhone").value.replace(/[\s.\-]/g,"");let p=$("uPass").value;
+  if(!uEdit&&!A.userRe.test(u)){msg(m,"Tên đăng nhập 3–32 ký tự, chỉ gồm chữ thường không dấu, số và dấu . _ -","bad");$("uUser").focus();return}
+  if(!name){msg(m,"Nhập họ tên người dùng.","bad");$("uName").focus();return}
+  if(!unit){msg(m,"Nhập đơn vị của người dùng.","bad");$("uUnit").focus();return}
+  if(phone&&!A.phoneRe.test(phone)){msg(m,"Số điện thoại gồm 10 chữ số, bắt đầu bằng 0.","bad");$("uPhone").focus();return}
+  if(p&&!passOK(p)){msg(m,"Mật khẩu tạm tối thiểu "+A.minPass+" ký tự, có cả chữ và số. Để trống để tool tự tạo.","bad");$("uPass").focus();return}
+  const a=ACC.list();
+  try{if(uEdit){const x=a.find(y=>y.u===uEdit);if(!x){uEditEnd();msg(m,"Tài khoản không còn tồn tại.","bad");renderUsers();return}
+      Object.assign(x,{name,unit,phone});if(p){x.salt=rndSalt();x.hash=await pwHash(p,x.salt);x.must=true}ACC.save(a);
+      msg(m,"Đã lưu thay đổi cho "+x.u+(p?" (đã đặt mật khẩu tạm mới).":"."),"ok");if(p)credShow(x.u,p);else $("uCredWrap").hidden=true;uEditEnd()}
+    else{if(a.some(y=>y.u===u)){msg(m,"Tên đăng nhập “"+u+"” đã có. Chọn tên khác.","bad");return}if(!p)p=genPass();const salt=rndSalt();
+      a.push({u,name,unit,phone,salt,hash:await pwHash(p,salt),must:true,locked:false,role:"user",createdAt:new Date().toISOString(),lastLogin:null});
+      if(!ACC.save(a)){msg(m,"Không lưu được: trình duyệt chặn bộ nhớ của trang.","bad");return}
+      msg(m,"Đã tạo tài khoản "+u+" thuộc "+unit+".","ok");credShow(u,p);["uUser","uPass","uName","uPhone"].forEach(id=>$(id).value="")}}
+  catch(e){msg(m,CRYPTO_ERR,"bad");return}
+  renderUsers()};
+$("uCopy").onclick=()=>{const t=$("uCred").textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>msg($("uMsg"),"Đã chép thông tin đăng nhập.","ok"),()=>msg($("uMsg"),"Trình duyệt không cho chép tự động. Bôi đen khung thông tin rồi chép tay.","warn"))};
+$("uSearch").oninput=renderUsers;$("uUnitF").onchange=renderUsers;$("uLoginDemo").onclick=openLogin;
+/* [/F25] */
+
+/* [F40:quanTriThe] 4 thẻ con của Quản trị: Thư viện · Âm thanh · Người dùng · Nhật ký; nhớ thẻ đang mở */
+const QT=[...document.querySelectorAll("#qtTabs [data-qt]")];
+function setQt(k,focus){if(!QT.some(b=>b.dataset.qt===k))k="lib";
+  QT.forEach(b=>{const on=b.dataset.qt===k;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  document.querySelectorAll("[data-qtp]").forEach(p=>p.hidden=p.dataset.qtp!==k);store.set("bnkt.qt",k);
+  if(k==="aud")renderAudAdm();else if(k==="usr")renderUsers();else if(k==="log"&&isAdmin)loadLog()}
+QT.forEach(b=>b.onclick=()=>setQt(b.dataset.qt));
+$("qtTabs").addEventListener("keydown",e=>{const i=QT.findIndex(b=>b.getAttribute("aria-selected")==="true");let j=null;
+  if(e.key==="ArrowRight")j=(i+1)%QT.length;else if(e.key==="ArrowLeft")j=(i-1+QT.length)%QT.length;if(j!==null){e.preventDefault();setQt(QT[j].dataset.qt,true)}});
+$("audGoUp").onclick=()=>{setQt("lib");$("rKind").value="audio";kindUI();$("rName").focus()};
+setQt(store.get("bnkt.qt")||"lib");
+/* [/F40] */
 
 /* [F23:khoiDong] */
 if(!S.type||(!S.type.startsWith("lib:")&&!CFG.BUILTIN_TYPES.some(x=>x[0]===S.type)))S.type="finger";
